@@ -56,7 +56,7 @@ const HomeTopratedProduct = () => {
     <div>
       <div>
         <div className="container py-20">
-          <div className="mb-8 md:mb-12">
+          <div className="mb-8 md:mb-12 px-4 sm:px-0">
             <h2 className={isLoading ? "bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-xl font-extrabold uppercase text-transparent md:text-5xl animate-pulse" : "bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-xl font-extrabold uppercase text-transparent md:text-5xl"}>
               Top Rated Product
             </h2>
@@ -64,7 +64,7 @@ const HomeTopratedProduct = () => {
           {isLoading ? (
             <h2 className="text-center text-2xl font-bold">Loading...</h2>
           ) : (
-            <div className="grid w-full grid-cols-homepageLayoutHero1 place-items-start gap-4 overflow-hidden sm:grid-cols-productLayoutTop">
+            <div className="grid w-full grid-cols-collectionLayout px-4 ms:px-0 place-items-start gap-4 overflow-hidden sm:grid-cols-productLayoutTop">
               {topRate?.map((topProduct) => {
                 const { id, title, price, rating, image } = topProduct;
                 const titleLength = title.split(" ").slice(0, 5).join(" ");
@@ -80,7 +80,7 @@ const HomeTopratedProduct = () => {
                             className="objece-center block h-60 object-cover"
                             src={image}
                             alt=""
-                            width={400}
+                            width={320}
                             height={300}
                           />
                         </div>
