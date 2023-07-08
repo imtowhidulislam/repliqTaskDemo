@@ -28,7 +28,7 @@ a {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #e7e7e7cc;
+  @apply bg-baseClr1;
   /* background: linear-gradient(
       to bottom,
       transparent,
@@ -38,17 +38,17 @@ body {
 }
 
 .navList {
-  @apply block w-full cursor-pointer rounded-sm bg-transparent px-4 py-2 transition-all duration-200 ease-in-out hover:bg-lime-700 hover:text-gray-50 hover:drop-shadow-md;
+  @apply block w-full cursor-pointer rounded-md bg-transparent px-4 py-2 transition-all duration-200 ease-in-out hover:bg-primary hover:text-baseClr1 hover:drop-shadow-md;
 }
 .navLink {
-  @apply flex items-center gap-2 text-base font-bold capitalize;
+  @apply flex items-center text-base font-bold capitalize;
 }
 .flexRow {
   @apply flex items-center;
 }
 /* *** Subscribe Components Style Start */
 .subscribeBtn {
-  @apply w-full rounded-sm bg-lime-900 px-5 py-2 text-lime-100 drop-shadow-md transition-colors duration-300 ease-in-out hover:bg-lime-300 hover:text-lime-900;
+  @apply w-full rounded-sm bg-baseClr1 px-5 py-2 text-primary drop-shadow-md shadow-nutral1 transition-colors duration-300 ease-in-out hover:bg-primary hover:text-nutral3;
 }
 /* *** Subscribe Components Style End */
 
@@ -60,7 +60,7 @@ body {
   margin-bottom: 0.5rem;
 }
 .footerSocialIcon {
-  @apply cursor-pointer transition-colors duration-200 ease-in-out hover:text-lime-600;
+  @apply cursor-pointer transition-colors duration-200 ease-in-out hover:text-nutral3;
 }
 /* ?? Footer Style End */
 
@@ -73,7 +73,7 @@ body {
   flex-wrap: wrap;
 }
 .btn {
-  @apply cursor-pointer rounded-full border-2 border-lime-600 bg-transparent px-8 py-2 text-sm font-bold capitalize text-lime-900 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-lime-600 hover:text-lime-100;
+  @apply drop-shadow-lg cursor-pointer rounded-full border-2 border-nutral3 bg-transparent px-8 py-2 text-sm font-bold capitalize text-nutral2 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-nutral3 hover:text-primary;
 }
 /* !! Unique Btn Style End */
 
@@ -82,22 +82,22 @@ body {
   max-width: 13rem;
 }
 .card {
-  @apply z-10 overflow-hidden rounded-md border border-[#cccccc] bg-[#ffff] text-left drop-shadow-md transition-transform duration-200 ease-in-out hover:scale-105;
+  @apply z-10 overflow-hidden rounded-md text-left drop-shadow-lg shadow-nutral1 transition-transform duration-200 ease-in-out hover:scale-105;
 }
 /* *** Product Image Container Style End */
 
 /* ** Form Style Start */
 
 .form {
-  @apply rounded bg-gray-100 bg-opacity-5 p-2;
+  @apply rounded bg-opacity-5;
 }
 
 input {
   @apply w-full text-small sm:text-lg;
 }
 .registerForm {
-  background-color: #33323298;
-  backdrop-filter: blur(0.5rem);
+  /* background-color: #33323298; */
+  /* backdrop-filter: blur(0.5rem); */
 }
 .registerForm > *:not(:last-child) {
   @apply mb-2 md:mb-6;
@@ -225,6 +225,6 @@ label {
 
 /* *** Top Btn Style Start */
 .topBtn {
-  @apply animate-pulse text-3xl font-bold text-lime-900;
+  @apply animate-pulse text-3xl font-bold text-baseClr1;
 }
 /* *** Top Btn Style End */

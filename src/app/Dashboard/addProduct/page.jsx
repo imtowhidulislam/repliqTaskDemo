@@ -47,10 +47,10 @@ const page = () => {
 
   return (
     <>
-      <div className="relative flex h-full w-full items-center justify-center bg-contact-image bg-cover bg-center bg-no-repeat  before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-[rgba(10,46,16,0.57)] before:backdrop-blur-sm">
+      <div className="relative flex h-full w-full items-center justify-center">
         <form
           onSubmit={handleSubmit}
-          className="registerForm md:mx-4 md:my-8 w-full max-w-md animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-[#14141483] px-4 pb-6 pt-0 backdrop-blur-md backdrop-filter sm:mx-0"
+          className="registerForm md:mx-4 md:my-8 w-full max-w-md animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-[#f5f5f5] px-4 pb-6 pt-0 sm:mx-0"
         >
           <div className="flex items-center justify-center pb-1 text-6xl text-cyan-700"></div>
           <div className="pb-2">

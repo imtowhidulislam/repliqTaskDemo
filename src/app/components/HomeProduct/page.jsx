@@ -57,52 +57,51 @@ const HomeTopratedProduct = () => {
       <div>
         <div className="container py-20">
           <div className="mb-8 md:mb-12 px-4 sm:px-0">
-            <h2 className={isLoading ? "bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-xl font-extrabold uppercase text-transparent md:text-5xl animate-pulse" : "bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-xl font-extrabold uppercase text-transparent md:text-5xl"}>
+            <h2 className={isLoading ? "bg-gradient-to-r from-accent to-primary bg-clip-text text-xl font-extrabold uppercase text-transparent md:text-5xl animate-pulse" : "bg-gradient-to-r from-accent to-primary bg-clip-text text-xl font-extrabold uppercase text-transparent md:text-5xl"}>
               Top Rated Product
             </h2>
           </div>
           {isLoading ? (
             <h2 className="text-center text-2xl font-bold">Loading...</h2>
           ) : (
-            <div className="grid w-full grid-cols-collectionLayout px-4 ms:px-0 place-items-start gap-4 overflow-hidden sm:grid-cols-productLayoutTop">
+            <div className="grid w-full grid-cols-productLayout px-4 ms:px-0 place-items-start gap-4 overflow-hidden sm:grid-cols-productLayoutTop">
               {topRate?.map((topProduct) => {
                 const { id, title, price, rating, image } = topProduct;
                 const titleLength = title.split(" ").slice(0, 5).join(" ");
                 return (
                   <div
                     key={id}
-                    className="card z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2"
+                    className="card bg-nutral3 z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2"
                   >
                     <Link href={`/Product/${id}`} className="">
                       <div>
-                        <div className="m-auto mb-4 h-60 max-w-xs p-4">
+                        <div className="m-auto mb-4 h-60 max-w-md p-4">
                           <Image
-                            className="objece-center block h-60 object-cover"
+                            className="objece-center aspect-square block h-60 object-cover"
                             src={image}
                             alt=""
-                            width={320}
+                            width={350}
                             height={300}
                           />
                         </div>
-                        <div className="z-20 px-4 pb-4 pt-2 text-gray-700">
+                        <div className="z-20 px-4 pb-4 pt-2 text-nutral2">
                           <div>
-                            <h2>
+                            <h2 className="font-extrabold">
                               Name :{" "}
                               {title.split(" ").length <= 5
                                 ? `${titleLength}`
                                 : `${titleLength}...`}
                             </h2>
                           </div>
-                          <div className="flex items-center justify-between gap-4 py-2">
+                          <div className="flex items-center justify-between gap-4 py-2 ">
                             <h2>
-                              Price :{" "}
-                              <span className="text-sm font-bold text-lime-400">
-                                {price}$
-                              </span>
+                              <p className="text-base font-extrabold text-primary">
+                                $ {price}
+                              </p>
                             </h2>
-                            <p>
+                            <p className="text-nutra2 font-bold">
                               Rating :{" "}
-                              <span className="text-sm font-bold text-lime-400">
+                              <span className="text-base font-extrabold text-primary">
                                 {rating.rate}
                               </span>
                             </p>
@@ -114,7 +113,7 @@ const HomeTopratedProduct = () => {
                       <button
                         type="button"
                         onClick={() => addToCart(id)}
-                        className="w-full cursor-pointer rounded-md border-2 border-lime-900  bg-transparent px-4 py-2 text-sm font-bold capitalize text-lime-900 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-lime-700 hover:text-lime-100 hover:drop-shadow-md"
+                        className="w-full cursor-pointer rounded-md border-2 border-nutral2  bg-transparent px-4 py-2 text-sm font-bold capitalize text-nutral2 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-accent hover:text-nutral3 hover:drop-shadow-md"
                       >
                         add to cart
                       </button>

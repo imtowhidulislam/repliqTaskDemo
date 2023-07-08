@@ -49,16 +49,19 @@ const Cart = () => {
     <div className="cartHeight py-16">
       <div className="container p-2 sm:p-4 md:p-0 ">
         <div className="mb-8 flex items-center justify-between gap-4 sm:gap-20">
-          <h2 className="cartTitle ms:text-4xl text-left font-mono text-2xl font-bold capitalize text-lime-700 ">
+          <h2 className="cartTitle ms:text-4xl text-left font-mono text-2xl font-extrabold capitalize text-accent">
             Your Cart
           </h2>
           <button
             type="button"
             onClick={deleteItem}
-            className="flex cursor-pointer items-center justify-between gap-2 rounded-md bg-lime-400 px-4 py-2 capitalize"
+            className="flex cursor-pointer items-center justify-between gap-2 rounded-md text-nutral3 bg-primary px-4 py-2 capitalize"
           >
             Delete All{" "}
-            <HiArchiveBoxXMark className="hover:animate-shake text-xl text-red-500" />
+            <span className="flex items-center justify-center bg-[#fafafa] backdrop-blur-sm p-1 rounded-full">
+            <HiArchiveBoxXMark className="hover:animate-shake text-xl text-denger" />
+
+            </span>
           </button>
         </div>
         <div className="grid grid-cols-productLayout gap-24 sm:place-items-stretch md:grid-cols-homepageLayoutHero">
@@ -76,28 +79,28 @@ const Cart = () => {
                       onClick={() => deleteCartItem(id)}
                       className="cursor-pointer"
                     >
-                      <HiArchiveBoxXMark className="text-xl text-red-500" />
+                        <HiArchiveBoxXMark className="text-xl text-denger" />
                     </button>
                   </div>
                   <div className="flex items-center gap-6">
                     <div className="h-20 w-20 overflow-hidden rounded-md">
                       <Image
-                        className="h-20 object-cover object-center"
+                        className="aspect-square h-20 object-cover object-center"
                         src={image}
                         alt="image"
-                        width={60}
-                        height={40}
+                        width={80}
+                        height={80}
                       />
                     </div>
                     <div>
-                      <h2 className="text-left text-xs font-medium capitalize md:text-base">
+                      <h2 className="text-left text-xs font-bold capitalize text-nutral2 md:text-xl">
                         {title}
                       </h2>
-                      <h2 className="text-left text-xs font-medium capitalize text-lime-900 md:text-base">
+                      <h2 className="py-1 text-left text-xs font-bold capitalize text-nutral2 md:text-base">
                         {category}
                       </h2>
-                      <h2 className="text-left text-xs font-medium capitalize md:text-base">
-                        ${price} USD
+                      <h2 className="text-left text-xl font-bold capitalize text-primary md:text-base">
+                        ${price}
                       </h2>
                     </div>
                   </div>
@@ -105,7 +108,9 @@ const Cart = () => {
                     <div className="grid place-items-center">
                       {/* <Counter setUniqueCart={setUniqueCart} uniqueCart={uniqueCart} productId={id} quantity={quantity} /> */}
                       Quan
-                      <div className="text-xl text-lime-800 font-bold">{quantity}</div>
+                      <div className="text-xl font-bold text-primary">
+                        {quantity}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -136,7 +141,7 @@ const Cart = () => {
               <h2 className="text-left text-base font-medium capitalize">
                 total
               </h2>
-              <h2 className="text-left text-base font-medium capitalize">
+              <h2 className="text-left text-primary font-bold text-base capitalize">
                 {cartValue.length > 0
                   ? `$ ${(+total + 3.45).toFixed(2)}`
                   : `$ ${0.0}`}

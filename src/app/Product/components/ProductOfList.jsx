@@ -51,7 +51,7 @@ const ProductOfList = ({ product, loading, cart, setCart }) => {
           return (
             <div
               key={id}
-              className="card relative z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2"
+              className="card bg-nutral3 relative z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2"
             >
               <div className="absolute left-3/4 top-3">
                 <FavoriteBtn />
@@ -60,38 +60,38 @@ const ProductOfList = ({ product, loading, cart, setCart }) => {
                 <div>
                   <div className="m-auto mb-4 h-60 max-w-xs p-4">
                     <Image
-                      className="objece-center block h-60 object-cover"
+                      className="objece-center aspect-square block h-60 object-cover"
                       src={img}
                       alt=""
                       width={300}
                       height={400}
                     />
                   </div>
-                  <div className="z-20 px-4 pb-4 pt-2 text-gray-700">
+                  <div className="z-20 px-4 pb-4 pt-2 text-nutral2">
                     <div>
                       <h2 className="sm:text-lg">
-                        Name :{" "}
+                        {" "}
                         {title.split(" ").length <= 5
                           ? `${titleLength}`
                           : `${titleLength}...`}
                       </h2>
                     </div>
+                    
+                    <h2 className="text-xl mt-2 uppercase font-bold">{cat}</h2>
                     <div className="flex items-center justify-between gap-4 py-2">
                       <h2>
-                        Price :{" "}
-                        <span className="font-bold text-lime-400">
+                        {" "}
+                        <span className="font-bold text-xl text-primary">
                           {price}$
                         </span>
                       </h2>
-                      <p>
+                      <p className="text-base">
                         Rating :{" "}
-                        <span className="font-bold text-lime-400">
+                        <span className="font-bold text-primary text-xl">
                           {rating.rate}
                         </span>
                       </p>
                     </div>
-                    <h2>Category : {cat}</h2>
-                    {/* <p>Detail : {desc}$</p> */}
                   </div>
                 </div>
               </Link>
@@ -102,11 +102,11 @@ const ProductOfList = ({ product, loading, cart, setCart }) => {
                 <button
                   type="button"
                   onClick={() => getProduct(id)}
-                  className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-lime-900  bg-transparent px-4 py-2 text-sm font-bold capitalize text-lime-900 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-lime-700 hover:text-lime-100 hover:drop-shadow-md"
+                  className="group flex w-full cursor-pointer items-center drop-shadow-lg justify-center gap-2 rounded-md border-2 border-accent  bg-transparent px-4 py-2 text-sm font-bold capitalize text-nutral2 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
                 >
                   add to cart{" "}
                   <span>
-                    <HiShoppingCart className="text-2xl text-lime-100 group-hover:animate-cartAnimate" />
+                    <HiShoppingCart className="text-2xl text-accent group-hover:animate-cartAnimate" />
                   </span>
                 </button>
               </div>

@@ -40,14 +40,14 @@ const NavbarMain = ({ params }) => {
   };
 
   return (
-    <div className="fixed left-0 top-0 z-50 w-full bg-lime-100 md:relative md:bg-lime-200">
+    <div className="fixed left-0 top-0 z-50 w-full md:relative bg-nutral1 md:bg-transparent">
       <div className="container py-4">
         {width > 768 ? (
           <nav className="flex w-full max-w-7xl items-center justify-between gap-2">
             <div>
               <Link href="/">
-                <h2 className="flex items-center gap-2 text-2xl font-bold uppercase text-lime-700">
-                  <span className="text-pink-500">
+                <h2 className="flex items-center gap-2 text-2xl font-bold uppercase text-primary">
+                  <span className="text-3xl text-primary">
                     <RiShoppingBagFill />
                   </span>
                   repliq
@@ -58,7 +58,7 @@ const NavbarMain = ({ params }) => {
               <Link
                 className={
                   currentPath === "/"
-                    ? "navList navLink text-lime-600"
+                    ? "navList navLink text-primary"
                     : "navLink navList"
                 }
                 href="/"
@@ -68,7 +68,7 @@ const NavbarMain = ({ params }) => {
               <Link
                 className={
                   currentPath === "/Product"
-                    ? "navLink navList text-lime-600"
+                    ? "navLink navList text-primary"
                     : "navLink navList"
                 }
                 href="/Product"
@@ -78,7 +78,7 @@ const NavbarMain = ({ params }) => {
               <Link
                 className={
                   currentPath === "/Dashboard"
-                    ? "navLink navList text-lime-600"
+                    ? "navLink navList text-primary"
                     : "navLink navList"
                 }
                 href="/Dashboard"
@@ -99,7 +99,7 @@ const NavbarMain = ({ params }) => {
                 <Link
                   className={
                     currentPath === "/Register"
-                      ? "navLink text-lime-600"
+                      ? "navLink text-primary"
                       : "navLink"
                   }
                   href="/Register"
@@ -115,8 +115,8 @@ const NavbarMain = ({ params }) => {
                     <p
                       className={
                         currentPath === "/Cart"
-                          ? "absolute -top-2 left-1 mb-1 ml-1 flex h-4 w-4 items-center justify-center rounded-full bg-pink-500 text-small font-bold text-lime-100"
-                          : "absolute -top-2 left-1 mb-1 ml-1 flex h-4 w-4 items-center justify-center rounded-full bg-pink-500 text-small font-bold text-lime-100"
+                          ? "absolute -top-2 left-1 mb-1 ml-1 flex h-4 w-4 items-center justify-center rounded-full bg-denger text-small font-bold text-nutral2"
+                          : "absolute -top-2 left-1 mb-1 ml-1 flex h-4 w-4 items-center justify-center rounded-full bg-denger text-small font-bold text-nutral2"
                       }
                     >
                       {cartItem.length}
@@ -126,7 +126,7 @@ const NavbarMain = ({ params }) => {
                 <Link
                   className={
                     currentPath === "/Cart"
-                      ? "navLink text-lime-600"
+                      ? "navLink text-primary"
                       : "navLink"
                   }
                   href="/Cart"
@@ -139,8 +139,8 @@ const NavbarMain = ({ params }) => {
         ) : (
           <nav className="relative z-20 flex w-full max-w-7xl items-center justify-between gap-4">
             <div>
-              <h2 className="flex items-center gap-2 text-2xl font-bold uppercase text-lime-600">
-                <span className="text-lime-600">
+              <h2 className="flex items-center gap-2 text-2xl font-bold uppercase text-primary">
+                <span className="text-primary">
                   <RiShoppingBagFill />
                 </span>
                 repliq
@@ -167,7 +167,7 @@ const NavbarMain = ({ params }) => {
                     onClick={toggleMobNav}
                     className={
                       currentPath === "/"
-                        ? "navLink navList text-lime-200"
+                        ? "navLink navList text-nutral3"
                         : "navLink navList"
                     }
                     href="/"
@@ -178,7 +178,7 @@ const NavbarMain = ({ params }) => {
                     onClick={toggleMobNav}
                     className={
                       currentPath === "/Product"
-                        ? "navLink navList text-lime-200"
+                        ? "navLink navList text-nutral3"
                         : "navLink navList"
                     }
                     href="/Product"
@@ -189,7 +189,7 @@ const NavbarMain = ({ params }) => {
                     onClick={toggleMobNav}
                     className={
                       currentPath === "/Dashboard"
-                        ? "navLink navList text-lime-200"
+                        ? "navLink navList text-nutral3"
                         : "navLink navList"
                     }
                     href="/Dashboard"
@@ -201,7 +201,7 @@ const NavbarMain = ({ params }) => {
                       onClick={toggleMobNav}
                       className={
                         currentPath === "/Register"
-                          ? "navLink text-lime-200"
+                          ? "navLink text-nutral3"
                           : "navLink"
                       }
                       href="/Register"
@@ -219,7 +219,7 @@ const NavbarMain = ({ params }) => {
                       onClick={toggleMobNav}
                       className={
                         currentPath === "/Cart"
-                          ? "navLink relative text-lime-200"
+                          ? "navLink relative text-nutral3"
                           : "navLink relative"
                       }
                       href="/Cart"

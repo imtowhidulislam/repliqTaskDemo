@@ -19,7 +19,7 @@ const FavoriteBtn = () => {
         {favorite ? (
           <HiHeart className="text-2xl text-red-400" />
         ) : (
-          <HiOutlineHeart className="text-2xl text-lime-100" />
+          <HiOutlineHeart className="text-2xl text-denger" />
         )}
       </button>
     </>

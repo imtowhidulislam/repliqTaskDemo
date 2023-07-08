@@ -37,13 +37,13 @@ const Footer = () => {
   }, [newsletterUser]);
 
   return (
-    <div className="bg-lime-200 px-4 py-8 mt-1">
+    <div className="bg-nutral1 px-4 py-8 mt-1">
       <div className="container">
         <div className="mb-10 flex items-center justify-start text-6xl text-gray-100">
           <div>
             <Link href="/" className="cursor-pointer">
-              <h2 className="flex items-center gap-2 text-2xl font-bold uppercase text-lime-800">
-                <span className="text-4xl text-lime-800">
+              <h2 className="flex items-center gap-2 text-3xl font-bold uppercase text-primary">
+                <span className="text-4xl text-primary">
                   <RiShoppingBagFill />
                 </span>
                 repliq
@@ -53,14 +53,14 @@ const Footer = () => {
         </div>
         <div className="grid grid-cols-footerLayout gap-12">
           <div className="footerStyle">
-            <h2>Privacy Policy</h2>
+            <h2 className="text-2xl text-nutral2">Privacy Policy</h2>
             <p>Terms & Condition</p>
             <p>contacts</p>
             <p>support</p>
             <p>feedback</p>
           </div>
           <div className="footerStyle">
-            <h2>Navigate</h2>
+            <h2 className="text-2xl text-nutral2">Navigate</h2>
             <div className="flex items-center gap-2">
               <Link
                 className="transition-all duration-200 ease-in-out hover:text-gray-200"
@@ -86,9 +86,9 @@ const Footer = () => {
             </p>
           </div>
           <div className="footerStyle">
-            <h2>Follow Us</h2>
+            <h2 className="text-2xl text-nutral2">Follow Us</h2>
 
-            <div className="mt-2 flex gap-2 text-2xl text-lime-800">
+            <div className="mt-2 flex gap-2 text-3xl text-primary">
               <FaFacebookSquare className="footerSocialIcon" />
               <FaTwitterSquare className="footerSocialIcon
               " />
@@ -97,8 +97,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex items-center justify-start gap-1 capitalize text-[#363535cc]">
-          <FaCopyright className="text-small sm:text-base" />
+        <div className="mt-12 flex items-center justify-start gap-1 capitalize text-baseClr1">
+          <FaCopyright className="text-small sm:text-lg" />
           <p className="text-small font-light sm:text-base">
             copyright <span>2023. </span>all rights reserve to Repliq
           </p>

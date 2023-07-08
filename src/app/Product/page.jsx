@@ -51,9 +51,9 @@ const Page = () => {
   };
 
   return (
-    <div className="container px-3 py-8 sm:py-24 md:px-0 ">
+    <div className="container px-3 py-8 sm:py-4 sm:pb-12 md:px-0 ">
       <div ref={sectionRef} className="md-4 mt-16 sm:mt-0 md:mb-12">
-        <h2 className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-left text-2xl font-extrabold uppercase text-transparent md:text-center md:text-4xl lg:text-6xl">
+        <h2 className="bg-gradient-to-r from-accent to-primary bg-clip-text text-left text-2xl font-extrabold uppercase text-transparent md:text-center md:text-4xl lg:text-6xl">
           Get your desired One.
         </h2>
       </div>
@@ -131,7 +131,7 @@ const Page = () => {
       {/* Move to Top Button. */}
       <div className="fixed bottom-5 left-3/4 z-50">
         <button
-          className="rounded-full border-2 border-lime-200 p-1"
+          className="rounded-full border-2 border-nutral3 p-1"
           onClick={handleTop}
         >
           {backToTop ? (
