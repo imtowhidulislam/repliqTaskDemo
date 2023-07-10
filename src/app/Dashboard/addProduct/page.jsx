@@ -50,11 +50,11 @@ const page = () => {
       <div className="relative flex h-full w-full items-center justify-center overflow-y-hidden">
         <form
           onSubmit={handleSubmit}
-          className="registerForm md:mx-4 md:my-8 w-full max-w-md animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-nutral3 px-4 pb-6 pt-0 sm:mx-0"
+          className="registerForm md:mx-4 drop-shadow-lg shadow-nutral2 md:my-8 w-full max-w-md animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-nutral3 px-4 pb-6 pt-0 sm:mx-0"
         >
           <div className="flex items-center justify-center pb-1 text-6xl text-cyan-700"></div>
           <div className="pb-2">
-            <h2 className="text-center text-xl font-bold uppercase text-accent">
+            <h2 className="text-center text-2xl font-bold uppercase text-accent">
               Create Product
             </h2>
           </div>
@@ -62,7 +62,7 @@ const page = () => {
           <div className="text-nutral2">
             <label
               className="lableWidth font-bold "
-              htmlFor="first name"
+              htmlFor="name"
             >
               Name
             </label>
@@ -76,8 +76,8 @@ const page = () => {
                 placeholder="enter product title"
                 className={
                   errors.title && touched.title
-                    ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize placeholder:text-gray-900"
-                    : "form py-1 pl-4 placeholder:capitalize "
+                    ? "form text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize placeholder:text-gray-900"
+                    : "form text-nutral2 py-1 pl-4 placeholder:capitalize "
                 }
               />
               {errors.title && touched.title && (
@@ -104,8 +104,8 @@ const page = () => {
                 value={values.desc}
                 className={
                   errors.desc && touched.desc
-                    ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                    : "form py-1 pl-4 placeholder:capitalize"
+                    ? "form text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                    : "form text-nutral2 py-1 pl-4 placeholder:capitalize"
                 }
                 placeholder="enter product desc"
               />
@@ -132,8 +132,8 @@ const page = () => {
                 value={values.price}
                 className={
                   errors.price && touched.price
-                    ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                    : "form py-1 pl-4 placeholder:capitalize"
+                    ? "form text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                    : "form text-nutral2 py-1 pl-4 placeholder:capitalize"
                 }
                 placeholder="enter product price"
               />
@@ -160,8 +160,8 @@ const page = () => {
                 onChange={(e) => setFieldValue("file", e.target.files[0])}
                 className={
                   errors.file && touched.file
-                    ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                    : "form py-1 pl-4 placeholder:capitalize"
+                    ? "form text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                    : "form text-nutral2 py-1 pl-4 placeholder:capitalize"
                 }
                 placeholder="enter product Image"
               />
@@ -188,8 +188,8 @@ const page = () => {
               value={values.category}
               className={
                 errors.category && touched.category
-                  ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                  : "form py-1 bg-transparent pl-4 placeholder:capitalize"
+                  ? "form text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                  : "form text-nutral2 py-1 bg-transparent pl-4 placeholder:capitalize"
               }
               placeholder="enter product category"
             />
@@ -205,7 +205,7 @@ const page = () => {
             <button
               type="submit"
               // onClick={handleSubmit}
-              className="w-full cursor-pointer rounded-md border-2 border-nutral1 bg-transparent px-8 py-2 text-base font-bold capitalize text-nutral2 transition-all duration-200 ease-out hover:border-transparent hover:bg-accent hover:text-nutral3"
+              className="w-full cursor-pointer rounded-md border-2 border-nutral1 bg-transparent px-8 py-2 text-base font-bold capitalize text-nutral2 transition-all duration-200 ease-out hover:border-transparent hover:bg-accent hover:text-nutral2"
             >
               submit
             </button>

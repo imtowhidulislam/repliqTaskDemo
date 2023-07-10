@@ -11,7 +11,7 @@ import { HiShoppingCart } from "react-icons/hi";
 const ProductCategory = ({
   product,
   cart,
-  loading,
+  isLoading,
   setCart,
   setProduct,
   filterProduct,
@@ -49,7 +49,7 @@ const ProductCategory = ({
 
   return (
     <>
-      {loading ? (
+      {isLoading ? (
         <h2 className="text-3xl font-bold text-lime-800">Fetching Data...</h2>
       ) : (
         filterProductData?.map((singleProduct) => {

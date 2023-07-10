@@ -63,19 +63,19 @@ const Footer = () => {
             <h2 className="text-2xl text-nutral2">Navigate</h2>
             <div className="flex items-center gap-2">
               <Link
-                className="transition-all duration-200 ease-in-out hover:text-gray-200"
+                className="transition-all duration-200 ease-in-out hover:text-primary"
                 href="/"
               >
                 Home
               </Link>
               <Link
-                className="transition-all duration-200 ease-in-out hover:text-gray-200"
+                className="transition-all duration-200 ease-in-out hover:text-primary"
                 href="/Product"
               >
                 Product
               </Link>
               <Link
-                className="transition-all duration-200 ease-in-out hover:text-gray-200"
+                className="transition-all duration-200 ease-in-out hover:text-primary"
                 href="/Dashboard"
               >
                 Dashboard

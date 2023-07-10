@@ -72,12 +72,12 @@ const Cart = () => {
               return (
                 <div
                   key={id}
-                  className="group relative mb-2 flex items-center justify-between gap-8 rounded-md border-b border-gray-400 bg-[#f6f6f6cc] p-3 drop-shadow-md"
+                  className="group relative mb-2 flex items-center justify-between gap-8 rounded-md border-b border-nutral1 bg-nutral3 p-3 drop-shadow-md shadow-nutral2"
                 >
-                  <div className="absolute right-0 top-3 flex h-8 w-8 -translate-x-1/2 -translate-y-2/4  items-center justify-center rounded-full p-1">
+                  <div className="absolute right-0 top-3 flex h-8 w-8 -translate-x-1/2  items-center justify-center rounded-full p-1">
                     <button
                       onClick={() => deleteCartItem(id)}
-                      className="cursor-pointer"
+                      className="cursor-pointer mb-2"
                     >
                         <HiArchiveBoxXMark className="text-xl text-denger" />
                     </button>
@@ -93,10 +93,10 @@ const Cart = () => {
                       />
                     </div>
                     <div>
-                      <h2 className="text-left text-xs font-bold capitalize text-nutral2 md:text-xl">
+                      <h2 className="text-left text-xs font-bold capitalize text-nutral2 md:text-base">
                         {title}
                       </h2>
-                      <h2 className="py-1 text-left text-xs font-bold capitalize text-nutral2 md:text-base">
+                      <h2 className="py-1 text-left text-xs font-bold capitalize text-nutral2 md:text-xl">
                         {category}
                       </h2>
                       <h2 className="text-left text-xl font-bold capitalize text-primary md:text-base">

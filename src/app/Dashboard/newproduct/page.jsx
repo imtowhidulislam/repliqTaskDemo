@@ -30,7 +30,7 @@ const NewProduct = () => {
             return (
               <div
                 key={id}
-                className="mb-2 animate-moveUp flex max-w-xs flex-col flex-wrap items-center justify-center gap-2 rounded-md border-2 border-gray-300 p-4 shadow-lg sm:flex-row sm:justify-between sm:gap-1"
+                className="mb-2 animate-moveUp flex max-w-xs flex-col flex-wrap items-center justify-center gap-2 rounded-md border-2 border-nutral3 p-4 shadow-xl sm:flex-row sm:justify-between sm:gap-1"
               >
                 <div className="overflow-hidden rounded border-lime-700">
                   {/*  <Image
@@ -41,27 +41,27 @@ const NewProduct = () => {
                   />  */}
                   <img src={imageUrl} alt="preview" />
                 </div>
-                <p className="text-sm md:text-base font-bold capitalize text-lime-900">
+                <p className="text-sm mt-2 md:text-xl font-bold capitalize text-nutral2">
                   {title}
                 </p>
-                <p className="break-words text-small font-bold capitalize text-lime-800 sm:text-base">
+                <p className="break-words text-small font-extrabold capitalize text-nutral2 sm:text-base">
                   {category}
                 </p>
                 <div className="mt-2">
-                  <p className="break-words text-small font-bold capitalize sm:text-base sm:font-light">
+                  <p className="break-words text-small font-bold capitalize text-nutral2 sm:text-base sm:font-bold mb-2">
                     {desc.split(" ").length <= 5
                       ? `${descLength}`
                       : `${descLength}...`}
-                    <p className="mt-1  break-words text-small font-bold capitalize text-lime-500 sm:text-base">
-                      price : {price}$
+                    <p className="mt-1  break-words text-small font-bold capitalize text-primary sm:text-xl">
+                      {price}$
                     </p>
                   </p>
                 </div>
-                <div className="mt-4 w-full">
+                <div className="mt-4 w-full drop-shadow-md shadow-nutral2">
                   <button
                     type="button"
                     onClick={() => handleRemoveUser(id)}
-                    className="w-full cursor-pointer rounded-full border-2 border-lime-800 bg-transparent px-4 py-2 text-sm font-bold capitalize text-lime-800 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-lime-900 hover:text-lime-100 hover:drop-shadow-md"
+                    className="w-full cursor-pointer rounded-full border-2 border-nutral2 bg-transparent px-4 py-2 text-sm font-bold capitalize text-nutral2 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-lg "
                   >
                     add Product
                   </button>
@@ -78,7 +78,7 @@ const NewProduct = () => {
               <h2 className="py-4 text-center text-2xl font-bold md:text-left">
                 Product Not Found.
               </h2>
-              <Link href="/Dashboard/addProduct">
+              <Link className="w-full drop-shadow-md shadow-nutral2" href="/Dashboard/addProduct">
                 <ButtonOutlined btnText="Add New Product" />
               </Link>
             </div>

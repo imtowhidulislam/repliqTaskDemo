@@ -31,7 +31,7 @@ const page = () => {
             <h2 className="py-4 text-2xl font-bold text-center md:text-left">
               User not found, Create first.
             </h2>
-            <Link href="/Register">
+            <Link className="w-full drop-shadow-md shadow-nutral2" href="/Register">
               <ButtonOutlined btnText="Create user" />
             </Link>
           </div>
@@ -71,7 +71,7 @@ const page = () => {
                 <button
                   type="button"
                   onClick={() => handleRemoveUser(id)}
-                  className="w-max cursor-pointer rounded-full border-2 border-baseClr1 bg-transparent px-4 py-2 text-sm font-bold capitalize text-nutral2 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-denger hover:text-untral3 hover:drop-shadow-md"
+                  className="w-max cursor-pointer rounded-full border-2 border-baseClr1 bg-transparent px-4 py-2 text-sm font-bold capitalize text-nutral2 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-denger hover:text-nutral3 hover:drop-shadow-md"
                 >
                   Remove
                 </button>

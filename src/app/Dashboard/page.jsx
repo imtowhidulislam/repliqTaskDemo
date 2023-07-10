@@ -63,7 +63,7 @@ const Dashboard = () => {
                     <h2 className="text-left text-small font-medium capitalize md:text-base ">
                       {title}
                     </h2>
-                    <h2 className="text-left text-xs font-medium capitalize text-nutral2 md:text-base">
+                    <h2 className="text-left text-xs font-bold capitalize text-nutral2 md:text-base">
                       {category}
                     </h2>
                     <h2 className="text-left text-base font-extrabold text-primary capitalize md:text-base">

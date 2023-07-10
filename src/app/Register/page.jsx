@@ -47,11 +47,11 @@ const page = () => {
       <div className="relative flex h-full w-full items-center justify-center overflow-y-hidden">
         <form
           onSubmit={handleSubmit}
-          className="registerForm md:mx-4 md:my-8 w-full max-w-md animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-nutral3 px-4 pb-6 pt-0 sm:mx-0"
+          className="registerForm md:mx-4 drop-shadow-lg shadow-nutral2 md:my-8 w-full max-w-md animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-nutral3 px-4 pb-6 pt-0 sm:mx-0"
         >
           <div className="flex items-center justify-center pb-1 text-6xl text-cyan-700"></div>
           <div className="pb-2">
-            <h2 className="text-center text-xl font-bold uppercase text-accent">
+            <h2 className="text-center text-2xl font-bold uppercase text-accent">
               sign up
             </h2>
           </div>
@@ -203,7 +203,7 @@ const page = () => {
             <button
               type="submit"
               // onClick={handleSubmit}
-              className="w-full cursor-pointer rounded-md border-2 border-nutral1 bg-transparent px-8 py-2 text-base font-bold capitalize text-nutral2 transition-all duration-200 ease-out hover:border-transparent hover:bg-accent hover:text-nutral3"
+              className="w-full cursor-pointer rounded-md border-2 border-nutral1 bg-transparent px-8 py-2 text-base font-bold capitalize text-nutral2 transition-all duration-200 ease-out hover:border-transparent hover:bg-accent hover:text-nutral2"
             >
               sign up
             </button>

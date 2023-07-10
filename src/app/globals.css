@@ -48,7 +48,7 @@ body {
 }
 /* *** Subscribe Components Style Start */
 .subscribeBtn {
-  @apply w-full rounded-sm bg-baseClr1 px-5 py-2 text-primary drop-shadow-md shadow-nutral1 transition-colors duration-300 ease-in-out hover:bg-primary hover:text-nutral3;
+  @apply w-full rounded-md bg-baseClr1 px-5 py-2 text-primary drop-shadow-md shadow-nutral1 transition-colors duration-300 ease-in-out hover:bg-primary hover:text-nutral3;
 }
 /* *** Subscribe Components Style End */
 

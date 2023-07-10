@@ -111,7 +111,7 @@ const Page = () => {
               filterProduct={filterProduct}
               product={data}
               // setProduct={setProductValue}
-              loading={isLoading}
+              isLoading={isLoading}
               cart={cartValue}
               setCart={setCartValue}
             />
@@ -120,7 +120,7 @@ const Page = () => {
               filterProduct={filterProduct}
               product={data}
               // setProduct={setProductValue}
-              loading={isLoading}
+              isLoading={isLoading}
               cart={cartValue}
               setCart={setCartValue}
             />

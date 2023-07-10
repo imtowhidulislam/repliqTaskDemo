@@ -8,7 +8,7 @@ import Loading from "../loading";
 import { HiShoppingCart, HiOutlineHeart, HiHeart } from "react-icons/hi";
 import FavoriteBtn from "./FavoriteBtn";
 
-const ProductOfList = ({ product, loading, cart, setCart }) => {
+const ProductOfList = ({ product, isLoading, cart, setCart }) => {
   // const [cart,setCart] = useState([]);
   const getProduct = (id) => {
     try {
@@ -34,7 +34,7 @@ const ProductOfList = ({ product, loading, cart, setCart }) => {
 
   return (
     <>
-      {loading ? (
+      {isLoading ? (
         <h2 className="text-3xl font-bold text-lime-800">Fetching Data...</h2>
       ) : (
         product?.map((singleProduct) => {

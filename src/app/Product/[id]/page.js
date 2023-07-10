@@ -1,13 +1,18 @@
 "use client";
 import { ButtonFilled, ButtonOutlined } from "@/app/Util/ButtonOutlined";
 import { useQuery } from "@tanstack/react-query";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
+import { HiHeart, HiStar } from "react-icons/hi2";
+import CartContextProvider from "@/app/context/cartContext";
+import { HiShoppingCart } from "react-icons/hi";
+import { toast } from "react-hot-toast";
 
 const ProductDetailsPage = ({ params }) => {
-  console.log(+params.id);
+  const { cart } = useContext(CartContextProvider);
+  const [myCart, setMyCart] = cart;
   const productId = +params.id;
   const [product, setProduct] = useState([]);
   const [uniqueItem, setUniqueItem] = useState([]);
@@ -18,8 +23,8 @@ const ProductDetailsPage = ({ params }) => {
     if (!res.ok) throw Error("Url might be not found.");
 
     const fetchSingleProduct = data.find((item) => item.id === productId);
-    console.log(fetchSingleProduct);
     setUniqueItem([fetchSingleProduct]);
+    setProduct([data]);
 
     return data;
   };
@@ -31,10 +36,25 @@ const ProductDetailsPage = ({ params }) => {
   if (error) return "Product not Found!!" + error.message;
 
   const getProduct = (id) => {
-    const fetchCartItem = product.find((item) => item.id === productId);
-    console.log(fetchCartItem);
-    setUniqueItem([fetchCartItem]);
-    // setCart(prevValue => [...prevValue, fetchCartItem]);
+    try {
+      let quantity = 0;
+      /* const checkProductInThere = cart.find(item => item.id === id ? item.quantity =+ 1 : (product.find((item) => {
+        item.quantity = 1;
+        return item.id === id;
+      }))) */
+      const checkProductIsThere = data?.find((item) => {
+        item.quantity = 1;
+        return item.id === id;
+      });
+      console.log(checkProductIsThere);
+      setMyCart((prevItem) => [...prevItem, checkProductIsThere]);
+
+      cart.find((item) => item.id === id && (item.quantity += 1));
+
+      toast.success("Product Added");
+    } catch (error) {
+      toast.error("product not found");
+    }
   };
   return (
     <div className="min-h-custom-h-form">
@@ -55,18 +75,18 @@ const ProductDetailsPage = ({ params }) => {
             return (
               <div key={id} className="my-20 min-h-custom-h-form">
                 <div className="grid grid-cols-productLayout gap-4">
-                  <div className="grid animate-moveInLeft drop-shadow-lg place-items-center rounded-md bg-nutral3">
+                  <div className="grid animate-moveInLeft place-items-center rounded-md bg-nutral3 drop-shadow-lg">
                     <Image
-                      className="m-4 block rounded-md bg-gray-100 aspect-square object-cover object-center"
+                      className="m-4 aspect-square rounded-md bg-gray-100 object-cover object-center"
                       src={img}
                       alt=""
                       width={400}
-                      height={350}
+                      height={400}
                     />
                     <div className="items-cener my-4 flex  justify-between gap-3">
                       <div className="grid h-24 w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
                         <Image
-                          className="object-cover object-center aspect-square"
+                          className="aspect-square object-cover object-center"
                           src={img}
                           alt=""
                           width={50}
@@ -75,7 +95,7 @@ const ProductDetailsPage = ({ params }) => {
                       </div>
                       <div className="grid h-24 w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
                         <Image
-                          className="object-cover aspect-square object-center"
+                          className="aspect-square object-cover object-center"
                           src={img}
                           alt=""
                           width={50}
@@ -84,7 +104,7 @@ const ProductDetailsPage = ({ params }) => {
                       </div>
                       <div className="grid h-24 w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
                         <Image
-                          className="object-cover object-center aspect-square"
+                          className="aspect-square object-cover object-center"
                           src={img}
                           alt=""
                           width={50}
@@ -102,28 +122,44 @@ const ProductDetailsPage = ({ params }) => {
                           : `${titleLength}...`}
                       </h2>
                     </div>
-                    <h2 className="max-w-lg text-xl font-bold text-pimary">{cat}</h2>
+                    <h2 className="text-pimary max-w-lg text-xl font-bold">
+                      {cat}
+                    </h2>
                     <div className="py-2">
-                      <h2 className="max-w-md py-4">
+                      <h2 className="max-w-lg py-4 font-semibold text-nutral2">
                         <span className="">{desc}$</span>
                       </h2>
-                      <h2 className="pb-4">
+                      <h2 className="pb-2">
                         {" "}
-                        <span className="font-bold text-primary text-2xl">
+                        <span className="text-2xl font-bold text-primary">
                           {price}$
                         </span>
                       </h2>
                       <p>
                         {" "}
-                        <span className="font-bold text-primary text-2xl">
+                        <span className="text-2xl font-bold text-primary">
                           {rating.rate}
+                          {}
                         </span>
                       </p>
                     </div>
-                    
-                    <div className="mt-8 flex w-max gap-4 px-2 pb-4">
-                      <Link href="/Cart">
-                        <ButtonFilled btnText="view cart" />
+
+                    <div className="items-justify-center mt-4 flex w-full  gap-4 ">
+                      <button
+                        type="button"
+                        onClick={() => getProduct(id)}
+                        className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-accent bg-transparent  px-4 py-2 text-sm font-bold capitalize text-nutral2 drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
+                      >
+                        add to cart{" "}
+                        <span>
+                          <HiShoppingCart className="text-2xl text-accent group-hover:animate-cartAnimate" />
+                        </span>
+                      </button>
+                      <Link
+                        className="group grid w-full place-items-center rounded-md border border-accent text-2xl text-denger shadow-nutral2 drop-shadow-md "
+                        href="/Cart"
+                      >
+                        <HiHeart className="group-hover:animate-bounce" />
                       </Link>
                     </div>
                   </div>

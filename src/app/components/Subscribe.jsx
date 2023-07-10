@@ -71,7 +71,7 @@ const Subscribe = () => {
               <button
                 type="submit"
                 onClick={handleSubmit}
-                className="w-full cursor-pointer text-center font-bold text-base capitalize "
+                className="w-full cursor-pointer text-center font-bold text-base capitalize rounded-md"
               >
                 subscribe
               </button>
