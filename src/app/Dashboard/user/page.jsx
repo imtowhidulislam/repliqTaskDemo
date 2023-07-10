@@ -61,17 +61,17 @@ const page = () => {
                 /> */}
                 <img className="objejct-cover object-center h-12 w-full" src={imageUrl} alt="preview" />
               </div>
-              <p className="text-xl font-bold capitalize text-lime-900">
+              <p className="text-xl font-bold capitalize text-primary">
                 {fName}
               </p>
-              <p className="break-words text-small font-bold capitalize sm:text-base sm:font-light">
+              <p className="break-words text-small font-bold capitalize sm:text-base sm:font-semibold">
                 {email}
               </p>
               <div>
                 <button
                   type="button"
                   onClick={() => handleRemoveUser(id)}
-                  className="w-max cursor-pointer rounded-full border-2 border-lime-800 bg-transparent px-4 py-2 text-sm font-bold capitalize text-lime-800 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-lime-900 hover:text-lime-100 hover:drop-shadow-md"
+                  className="w-max cursor-pointer rounded-full border-2 border-baseClr1 bg-transparent px-4 py-2 text-sm font-bold capitalize text-nutral2 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-denger hover:text-untral3 hover:drop-shadow-md"
                 >
                   Remove
                 </button>

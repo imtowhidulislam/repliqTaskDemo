@@ -53,38 +53,38 @@ const ProductDetailsPage = ({ params }) => {
 
             const titleLength = title.split(" ").slice(0, 5).join(" ");
             return (
-              <div key={id} className="my-20 min-h-screen">
+              <div key={id} className="my-20 min-h-custom-h-form">
                 <div className="grid grid-cols-productLayout gap-4">
-                  <div className="grid animate-moveInLeft drop-shadow-lg place-items-center rounded-md bg-gray-300">
+                  <div className="grid animate-moveInLeft drop-shadow-lg place-items-center rounded-md bg-nutral3">
                     <Image
-                      className="m-4 block rounded-md bg-gray-100 object-cover object-center"
+                      className="m-4 block rounded-md bg-gray-100 aspect-square object-cover object-center"
                       src={img}
                       alt=""
-                      width={300}
+                      width={400}
                       height={350}
                     />
                     <div className="items-cener my-4 flex  justify-between gap-3">
-                      <div className="grid h-24 w-24 place-items-center overflow-hidden rounded-sm bg-gray-100 p-1">
+                      <div className="grid h-24 w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
                         <Image
-                          className="object-cover object-center"
+                          className="object-cover object-center aspect-square"
                           src={img}
                           alt=""
                           width={50}
                           height={50}
                         />
                       </div>
-                      <div className="grid h-24 w-24 place-items-center overflow-hidden rounded-sm bg-gray-100 p-1">
+                      <div className="grid h-24 w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
                         <Image
-                          className="object-cover object-center"
+                          className="object-cover aspect-square object-center"
                           src={img}
                           alt=""
                           width={50}
                           height={50}
                         />
                       </div>
-                      <div className="grid h-24 w-24 place-items-center overflow-hidden rounded-sm bg-gray-100 p-1">
+                      <div className="grid h-24 w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
                         <Image
-                          className="object-cover object-center"
+                          className="object-cover object-center aspect-square"
                           src={img}
                           alt=""
                           width={50}
@@ -95,31 +95,32 @@ const ProductDetailsPage = ({ params }) => {
                   </div>
                   <div className="z-20 animate-moveInRight px-4 pb-4 pt-4 text-gray-700">
                     <div>
-                      <h2 className="text-xl font-bold">
-                        Name :{" "}
+                      <h2 className="text-2xl font-bold">
+                        {" "}
                         {title.split(" ").length <= 5
                           ? `${titleLength}`
                           : `${titleLength}...`}
                       </h2>
                     </div>
+                    <h2 className="max-w-lg text-xl font-bold text-pimary">{cat}</h2>
                     <div className="py-2">
                       <h2 className="max-w-md py-4">
-                        Desc : <span className="">{desc}$</span>
+                        <span className="">{desc}$</span>
                       </h2>
                       <h2 className="pb-4">
-                        Price :{" "}
-                        <span className="font-bold text-blue-800">
+                        {" "}
+                        <span className="font-bold text-primary text-2xl">
                           {price}$
                         </span>
                       </h2>
                       <p>
-                        Rating :{" "}
-                        <span className="font-bold text-blue-600">
+                        {" "}
+                        <span className="font-bold text-primary text-2xl">
                           {rating.rate}
                         </span>
                       </p>
                     </div>
-                    <h2 className="max-w-lg">Category : {cat}</h2>
+                    
                     <div className="mt-8 flex w-max gap-4 px-2 pb-4">
                       <Link href="/Cart">
                         <ButtonFilled btnText="view cart" />

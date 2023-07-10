@@ -70,7 +70,7 @@ const NewProduct = () => {
             );
           })
         ) : (
-          <div className="grid w-full place-items-center overflow-hidden border border-red-100">
+          <div className="grid w-full place-items-center overflow-hidden ">
             <div className="animate-moveInRight">
               <Image src={EmptyProduct} alt="empty product" width={400} height={400} />
             </div>

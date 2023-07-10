@@ -89,7 +89,7 @@ body {
 /* ** Form Style Start */
 
 .form {
-  @apply rounded bg-opacity-5;
+  @apply rounded bg-baseClr1;
 }
 
 input {

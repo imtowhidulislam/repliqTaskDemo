@@ -29,18 +29,17 @@ const ProductCategory = ({
   }, [filterProduct]);
 
   const getProduct = (id) => {
-    
     try {
       // const fetchCartItem = product.find((item) => item.id === id);
       // setCart((prevValue) => [...prevValue, fetchCartItem]);
 
-      const checkProductInThere = product.find(item => {
+      const checkProductInThere = product.find((item) => {
         item.quantity = 1;
         return item.id === id;
-      })
+      });
       setCart((prevItem) => [...prevItem, checkProductInThere]);
-      
-      cart.find(item => item.id === id && (item.quantity += 1))
+
+      cart.find((item) => item.id === id && (item.quantity += 1));
 
       toast.success("Product Added");
     } catch (error) {
@@ -67,7 +66,7 @@ const ProductCategory = ({
           return (
             <div
               key={id}
-              className="card bg-nutral3 relative z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2"
+              className="card relative z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2 bg-nutral3"
             >
               <div className="absolute left-3/4 top-3">
                 <FavoriteBtn />
@@ -76,7 +75,7 @@ const ProductCategory = ({
                 <div>
                   <div className="m-auto mb-4 h-60 max-w-xs p-4">
                     <Image
-                      className="objece-center aspect-square block h-60 object-cover"
+                      className="objece-center block aspect-square h-60 object-cover"
                       src={img}
                       alt=""
                       width={300}
@@ -92,18 +91,18 @@ const ProductCategory = ({
                           : `${titleLength}...`}
                       </h2>
                     </div>
-                    
-                    <h2 className="text-xl mt-2 uppercase font-bold">{cat}</h2>
+
+                    <h2 className="mt-2 text-xl font-bold uppercase">{cat}</h2>
                     <div className="flex items-center justify-between gap-4 py-2">
                       <h2>
                         {" "}
-                        <span className="font-bold text-xl text-primary">
+                        <span className="text-xl font-bold text-primary">
                           {price}$
                         </span>
                       </h2>
                       <p className="text-base">
                         Rating :{" "}
-                        <span className="font-bold text-primary text-xl">
+                        <span className="text-xl font-bold text-primary">
                           {rating.rate}
                         </span>
                       </p>
@@ -118,7 +117,7 @@ const ProductCategory = ({
                 <button
                   type="button"
                   onClick={() => getProduct(id)}
-                  className="group flex w-full cursor-pointer items-center drop-shadow-lg justify-center gap-2 rounded-md border-2 border-accent  bg-transparent px-4 py-2 text-sm font-bold capitalize text-nutral2 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
+                  className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-accent bg-transparent  px-4 py-2 text-sm font-bold capitalize text-nutral2 drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
                 >
                   add to cart{" "}
                   <span>

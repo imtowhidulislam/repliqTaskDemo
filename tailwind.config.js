@@ -49,11 +49,11 @@ module.exports = {
       },
       keyframes: {
         bounce: {
-          "0%": { transform: "translateY(-5px)", color: "red" },
-          "25%": { transform: "rotate(0deg)", color: "blue" },
-          "50%": { transform: "translateY(5px)", color: "purple" },
-          "75%": { transform: "rotate(15deg)", color: "#34ff34" },
-          "100%": { transform: "translateY(0px)", color: "lime" },
+          "0%": { transform: "translateY(-5px)", color: "#f05959" },
+          "25%": { transform: "rotate(0deg)", color: "#0f51f7" },
+          "50%": { transform: "translateY(5px)", color: "#ba9e9f" },
+          "75%": { transform: "rotate(15deg)", color: "#0f51f7" },
+          "100%": { transform: "translateY(0px)", color: "#0f51f7" },
         },
         moveUp: {
           "0%": { transform: "translateY(100%)", opacity: 0 },

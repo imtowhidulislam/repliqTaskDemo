@@ -47,27 +47,27 @@ const Dashboard = () => {
             return (
               <div
                 key={id}
-                className={`border-1 z-0 mb-2 flex animate-moveUp items-center justify-between gap-8 rounded-md border-gray-600 bg-[#f6f6f6cc] p-3 drop-shadow-md delay-[${setDelay}]`}
+                className={`border z-0 mb-2 flex animate-moveUp items-center justify-between gap-8 rounded-md border-baseClr1 bg-nutral3 p-3 drop-shadow-md delay-[${setDelay}]`}
               >
-                <div className="flex items-center gap-2 md:gap-6">
+                <div className="flex items-center gap-2 md:gap-8">
                   <div className="h-20 w-20 overflow-hidden rounded-md">
                     <Image
-                      className="h-20 w-full object-cover"
+                      className="h-20 w-full object-center object-cover aspect-square"
                       src={image}
                       alt="image"
-                      width={80}
-                      height={80}
+                      width={50}
+                      height={50}
                     />
                   </div>
-                  <div>
+                  <div className="text-nutral2">
                     <h2 className="text-left text-small font-medium capitalize md:text-base ">
                       {title}
                     </h2>
-                    <h2 className="text-left text-xs font-medium capitalize text-lime-900 md:text-base">
+                    <h2 className="text-left text-xs font-medium capitalize text-nutral2 md:text-base">
                       {category}
                     </h2>
-                    <h2 className="text-left text-xs font-medium capitalize md:text-base">
-                      ${price} USD
+                    <h2 className="text-left text-base font-extrabold text-primary capitalize md:text-base">
+                      ${price}
                     </h2>
                   </div>
                 </div>

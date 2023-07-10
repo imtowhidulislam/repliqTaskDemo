@@ -44,20 +44,21 @@ const page = () => {
   
   return (
     <>
-      <div className="relative flex h-full md:min-h-custom-min-h w-full items-center justify-center overflow-hidden bg-contact-image bg-cover bg-center bg-no-repeat  before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-[rgba(10,46,16,0.57)] before:backdrop-blur-sm">
+      <div className="relative flex h-full w-full items-center justify-center overflow-y-hidden">
         <form
           onSubmit={handleSubmit}
-          className="registerForm md:mx-4 my-4 md:my-8 w-full max-w-md animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-[#14141483] px-4 py-6 backdrop-blur-md backdrop-filter sm:mx-0"
+          className="registerForm md:mx-4 md:my-8 w-full max-w-md animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-nutral3 px-4 pb-6 pt-0 sm:mx-0"
         >
+          <div className="flex items-center justify-center pb-1 text-6xl text-cyan-700"></div>
           <div className="pb-2">
-            <h2 className="text-center text-xl font-bold uppercase text-[#ffff]">
+            <h2 className="text-center text-xl font-bold uppercase text-accent">
               sign up
             </h2>
           </div>
 
-          <div className="">
+          <div className="text-nutral2">
             <label
-              className="lableWidth font-bold text-gray-100"
+              className="lableWidth font-bold "
               htmlFor="first name"
             >
               First Name
@@ -65,31 +66,32 @@ const page = () => {
             <div className="relative">
               <input
                 type="text"
-                id="fName"
+                name="fName"
+                id="title"
                 value={values.fName}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="enter your first name"
+                placeholder="enter your name"
                 className={
-                  errors.lName && touched.lName
-                    ? "form border-2 border-red-500 pl-4 placeholder:capitalize placeholder:text-gray-900"
-                    : "form pl-4 placeholder:capitalize "
+                  errors.fName && touched.fName
+                    ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize placeholder:text-gray-900"
+                    : "form py-1 pl-4 placeholder:capitalize "
                 }
               />
               {errors.fName && touched.fName && (
-                <p className="absolute left-0 top-full text-small md:text-sm capitalize text-red-300">
+                <p className="absolute left-0 top-full text-small md:text-sm capitalize text-denger">
                   {errors.fName}
                 </p>
               )}
             </div>
           </div>
 
-          <div className="">
+          <div className="text-nutral2">
             <label
-              className="lableWidth font-bold capitalize text-gray-100"
-              htmlFor="lName"
+              className="lableWidth font-bold capitalize "
+              htmlFor="desc"
             >
-              Last Name
+              last name
             </label>
             <div className="relative">
               <input
@@ -100,24 +102,24 @@ const page = () => {
                 value={values.lName}
                 className={
                   errors.lName && touched.lName
-                    ? "form border-2 border-red-500 pl-4 placeholder:capitalize"
-                    : "form pl-4 placeholder:capitalize"
+                    ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                    : "form py-1 pl-4 placeholder:capitalize"
                 }
-                placeholder="enter your last name"
+                placeholder="enter your last Name"
               />
               {errors.lName && touched.lName && (
-                <p className="absolute left-0 top-full text-small md:text-sm capitalize text-red-300">
+                <p className="absolute left-0 top-full text-small md:text-sm capitalize text-denger">
                   {errors.lName}
                 </p>
               )}{" "}
             </div>
           </div>
-          <div className="">
+          <div className="text-nutral2">
             <label
-              className="lableWidth font-bold capitalize text-gray-100"
+              className="lableWidth font-bold capitalize "
               htmlFor="email"
             >
-              Email
+              email
             </label>
             <div className="relative">
               <input
@@ -128,21 +130,21 @@ const page = () => {
                 value={values.email}
                 className={
                   errors.email && touched.email
-                    ? "form border-2 border-red-500 pl-4 placeholder:capitalize"
-                    : "form pl-4 placeholder:capitalize"
+                    ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                    : "form py-1 pl-4 placeholder:capitalize"
                 }
                 placeholder="enter your email"
               />
               {errors.email && touched.email && (
-                <p className="absolute left-0 top-full text-small md:text-sm capitalize text-red-300">
+                <p className="absolute left-0 top-full text-small md:text-sm capitalize text-denger">
                   {errors.email}
                 </p>
               )}
             </div>
           </div>
-          <div className="">
+          <div className="text-nutral2">
             <label
-              className="lableWidth font-bold capitalize text-gray-100"
+              className="lableWidth font-bold capitalize "
               htmlFor="image"
             >
               Image
@@ -150,62 +152,60 @@ const page = () => {
             <div className="relative">
               <input
                 type="file"
-                // accept="/*"
-                name="file"
-                // ref={imgRef}
+                accept="image/*"
+                // name="file"
                 onBlur={handleBlur}
                 onChange={(e) => setFieldValue("file", e.target.files[0])}
                 className={
                   errors.file && touched.file
-                    ? " form border-2 border-red-500 pl-4 placeholder:capitalize"
-                    : " form pl-4 placeholder:capitalize"
+                    ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                    : "form py-1 pl-4 placeholder:capitalize"
                 }
-                placeholder="enter your Image"
+                placeholder="enter product Image"
               />
-              {/* <button className="form w-full text-[#cccccc] capitalize" onClick={handleImg}>uploade image</button> */}
               {errors.file && touched.file && (
-                <p className="absolute left-0 top-full text-small md:text-sm capitalize text-red-300">
+                <p className="absolute left-0 top-full text-small md:text-sm capitalize text-denger">
                   {errors.file}
                 </p>
               )}
             </div>
           </div>
-          <div className="">
-            <label
-              className="lableWidth font-bold capitalize text-gray-100"
-              htmlFor="password"
-            >
-              Password
-            </label>
-            <div className="relative">
-              <input
-                type="password"
-                name="password"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.password}
-                className={
-                  errors.password && touched.password
-                    ? "form border-2 border-red-500 pl-4 placeholder:capitalize"
-                    : "form bg-transparent pl-4 placeholder:capitalize"
-                }
-                placeholder="enter you password"
-              />
-              {errors.password && touched.password && (
-                <p className="absolute left-0 top-full text-small md:text-sm capitalize text-red-300">
-                  {errors.password}
-                </p>
-              )}
-            </div>
+        <div className="text-nutral2">
+          <label
+            className="lableWidth font-bold capitalize "
+            htmlFor="password"
+          >
+            password
+          </label>
+          <div className="relative">
+            <input
+              type="password"
+              name="password"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.password}
+              className={
+                errors.password && touched.password
+                  ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                  : "form py-1 bg-transparent pl-4 placeholder:capitalize"
+              }
+              placeholder="enter your password"
+            />
+            {errors.password && touched.password && (
+              <p className="absolute left-0 top-full text-small md:text-sm capitalize text-denger">
+                {errors.password}
+              </p>
+            )}
           </div>
+        </div>
 
           <div className="mt-4 md:mt-12 w-full">
             <button
               type="submit"
               // onClick={handleSubmit}
-              className="w-full cursor-pointer rounded-md border-2 border-lime-700 bg-transparent px-8 py-2 text-base font-bold capitalize text-lime-100 transition-all duration-200 ease-out hover:border-transparent hover:bg-lime-700 hover:text-lime-100"
+              className="w-full cursor-pointer rounded-md border-2 border-nutral1 bg-transparent px-8 py-2 text-base font-bold capitalize text-nutral2 transition-all duration-200 ease-out hover:border-transparent hover:bg-accent hover:text-nutral3"
             >
-              submit
+              sign up
             </button>
           </div>
 
