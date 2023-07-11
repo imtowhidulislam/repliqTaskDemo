@@ -26,6 +26,9 @@ module.exports = {
         "custom-min-h": "500px",
         "custom-h-form": "600px",
       },
+      minWidth : {
+        'custome-w' : "400px",
+      },
       gridTemplateColumns: {
         footerLayout: "repeat(auto-fit, minmax(14rem, 1fr))",
         productLayout: "repeat(auto-fit,minmax(16rem, 1fr))",
