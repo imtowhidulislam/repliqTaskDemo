@@ -6,7 +6,7 @@ const DashboardLayout = ({ children }) => {
   return (
     <div className="grid-layout container">
       <>
-        <div className="hidden md:block">
+        <div className="hidden md:block"> 
           <DashboardNavbar />
         </div>
         <div className="block md:hidden mt-30">
