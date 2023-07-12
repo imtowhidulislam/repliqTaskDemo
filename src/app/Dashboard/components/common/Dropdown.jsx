@@ -48,7 +48,7 @@ const Dropdown = () => {
     <div className="mt-20 md:mt-4 flex items-center">
       <div className="relative w-full lg:w-1/2 mx-auto">
         <button
-          className="inline-flex items-center gap-52 rounded-md bg-nutral3 px-4 py-3 font-bold capitalize drop-shadow-md focus:text-nutral2"
+          className="inline-flex items-center gap-32 sm:gap-52 rounded-md bg-nutral3 px-4 py-3 font-bold capitalize drop-shadow-md focus:text-nutral2"
           onClick={handleDropdown}
         >
           {path === "Dashboard" ? "Product" : `${path}`}
