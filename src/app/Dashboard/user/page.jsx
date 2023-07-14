@@ -13,7 +13,9 @@ const page = () => {
 
   const handleRemoveUser = (id) => {
     try {
-      setUsers((currValue) => currValue.filter((item) => item.userId !== id));
+      const showUser = users.filter(user => user);
+      const removingUser = users.filter((item) => item.userId !== id);
+      setUsers(removingUser);
       toast.success("User deleted");
     } catch (error) {
       toast.error("User not found");
@@ -41,7 +43,7 @@ const page = () => {
           const { userId: id, fName, email, file } = user;
           const [imageUrl, setImageurl] = useState(null);
           const reader = new FileReader();
-          console.log(reader);
+          
           reader.readAsDataURL(file);
           reader.onload = () => {
             setImageurl(reader.result);

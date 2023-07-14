@@ -107,10 +107,11 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="md:hidden mt-2">
+      <div className="md:hidden mt-2 my-4">
         <select
           value={filterProduct}
           onChange={handleOptionChange}
+          className="block capitalize w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
         >
           {/* <option className="capitalize" value={filterProduct}>
             {button ? `${filterProduct}` : "choose an option"}
@@ -121,8 +122,8 @@ const Page = () => {
                 <option
                   className={
                     filterProduct === btns
-                      ? "capitalize absolute top-20 left-0 w-full max-w-2xl rounded-md py-2 text-nutral3"
-                      : "capitalize max-w-2xl w-full rounded-md absolute top-20 left-0"
+                      ? "capitalize rounded-md font-bold my-2 text-primary"
+                      : "capitalize rounded-md my-4 font-bold"
                   }
                   key={i}
                   value={btns}

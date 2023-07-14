@@ -60,7 +60,7 @@ body {
   margin-bottom: 0.5rem;
 }
 .footerSocialIcon {
-  @apply cursor-pointer transition-colors duration-200 ease-in-out hover:text-nutral3;
+  @apply cursor-pointer transition-colors duration-200 ease-in-out hover:text-[#2336a5];
 }
 /* ?? Footer Style End */
 

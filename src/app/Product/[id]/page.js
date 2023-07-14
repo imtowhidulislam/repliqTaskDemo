@@ -113,7 +113,7 @@ const ProductDetailsPage = ({ params }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="z-20 animate-moveInRight px-4 pb-4 pt-4 text-gray-700">
+                  <div className="z-20  flex items-start flex-col justify-center animate-moveInRight px-4 pb-4 pt-4 text-gray-700">
                     <div>
                       <h2 className="text-2xl font-bold">
                         {" "}
@@ -122,12 +122,12 @@ const ProductDetailsPage = ({ params }) => {
                           : `${titleLength}...`}
                       </h2>
                     </div>
-                    <h2 className="text-pimary capitalize max-w-lg text-xl font-semibold text-accent">
+                    <h2 className="text-pimary capitalize max-w-lg text-xl font-semibold text-nutral2">
                       {cat}
                     </h2>
                     <div className="py-2">
-                      <h2 className="max-w-lg py-4 font-semibold text-nutral2">
-                        <span className="">{desc}$</span>
+                      <h2 className="py-4 font-semibold text-nutral2">
+                        <span className="line-clamp-3">{desc}$</span>
                       </h2>
                       <h2 className="pb-2">
                         {" "}
@@ -148,7 +148,7 @@ const ProductDetailsPage = ({ params }) => {
                       <button
                         type="button"
                         onClick={() => getProduct(id)}
-                        className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-accent bg-transparent  px-4 py-2 text-sm font-bold capitalize text-nutral2 drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
+                        className="group flex max-w-sm w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-nutral2 bg-transparent  px-4 py-2 text-sm font-bold capitalize text-nutral2 drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
                       >
                         add to cart{" "}
                         <span>
@@ -156,7 +156,7 @@ const ProductDetailsPage = ({ params }) => {
                         </span>
                       </button>
                       <Link
-                        className="group grid w-full place-items-center rounded-md border border-accent text-2xl text-denger shadow-nutral2 drop-shadow-md "
+                        className="group grid w-24 place-items-center rounded-md border border-nutral2 text-2xl text-denger shadow-nutral2 drop-shadow-md "
                         href="/Cart"
                       >
                         <HiHeart className="group-hover:animate-bounce" />

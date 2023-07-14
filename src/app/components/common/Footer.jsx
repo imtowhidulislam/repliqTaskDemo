@@ -37,7 +37,7 @@ const Footer = () => {
   }, [newsletterUser]);
 
   return (
-    <div className="bg-nutral1 px-4 py-8 mt-1">
+    <div className="bg-nutral3 px-4 py-8 mt-1">
       <div className="container">
         <div className="mb-10 flex items-center justify-start text-6xl text-gray-100">
           <div>
@@ -97,9 +97,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-12 flex items-center justify-start gap-1 capitalize text-baseClr1">
+        <div className="mt-12 flex items-center justify-start gap-1 capitalize text-baseClr2">
           <FaCopyright className="text-small sm:text-lg" />
-          <p className="text-small font-light sm:text-base">
+          <p className="text-small font-bold sm:text-base">
             copyright <span>2023. </span>all rights reserve to Repliq
           </p>
         </div>
