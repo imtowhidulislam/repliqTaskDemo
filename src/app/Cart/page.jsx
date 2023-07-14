@@ -50,17 +50,16 @@ const Cart = () => {
       <div className="container p-2 sm:p-4 md:p-0 ">
         <div className="mb-8 flex items-center justify-between gap-4 sm:gap-20">
           <h2 className="cartTitle ms:text-4xl text-left font-mono text-2xl font-extrabold capitalize text-accent">
-            Your Cart
+            {uniqueCart.length < 1 ? "Your cart is empty" : `Your Cart has ${cartValue.length} products`}
           </h2>
           <button
             type="button"
             onClick={deleteItem}
-            className="flex cursor-pointer items-center justify-between gap-2 rounded-md text-nutral3 bg-primary px-4 py-2 capitalize"
+            className="flex cursor-pointer items-center justify-between gap-2 rounded-md bg-primary px-4 py-2 capitalize text-nutral3"
           >
             Delete All{" "}
-            <span className="flex items-center justify-center bg-[#fafafa] backdrop-blur-sm p-1 rounded-full">
-            <HiArchiveBoxXMark className="hover:animate-shake text-xl text-denger" />
-
+            <span className="flex items-center justify-center rounded-full bg-[#fafafa] p-1 backdrop-blur-sm">
+              <HiArchiveBoxXMark className="hover:animate-shake text-xl text-denger" />
             </span>
           </button>
         </div>
@@ -72,14 +71,14 @@ const Cart = () => {
               return (
                 <div
                   key={id}
-                  className="group relative mb-2 flex items-center justify-between gap-8 rounded-md border-b border-nutral1 bg-nutral3 p-3 drop-shadow-md shadow-nutral2"
+                  className="group relative mb-2 flex items-center justify-between gap-8 rounded-md border-b border-nutral1 bg-nutral3 p-3 shadow-nutral2 drop-shadow-md"
                 >
                   <div className="absolute right-0 top-3 flex h-8 w-8 -translate-x-1/2  items-center justify-center rounded-full p-1">
                     <button
                       onClick={() => deleteCartItem(id)}
-                      className="cursor-pointer mb-2"
+                      className="mb-2 cursor-pointer"
                     >
-                        <HiArchiveBoxXMark className="text-xl text-denger" />
+                      <HiArchiveBoxXMark className="text-xl text-denger" />
                     </button>
                   </div>
                   <div className="flex items-center gap-6">
@@ -141,7 +140,7 @@ const Cart = () => {
               <h2 className="text-left text-base font-medium capitalize">
                 total
               </h2>
-              <h2 className="text-left text-primary font-bold text-base capitalize">
+              <h2 className="text-left text-base font-bold capitalize text-primary">
                 {cartValue.length > 0
                   ? `$ ${(+total + 3.45).toFixed(2)}`
                   : `$ ${0.0}`}

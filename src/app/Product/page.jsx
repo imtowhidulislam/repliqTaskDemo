@@ -50,61 +50,97 @@ const Page = () => {
     setFilterProduct(e.target.dataset.name);
   };
 
+  const handleOptionChange = (e) => {
+    setFilterProduct(e.target.value);
+  };
+  console.log(filterProduct);
+
   return (
     <div className="container px-3 py-8 sm:py-4 sm:pb-12 md:px-0 ">
-      <div ref={sectionRef} className="md-4 mt-16 sm:mt-0 md:mb-12">
+      <div ref={sectionRef} className="md-4 mt-12 sm:mt-16 md:mb-12">
         <h2 className="bg-gradient-to-r from-accent to-primary bg-clip-text text-left text-2xl font-extrabold uppercase text-transparent md:text-center md:text-4xl lg:text-6xl">
           Get your desired One.
         </h2>
       </div>
-      <div id="buttonSection" className="btn_container mt-4 md:mt-0">
-        {button && (
-          <button
-            className="btn w-full sm:w-max"
-            onClick={handleClick}
-            data-name="All"
-          >
-            All
-          </button>
-        )}
-        <div className="flex flex-wrap items-center justify-center gap-2">
-          {button.length !== 0
-            ? button.map((btns, i) => {
-                return (
-                  <>
-                    <button
-                      key={i}
-                      className="btn w-full sm:w-max"
-                      onClick={handleClick}
-                      data-name={btns}
-                    >
-                      {btns}
-                    </button>
-                  </>
-                );
-              })
-            : buttonData.map((btns, i) => {
-                return (
-                  <>
-                    <button
-                      key={i}
-                      className="btn w-full sm:w-max"
-                      onClick={handleClick}
-                      data-name={btns}
-                    >
-                      {btns}
-                    </button>
-                  </>
-                );
-              })}
+      <div className="hidden md:block">
+        <div id="buttonSection" className="btn_container mt-4 md:mt-0 ">
+          {button && (
+            <button
+              className="btn w-full sm:w-max"
+              onClick={handleClick}
+              data-name="All"
+            >
+              All
+            </button>
+          )}
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {button.length !== 0
+              ? button.map((btns, i) => {
+                  return (
+                    <>
+                      <button
+                        key={i}
+                        className="btn w-full sm:w-max"
+                        onClick={handleClick}
+                        data-name={btns}
+                      >
+                        {btns}
+                      </button>
+                    </>
+                  );
+                })
+              : buttonData.map((btns, i) => {
+                  return (
+                    <>
+                      <button
+                        key={i}
+                        className="btn w-full sm:w-max"
+                        onClick={handleClick}
+                        data-name={btns}
+                      >
+                        {btns}
+                      </button>
+                    </>
+                  );
+                })}
+          </div>
         </div>
       </div>
+
+      <div className="md:hidden mt-2">
+        <select
+          value={filterProduct}
+          onChange={handleOptionChange}
+        >
+          {/* <option className="capitalize" value={filterProduct}>
+            {button ? `${filterProduct}` : "choose an option"}
+          </option> */}
+          {(buttonData || button).map((btns, i) => {
+            return (
+              <>
+                <option
+                  className={
+                    filterProduct === btns
+                      ? "capitalize absolute top-20 left-0 w-full max-w-2xl rounded-md py-2 text-nutral3"
+                      : "capitalize max-w-2xl w-full rounded-md absolute top-20 left-0"
+                  }
+                  key={i}
+                  value={btns}
+                >
+                  {btns}
+                </option>
+              </>
+            );
+          })}
+        </select>
+      </div>
+      {/* fetching product categorically */}
       {isLoading ? (
         <Loading />
       ) : (
         <div
           // ref={sectionRef}
-          className="z-10 mt-10 grid min-h-custom-min-h grid-cols-productLayout place-items-start gap-4 overflow-hidden"
+          className="z-10 mt-10 grid min-h-custom-min-h grid-cols-productLayout place-items-center md:place-items-start gap-4 overflow-hidden"
         >
           {filterProduct === "All" ? (
             <ProductOfList

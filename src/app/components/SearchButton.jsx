@@ -30,9 +30,9 @@ const SearchButton = () => {
     }
 
   return (
-    <div className='flex items-center justify-between border border-lime-800 rounded-full overflow-hidden'>
+    <div className='flex items-center justify-between border border-accent rounded-full overflow-hidden'>
         <form className='flex items-center justify-center' onSubmit={handleSumbit}>
-            <input type='text' id='searchInput' ref={focusSearch} name='search' value={searchInput.search} onChange={handleChange} placeholder='search' className='w-full lg:w-full placeholder:capitalize bg-transparent pl-4 border-none outline-none placeholder:text-[#222]'>
+            <input type='text' id='searchInput' ref={focusSearch} name='search' value={searchInput.search} onChange={handleChange} placeholder='search' className='w-full lg:w-full placeholder:capitalize bg-transparent pl-4 border-none outline-none placeholder:text-nutral2 font-bold'>
             </input>
             <div className={`flex items-center justify-center px-2 transition-all duration-150 ease-in-out ${searchInput.search ? 'visible':'collapse'}`}>
                 <button type='submit' onClick={deleteSearchText}>
@@ -40,8 +40,8 @@ const SearchButton = () => {
                 </button>
             </div>
         </form>
-        <div className='border-l border-gray-400 h-full py-2 px-2 lg:px-5 bg-transparent cursor-pointer hover:bg-lime-800 transition-all duration-200 ease-in-out hover:text-gray-50'>
-            <span className='text-xl font-bold'><AiOutlineSearch /></span>
+        <div className='border-l border-accent group h-full py-2 px-2 lg:px-5 bg-transparent cursor-pointer hover:bg-accent transition-all duration-200 ease-in-out hover:text-baseClr1 font-extrabold'>
+            <span className='text-xl font-bold'><AiOutlineSearch className='group-hover:animate-spin' /></span>
         </div>
     </div>
   )

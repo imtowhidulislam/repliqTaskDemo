@@ -3,33 +3,14 @@ import React, { useEffect, useState } from "react";
 import { HiArrowDown, HiArrowUp } from "react-icons/hi";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { dashboardData } from "@/app/Data/dropDownData";
 
 const Dropdown = () => {
   const currPath = usePathname();
   const [path, setPath] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
-  const dropdownList = [
-    {
-      id: 1,
-      link: "/Dashboard",
-      label: "Product",
-    },
-    {
-      id: 2,
-      link: "/Dashboard/addProduct",
-      label: "add product",
-    },
-    {
-      id: 3,
-      link: "/Dashboard/user",
-      label: "user",
-    },
-    {
-      id: 4,
-      link: "/Dashboard/newproduct",
-      label: "new product",
-    },
-  ];
+  const [dropDownData, setDropDownData] = useState(dashboardData);
+  
 
   const handleDropdown = () => {
     setMenuOpen((prev) => !prev);
@@ -60,7 +41,7 @@ const Dropdown = () => {
         </button>
         {menuOpen && (
           <div className="bsolute top-24 mt-2 w-full animate-moveUp rounded-md bg-nutral3 px-4 py-2 text-base font-bold capitalize drop-shadow-md">
-            {dropdownList.map((links) => {
+            {dropDownData.map((links) => {
               const { id, link, label } = links;
               return (
                 <Link onClick={handleDropdown} className="py-3 cursor-pointer hover:bg-baseClr1 " key={id} href={link}>
