@@ -43,7 +43,7 @@ export default function Home() {
                   Reprehenderit, voluptatem!
                 </p>
                 <div className="">
-                  <li className=" flex w-max cursor-pointer justify-start rounded-full bg-accent px-8 py-3 font-extrabold text-nutral3 transition-colors duration-300 ease-in-out hover:bg-primary  hover:text-nutral3">
+                  <li className=" flex w-max cursor-pointer justify-start rounded-full bg-nutral3 px-8 py-3 font-extrabold text-nutral2 drop-shadow-md transition-colors duration-300 ease-in-out hover:bg-primary  hover:text-nutral3">
                     <Link href="/Product">
                       <button className="flex items-center justify-between gap-2 capitalize">
                         shop now{" "}
