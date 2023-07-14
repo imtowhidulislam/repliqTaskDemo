@@ -137,10 +137,10 @@ const Cart = () => {
               </div>
             </div>
             <div className="flex w-full items-center justify-between gap-4">
-              <h2 className="text-left text-base font-medium capitalize">
+              <h2 className="text-left text-base md:text-xl font-bold capitalize align-baseline text-primary">
                 total
               </h2>
-              <h2 className="text-left text-base font-bold capitalize text-primary">
+              <h2 className="text-left text-base md:text-xl font-bold capitalize text-primary">
                 {cartValue.length > 0
                   ? `$ ${(+total + 3.45).toFixed(2)}`
                   : `$ ${0.0}`}
