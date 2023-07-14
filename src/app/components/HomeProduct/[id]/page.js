@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react'
 import { FaStar } from 'react-icons/fa';
 import Image from 'next/image';
+import { HiStar } from 'react-icons/hi';
 
 const page = ({params}) => {
     console.log(+params.id);
@@ -33,7 +34,6 @@ const page = ({params}) => {
         setUniqueItem([fetchCartItem])
         // setCart(prevValue => [...prevValue, fetchCartItem]);
     }
-    console.log(uniqueItem);
   return (
     <div>
         <div className="container ">
@@ -92,6 +92,7 @@ const page = ({params}) => {
                                 Rating :{" "}
                                 <span className="font-bold text-blue-600">
                                     {rating.rate}
+                                    <HiStar className='text-yellow-400 text-xl font-bold'/>
                                 </span>
                                 </p>
                             </div>

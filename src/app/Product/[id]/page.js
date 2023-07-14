@@ -135,12 +135,12 @@ const ProductDetailsPage = ({ params }) => {
                           {price}$
                         </span>
                       </h2>
-                      <p>
+                      <p className="flex items-center justify-start gap-2">
                         {" "}
                         <span className="text-2xl font-bold text-primary">
                           {rating.rate}
-                          {}
                         </span>
+                          <HiStar className='text-yellow-500 text-2xl font-bold'/>
                       </p>
                     </div>
 
