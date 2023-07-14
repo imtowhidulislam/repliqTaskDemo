@@ -117,7 +117,7 @@ const ProductCategory = ({
                 <button
                   type="button"
                   onClick={() => getProduct(id)}
-                  className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-accent bg-transparent  px-4 py-2 text-sm font-bold capitalize text-nutral2 drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
+                  className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-accent bg-transparent  px-4 py-2 text-sm font-bold capitalize text-nutral2 drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-nutral3 hover:text-primary hover:drop-shadow-md"
                 >
                   add to cart{" "}
                   <span>
