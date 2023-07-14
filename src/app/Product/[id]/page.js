@@ -122,7 +122,7 @@ const ProductDetailsPage = ({ params }) => {
                           : `${titleLength}...`}
                       </h2>
                     </div>
-                    <h2 className="text-pimary max-w-lg text-xl font-bold">
+                    <h2 className="text-pimary capitalize max-w-lg text-xl font-semibold text-accent">
                       {cat}
                     </h2>
                     <div className="py-2">
