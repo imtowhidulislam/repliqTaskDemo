@@ -12,7 +12,8 @@ import { HiOutlineArrowCircleUp } from "react-icons/hi";
 import HomeTopratedProduct from "./components/HomeProduct/page";
 import CartContextProvider from "./context/cartContext";
 import { useProductData } from "./Data/productData";
-import DemoRef from "./components/DemoRef";
+// import CounterOne from "./components/CounterOne";
+// import CounterTwo from "./components/CounterTwo";
 
 export default function Home() {
   const { data, isLoading, error: error } = useProductData();

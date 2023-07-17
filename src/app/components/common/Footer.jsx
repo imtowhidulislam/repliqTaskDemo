@@ -99,7 +99,7 @@ const Footer = () => {
         </div>
         <div className="mt-12 flex items-center justify-start gap-1 capitalize text-baseClr2">
           <FaCopyright className="text-small sm:text-lg" />
-          <p className="text-small font-bold sm:text-base">
+          <p className="text-small font-semibold sm:text-base">
             copyright <span>2023. </span>all rights reserve to Repliq
           </p>
         </div>

@@ -8,6 +8,7 @@ import { HiOutlineArrowUpCircle, HiArrowUpCircle } from "react-icons/hi2";
 import CartContextProvider from "../context/cartContext";
 import Loading from "./loading";
 import { buttonData } from "../Data/buttonData";
+import Example from "./components/productDropDown";
 
 const Page = () => {
   const sectionRef = useRef(null);
@@ -53,7 +54,6 @@ const Page = () => {
   const handleOptionChange = (e) => {
     setFilterProduct(e.target.value);
   };
-  console.log(filterProduct);
 
   return (
     <div className="container px-3 py-8 sm:py-4 sm:pb-12 md:px-0 ">
@@ -107,41 +107,17 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="md:hidden mt-2 my-4">
-        <select
-          value={filterProduct}
-          onChange={handleOptionChange}
-          className="block capitalize w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-        >
-          {/* <option className="capitalize" value={filterProduct}>
-            {button ? `${filterProduct}` : "choose an option"}
-          </option> */}
-          {(buttonData || button).map((btns, i) => {
-            return (
-              <>
-                <option
-                  className={
-                    filterProduct === btns
-                      ? "capitalize rounded-md font-bold my-2 text-primary"
-                      : "capitalize rounded-md my-4 font-bold"
-                  }
-                  key={i}
-                  value={btns}
-                >
-                  {btns}
-                </option>
-              </>
-            );
-          })}
-        </select>
+      <div className="my-8 md:hidden">
+        <Example setFilterProduct={setFilterProduct} people={buttonData || button} handleOptionChange={handleOptionChange}  />
       </div>
-      {/* fetching product categorically */}
+
+      {/* !! fetching product categorically */}
       {isLoading ? (
         <Loading />
       ) : (
-        <div
+        <div 
           // ref={sectionRef}
-          className="z-10 mt-10 grid min-h-custom-min-h grid-cols-productLayout place-items-center md:place-items-start gap-4 overflow-hidden"
+          className="z-10 mt-10 grid min-h-custom-min-h grid-cols-productLayout place-items-center gap-4 overflow-hidden md:place-items-start"
         >
           {filterProduct === "All" ? (
             <ProductOfList
