@@ -6,9 +6,10 @@ export const CartProvider = ({children}) => {
     const [cart,setCart] = useState([]);
     const [user,setUser] = useState([]);
     const [newProduct, setNewProduct] = useState([]);
+    const [searchProduct, setSearchProrduct] = useState([]);
 
   return (
-    <CartContextProvider.Provider value={{product:[newProduct,setNewProduct],user:[user,setUser],cart:[cart, setCart]}}>
+    <CartContextProvider.Provider value={{product:[newProduct,setNewProduct],user:[user,setUser],cart:[cart, setCart], searchProduct:[searchProduct,setSearchProrduct]}}>
         {children}
     </CartContextProvider.Provider>
   )

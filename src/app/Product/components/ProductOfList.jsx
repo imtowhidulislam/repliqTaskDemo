@@ -9,7 +9,6 @@ import { HiShoppingCart, HiOutlineHeart, HiHeart } from "react-icons/hi";
 import FavoriteBtn from "./FavoriteBtn";
 
 const ProductOfList = ({ product, isLoading, cart, setCart }) => {
-  // const [cart,setCart] = useState([]);
   const getProduct = (id) => {
     try {
       let quantity = 0;
@@ -30,7 +29,6 @@ const ProductOfList = ({ product, isLoading, cart, setCart }) => {
       toast.error("product not found");
     }
   };
-  console.log(product);
 
   return (
     <>
@@ -51,7 +49,7 @@ const ProductOfList = ({ product, isLoading, cart, setCart }) => {
           return (
             <div
               key={id}
-              className="card relative z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2 bg-nutral3 hover:bg-[#f5f5f5] transition-colors ease-in-out duration-100"
+              className="card relative z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2 bg-nutral3 transition-colors duration-100 ease-in-out hover:bg-[#f5f5f5]"
             >
               <div className="absolute left-3/4 top-3">
                 <FavoriteBtn />

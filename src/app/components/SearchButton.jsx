@@ -1,50 +1,102 @@
-import React, { useEffect, useRef, useState } from 'react'
-import {AiOutlineSearch} from "react-icons/ai"
-import {RxCross1} from "react-icons/rx"
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { AiOutlineSearch } from "react-icons/ai";
+import { RxCross1 } from "react-icons/rx";
+import CartContextProvider from "../context/cartContext";
 
 const SearchButton = () => {
-    const focusSearch = useRef(null);
-    const [searchInput,setSearchInput] = useState({search:""});
-    const [searchValue , setSearchValue] = useState([]);
+  const { searchProduct } = useContext(CartContextProvider);
+  const [searchProducts, setSearchProducts] = searchProduct;
+  const [product, setsProduct] = useState([]);
+  const focusSearch = useRef(null);
+  const [searchInput, setSearchInput] = useState("");
+  const [searchValue, setSearchValue] = useState("");
 
-    const handleChange = (e) => {
-        const {name,value} = e.target;
-        setSearchInput({...searchInput, [name]:value});
-    }
-    const handleSumbit = (e) => {
-        e.preventDefault();
-        if(searchInput.search) {
-            const id = new Date().getTime().toString();
-            const newSearch = {...searchInput,id};
-            setSearchValue([...searchValue,newSearch]);
-            setSearchInput({search : ""})
-        } 
-    }
+  const fetchData = async () => {
+    const res = await fetch("https://fakestoreapi.com/products");
+    const data = await res.json();
+    if (!res.ok) throw Error("Url might be not found.");
 
-    useEffect(() => {
-        focusSearch.current.focus();
-    },[searchInput])
+    setsProduct([...data]);
+  };
 
-    const deleteSearchText = () => {
-        setSearchInput({search : ""})
+  const handleChange = (e) => {
+    const { value } = e.target;
+    setSearchInput(value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (searchInput) {
+      setSearchValue(searchInput);
+      setSearchInput("");
+    } else {
+      console.log("Please provide your query.");
     }
+  };
+  const checkProductIsAvailable = () => {
+    const findSomeProductStatus = product.filter((item) =>
+      item.title.toLowerCase().includes(`${searchInput}`)
+    );
+    console.log(findSomeProductStatus);
+    setSearchProducts(findSomeProductStatus);
+    return findSomeProductStatus;
+  };
+
+  useEffect(() => {
+    checkProductIsAvailable();
+  }, [searchInput]);
+
+  console.log(searchProducts);
+  console.log(searchInput);
+
+  useEffect(() => {
+    focusSearch.current.focus();
+  }, [searchInput]);
+  useEffect(() => {
+    fetchData();
+  },[])
+
+  const deleteSearchText = () => {
+    setSearchInput("");
+  };
+  console.log(searchInput);
+  console.log(searchValue);
 
   return (
-    <div className='flex items-center justify-between border border-accent rounded-full overflow-hidden'>
-        <form className='flex items-center justify-center' onSubmit={handleSumbit}>
-            <input type='text' id='searchInput' ref={focusSearch} name='search' value={searchInput.search} onChange={handleChange} placeholder='search' className='w-full lg:w-full placeholder:capitalize bg-transparent pl-4 border-none outline-none placeholder:text-nutral2 font-bold'>
-            </input>
-            <div className={`flex items-center justify-center px-2 transition-all duration-150 ease-in-out ${searchInput.search ? 'visible':'collapse'}`}>
-                <button type='submit' onClick={deleteSearchText}>
-                    <span className='text-xl font-bold'><RxCross1 /></span>
-                </button>
-            </div>
-        </form>
-        <div className='border-l border-accent group h-full py-2 px-2 lg:px-5 bg-transparent cursor-pointer hover:bg-accent transition-all duration-200 ease-in-out hover:text-baseClr1 font-extrabold'>
-            <span className='text-xl font-bold'><AiOutlineSearch className='group-hover:animate-spin' /></span>
+    <div className="flex items-center justify-between overflow-hidden rounded-full border border-accent">
+      <form
+        className="flex items-center justify-center"
+        onSubmit={handleSubmit}
+      >
+        <input
+          type="text"
+          id="searchInput"
+          ref={focusSearch}
+          name="search"
+          value={searchInput}
+          onChange={handleChange}
+          placeholder="search"
+          className="w-full border-none bg-transparent pl-4 font-bold outline-none placeholder:capitalize placeholder:text-nutral2 lg:w-full"
+        ></input>
+        <div
+          className={`flex items-center justify-center px-2 transition-all duration-150 ease-in-out ${
+            searchInput.search ? "visible" : "collapse"
+          }`}
+        >
+          <button type="submit" onClick={deleteSearchText}>
+            <span className="text-xl font-bold">
+              <RxCross1 />
+            </span>
+          </button>
         </div>
+      </form>
+      <div className="group h-full cursor-pointer border-l border-accent bg-transparent px-2 py-2 font-extrabold transition-all duration-200 ease-in-out hover:bg-accent hover:text-baseClr1 lg:px-5">
+        <span className="text-xl font-bold">
+          <AiOutlineSearch className="group-hover:animate-spin" />
+        </span>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default SearchButton
+export default SearchButton;

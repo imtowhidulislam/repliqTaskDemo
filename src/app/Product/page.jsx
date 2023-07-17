@@ -13,8 +13,9 @@ import Example from "./components/productDropDown";
 const Page = () => {
   const sectionRef = useRef(null);
   //   const { data, isLoading, error } = useProductData();
-  const { cart } = useContext(CartContextProvider);
+  const { cart,searchProduct } = useContext(CartContextProvider);
   const [cartValue, setCartValue] = cart;
+  const [searchProducts, setSearchProducts] = searchProduct;
   const [backToTop, setBackToTop] = useState(false);
   //   const [productValue, setProductValue] = useState(data);
   const [productValue, setProductValue] = useState([]);
@@ -59,7 +60,7 @@ const Page = () => {
     <div className="container px-3 py-8 sm:py-4 sm:pb-12 md:px-0 ">
       <div ref={sectionRef} className="md-4 mt-12 sm:mt-16 md:mb-12">
         <h2 className="bg-gradient-to-r from-accent to-primary bg-clip-text text-left text-2xl font-extrabold uppercase text-transparent md:text-center md:text-4xl lg:text-6xl">
-          Get your desired One.
+          Get your desired Item.
         </h2>
       </div>
       <div className="hidden md:block">
@@ -122,7 +123,7 @@ const Page = () => {
           {filterProduct === "All" ? (
             <ProductOfList
               filterProduct={filterProduct}
-              product={data}
+              product={searchProducts.length > 0 ? searchProducts : data}
               // setProduct={setProductValue}
               isLoading={isLoading}
               cart={cartValue}
