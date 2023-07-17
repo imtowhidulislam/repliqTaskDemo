@@ -19,8 +19,8 @@ const Example = ({ people,setFilterProduct }) => {
       {({ open }) => (
         <>
           <div className="relative mt-2">
-            <Listbox.Button className="relative w-full cursor-default rounded-md bg-nutral3 py-1.5 pl-3 pr-10 text-left text-nutral2 shadow-sm ring-1 ring-inset ring-nutral3 focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm sm:leading-6">
-              <span className="flex items-center py-4">
+            <Listbox.Button className="relative w-full cursor-default rounded-md bg-nutral3 py-1 pl-3 pr-10 text-left text-nutral2 shadow-sm ring-1 ring-inset ring-nutral3 focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm sm:leading-6">
+              <span className="flex items-center py-2">
                 
                 <span className="ml-3 block truncate capitalize text-base">{selected}</span>
               </span>
