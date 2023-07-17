@@ -118,7 +118,7 @@ const Page = () => {
       ) : (
         <div 
           // ref={sectionRef}
-          className="z-10 mt-10 grid min-h-custom-min-h grid-cols-productLayout place-items-center gap-4 overflow-hidden md:place-items-start"
+          className="z-10 mt-10 grid min-h-custom-min-h grid-cols-productLayout place-items-center gap-4 overflow-hidden md:placeholder-start"
         >
           {filterProduct === "All" ? (
             <ProductOfList

@@ -1,8 +1,9 @@
 "use client";
-import React, { useContext, useState } from "react";
-import { RiShoppingBagFill } from "react-icons/ri";
+import React, { useContext, useRef, useState } from "react";
+import { RiShoppingBagFill,RiImage2Fill } from "react-icons/ri";
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
+
 import CartContextProvider from "@/app/context/cartContext";
 import { useProductData } from "@/app/Data/productData";
 import { productSchema } from "@/app/Register/schemas/page";
@@ -12,7 +13,7 @@ const page = () => {
   const { data, isLoading, error } = useProductData();
   const {product} = useContext(CartContextProvider);
   const [newProduct, setNewProduct] = product;
-
+  const imgRef = useRef(null);
 
   const {
     values,
@@ -45,6 +46,8 @@ const page = () => {
     },
   });
 
+  const handleImg = () => imgRef.current.click();
+
   return (
     <>
       <div className="relative flex h-full w-full items-center justify-center overflow-y-hidden">
@@ -54,7 +57,7 @@ const page = () => {
         >
           <div className="flex items-center justify-center pb-1 text-6xl text-cyan-700"></div>
           <div className="pb-2">
-            <h2 className="text-center text-2xl font-bold uppercase text-accent">
+            <h2 className="text-center text-2xl font-bold uppercase text-nutral2">
               Create Product
             </h2>
           </div>
@@ -76,8 +79,8 @@ const page = () => {
                 placeholder="enter product title"
                 className={
                   errors.title && touched.title
-                    ? "form text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize placeholder:text-gray-900"
-                    : "form text-nutral2 py-1 pl-4 placeholder:capitalize "
+                    ? "form placeholder:text-sm text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize placeholder:text-gray-900"
+                    : "form placeholder:text-sm text-nutral2 py-1 pl-4 placeholder:capitalize "
                 }
               />
               {errors.title && touched.title && (
@@ -104,8 +107,8 @@ const page = () => {
                 value={values.desc}
                 className={
                   errors.desc && touched.desc
-                    ? "form text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                    : "form text-nutral2 py-1 pl-4 placeholder:capitalize"
+                    ? "form placeholder:text-sm text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                    : "form placeholder:text-sm text-nutral2 py-1 pl-4 placeholder:capitalize"
                 }
                 placeholder="enter product desc"
               />
@@ -132,8 +135,8 @@ const page = () => {
                 value={values.price}
                 className={
                   errors.price && touched.price
-                    ? "form text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                    : "form text-nutral2 py-1 pl-4 placeholder:capitalize"
+                    ? "form placeholder:text-sm text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                    : "form placeholder:text-sm text-nutral2 py-1 pl-4 placeholder:capitalize"
                 }
                 placeholder="enter product price"
               />
@@ -155,16 +158,18 @@ const page = () => {
               <input
                 type="file"
                 accept="image/*"
+                ref={imgRef}
                 // name="file"
                 onBlur={handleBlur}
                 onChange={(e) => setFieldValue("file", e.target.files[0])}
                 className={
                   errors.file && touched.file
-                    ? "form text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                    : "form text-nutral2 py-1 pl-4 placeholder:capitalize"
+                    ? "form placeholder:text-sm hidden py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                    : "form placeholder:text-sm hidden py-1 pl-4 placeholder:capitalize"
                 }
                 placeholder="enter product Image"
               />
+              <button onClick={handleImg} className="capitalize text-gray-400 font-semibnold bg-slate-300/30 flex items-center justify-start gap-2 text-sm rounded-md py-1 pl-4 w-full text-left"><RiImage2Fill className="text-3xl text-primary " /> Upload Image </button>
               {errors.file && touched.file && (
                 <p className="absolute left-0 top-full text-small md:text-sm capitalize text-denger">
                   {errors.file}
@@ -188,8 +193,8 @@ const page = () => {
               value={values.category}
               className={
                 errors.category && touched.category
-                  ? "form text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                  : "form text-nutral2 py-1 bg-transparent pl-4 placeholder:capitalize"
+                  ? "form placeholder:text-sm text-nutral2 py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                  : "form placeholder:text-sm text-nutral2 py-1 bg-transparent pl-4 placeholder:capitalize"
               }
               placeholder="enter product category"
             />
@@ -207,7 +212,7 @@ const page = () => {
               // onClick={handleSubmit}
               className="w-full cursor-pointer rounded-md border-2 border-nutral1 bg-transparent px-8 py-2 text-base font-bold capitalize text-nutral2 transition-all duration-200 ease-out hover:border-transparent hover:bg-accent hover:text-nutral2"
             >
-              submit
+              Create Product
             </button>
           </div>
 

@@ -127,7 +127,7 @@ const ProductDetailsPage = ({ params }) => {
                     </h2>
                     <div className="py-2">
                       <h2 className="py-4 font-semibold text-nutral2">
-                        <span className="line-clamp-3">{desc}$</span>
+                        <span className="line-clamp-4">{desc}</span>
                       </h2>
                       <h2 className="pb-2">
                         {" "}

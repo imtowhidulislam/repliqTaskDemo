@@ -35,7 +35,7 @@ const page = () => {
         >
           <div className="flex items-center justify-center pb-1 text-6xl text-cyan-700"></div>
           <div className="pb-2">
-            <h2 className="text-center text-2xl font-bold uppercase text-accent">
+            <h2 className="text-center text-2xl font-bold uppercase text-nutral2">
               Sign in
             </h2>
           </div>
@@ -53,8 +53,8 @@ const page = () => {
                 value={values.email}
                 className={
                   errors.email && touched.email
-                    ? "form border-2 border-denger py-1 pl-4 placeholder:capitalize"
-                    : "form py-1 pl-4 placeholder:capitalize"
+                    ? "form border-2 border-denger py-1 placeholder:text-sm pl-4 placeholder:capitalize"
+                    : "form py-1 placeholder:text-sm pl-4 placeholder:capitalize"
                 }
                 placeholder="enter your email"
               />
@@ -82,8 +82,8 @@ const page = () => {
                 value={values.password}
                 className={
                   errors.password && touched.password
-                    ? "form border-2 border-denger py-1 pl-4 placeholder:capitalize"
-                    : "form bg-transparent py-1 pl-4 placeholder:capitalize"
+                    ? "form border-2 border-denger placeholder:text-sm py-1 pl-4 placeholder:capitalize"
+                    : "form bg-transparent placeholder:text-sm py-1 pl-4 placeholder:capitalize"
                 }
                 placeholder="enter your password"
               />

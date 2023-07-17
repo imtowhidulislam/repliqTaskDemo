@@ -1,14 +1,14 @@
 "use client";
 import React, { useContext, useRef, useState } from "react";
-import { RiShoppingBagFill } from "react-icons/ri";
+import { RiShoppingBagFill,RiImage2Fill } from "react-icons/ri";
 import { useFormik } from "formik";
 import { formSchema } from "../Register/schemas/page";
 import toast from "react-hot-toast";
 import CartContextProvider from "../context/cartContext";
 
 const page = () => {
-  const { user } = useContext(CartContextProvider);
   const imgRef = useRef(null);
+  const { user } = useContext(CartContextProvider);
   const [users, setUsers] = user;
 
   const {
@@ -51,7 +51,7 @@ const page = () => {
         >
           <div className="flex items-center justify-center pb-1 text-6xl text-cyan-700"></div>
           <div className="pb-2">
-            <h2 className="text-center text-2xl font-bold uppercase text-accent">
+            <h2 className="text-center text-2xl font-bold uppercase text-nutral2">
               sign up
             </h2>
           </div>
@@ -74,8 +74,8 @@ const page = () => {
                 placeholder="enter your name"
                 className={
                   errors.fName && touched.fName
-                    ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize placeholder:text-gray-900"
-                    : "form py-1 pl-4 placeholder:capitalize "
+                    ? "form py-1 border-2 border-denger pl-4 placeholder:text-sm placeholder:capitalize placeholder:text-gray-900"
+                    : "form py-1 pl-4 placeholder:capitalize placeholder:text-sm"
                 }
               />
               {errors.fName && touched.fName && (
@@ -102,8 +102,8 @@ const page = () => {
                 value={values.lName}
                 className={
                   errors.lName && touched.lName
-                    ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                    : "form py-1 pl-4 placeholder:capitalize"
+                    ? "form placeholder:text-sm py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                    : "form placeholder:text-sm py-1 pl-4 placeholder:capitalize"
                 }
                 placeholder="enter your last Name"
               />
@@ -130,8 +130,8 @@ const page = () => {
                 value={values.email}
                 className={
                   errors.email && touched.email
-                    ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                    : "form py-1 pl-4 placeholder:capitalize"
+                    ? "form placeholder:text-sm py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                    : "form placeholder:text-sm py-1 pl-4 placeholder:capitalize"
                 }
                 placeholder="enter your email"
               />
@@ -153,16 +153,18 @@ const page = () => {
               <input
                 type="file"
                 accept="image/*"
+                ref={imgRef}
                 // name="file"
                 onBlur={handleBlur}
                 onChange={(e) => setFieldValue("file", e.target.files[0])}
                 className={
                   errors.file && touched.file
-                    ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                    : "form py-1 pl-4 placeholder:capitalize"
+                    ? "form placeholder:text-sm hidden py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                    : "form placeholder:text-sm hidden py-1 pl-4 placeholder:capitalize"
                 }
                 placeholder="enter product Image"
               />
+              <button onClick={handleImg} className="capitalize text-gray-400 font-semibnold bg-slate-300/30 flex items-center justify-start gap-2 text-sm rounded-md py-1 pl-4 w-full text-left"><RiImage2Fill className="text-3xl text-primary" /> Upload Image </button>
               {errors.file && touched.file && (
                 <p className="absolute left-0 top-full text-small md:text-sm capitalize text-denger">
                   {errors.file}
@@ -186,8 +188,8 @@ const page = () => {
               value={values.password}
               className={
                 errors.password && touched.password
-                  ? "form py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                  : "form py-1 bg-transparent pl-4 placeholder:capitalize"
+                  ? "form placeholder:text-sm py-1 border-2 border-denger pl-4 placeholder:capitalize"
+                  : "form placeholder:text-sm py-1 bg-transparent pl-4 placeholder:capitalize"
               }
               placeholder="enter your password"
             />
