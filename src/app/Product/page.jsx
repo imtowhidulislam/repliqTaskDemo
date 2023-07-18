@@ -149,8 +149,8 @@ const Page = () => {
         </div>
       )}
 
-      <div className="py-4 mt-12">
-        {filterProduct === "All" && <Pagination />}
+      <div className="py-4 mt-12 hidden">
+        {filterProduct === "All" && <Pagination product={data} />}
       </div>
       {/* Move to Top Button. */}
       <div className="fixed bottom-5 left-3/4 z-50 w-full">
