@@ -142,7 +142,7 @@ label {
   /* padding-inline: 1rem; */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .grid-layout > *:first-child {
     grid-column: 1 /13;
   }
