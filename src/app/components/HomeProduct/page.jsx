@@ -82,7 +82,7 @@ const HomeTopratedProduct = () => {
                     key={id}
                     className="card relative z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2 bg-nutral3 hover:bg-[#f5f5f5] transition-colors ease-in-out duration-100"
                   >
-                    <div className="absolute left-3/4 top-3">
+                    <div className="absolute right-3 top-3">
                       <FavoriteBtn />
                     </div>
                     <Link href={`/Product/${id}`} className="">

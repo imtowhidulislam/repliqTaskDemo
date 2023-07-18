@@ -73,7 +73,7 @@ body {
   flex-wrap: wrap;
 }
 .btn {
-  @apply drop-shadow-lg cursor-pointer rounded-full border-2 border-nutral3 bg-transparent px-8 py-2 text-sm font-bold capitalize text-nutral2 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-nutral3 hover:text-primary;
+  @apply hover:drop-shadow-lg cursor-pointer rounded-full border-2 border-nutral3 bg-transparent px-8 py-2 text-sm font-bold capitalize text-nutral2 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-nutral3 hover:text-primary;
 }
 /* !! Unique Btn Style End */
 
