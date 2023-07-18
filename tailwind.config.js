@@ -52,10 +52,8 @@ module.exports = {
       },
       keyframes: {
         bounce: {
-          "0%": { transform: "translateY(-5px)", color: "#f05959" },
-          "25%": { transform: "rotate(0deg)", color: "#0f51f7" },
-          "50%": { transform: "translateY(5px)", color: "#ba9e9f" },
-          "75%": { transform: "rotate(15deg)", color: "#0f51f7" },
+          "0%": { transform: "translateY(-5px)", color: "#0f51f7" },
+          "50%": { transform: "rotate(0deg)", color: "#1aab7f" },
           "100%": { transform: "translateY(0px)", color: "#0f51f7" },
         },
         moveUp: {
@@ -80,7 +78,7 @@ module.exports = {
           "100%": {
             transform: "translateX(100%)",
             opacity: 1,
-            color: "#f05959",
+            color: "#1aab7f",
           },
         },
         cartDeleteBtnAnimate: {

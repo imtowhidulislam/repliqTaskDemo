@@ -12,6 +12,7 @@ import { usePathname } from "next/navigation";
 
 const NavbarMain = ({ params }) => {
   const currentPath = usePathname();
+  console.log(currentPath);
   const { cart } = useContext(CartContextProvider);
   const [cartItem, setCartItem] = cart;
   const [toggleNav, setToggleNav] = useState(false);
@@ -87,9 +88,11 @@ const NavbarMain = ({ params }) => {
               </Link>
             </div>
             <div className="flexRow gap-4">
-              <li>
-                <SearchButton />
-              </li>
+              {currentPath === "/Product" && (
+                <li>
+                  <SearchButton />
+                </li>
+              )}
             </div>
             <div className="flexRow gap-4">
               <li className="flex items-center gap-2">
@@ -124,8 +127,8 @@ const NavbarMain = ({ params }) => {
                       <p
                         className={
                           currentPath === "/Cart"
-                            ? "absolute -top-2 left-1 mb-1 ml-1 flex h-5 w-5 text-base items-center justify-center rounded-full bg-denger  font-semibold text-nutral3"
-                            : "absolute -top-2 left-1 mb-1 ml-1 flex h-5 w-5 text-base items-center justify-center rounded-full bg-denger  font-semibold text-nutral3"
+                            ? "absolute -top-2 left-1 mb-1 ml-1 flex h-5 w-5 items-center justify-center rounded-full bg-denger text-base  font-semibold text-nutral3"
+                            : "absolute -top-2 left-1 mb-1 ml-1 flex h-5 w-5 items-center justify-center rounded-full bg-denger text-base  font-semibold text-nutral3"
                         }
                       >
                         {cartItem.length}

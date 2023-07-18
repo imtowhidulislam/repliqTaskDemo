@@ -50,7 +50,9 @@ const Cart = () => {
       <div className="container p-2 sm:p-4 md:p-0 ">
         <div className="mb-8 flex items-center justify-between gap-4 sm:gap-20">
           <h2 className="cartTitle ms:text-4xl text-left font-mono text-2xl font-extrabold capitalize text-accent">
-            {uniqueCart.length < 1 ? "Your cart is empty" : `Your Cart has ${cartValue.length} products`}
+            {uniqueCart.length < 1
+              ? "Your cart is empty"
+              : `Your Cart has ${cartValue.length} products`}
           </h2>
           <button
             type="button"
@@ -71,16 +73,9 @@ const Cart = () => {
               return (
                 <div
                   key={id}
-                  className="group relative mb-2 flex items-center justify-between gap-8 rounded-md border-b border-nutral1 bg-nutral3 p-3 shadow-nutral2 drop-shadow-md"
+                  className="group mb-2 flex items-center justify-between gap-8 rounded-md border-b border-nutral1 bg-nutral3 p-3 shadow-nutral2 drop-shadow-md"
                 >
-                  <div className="absolute right-0 top-3 flex h-8 w-8 -translate-x-1/2  items-center justify-center rounded-full p-1">
-                    <button
-                      onClick={() => deleteCartItem(id)}
-                      className="mb-2 cursor-pointer"
-                    >
-                      <HiArchiveBoxXMark className="text-xl text-denger" />
-                    </button>
-                  </div>
+
                   <div className="flex items-center gap-6">
                     <div className="h-20 w-20 overflow-hidden rounded-md">
                       <Image
@@ -104,9 +99,17 @@ const Cart = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="grid place-items-center">
+                    <div className="grid place-items-center gap-2">
+                      <div className="">
+                        <button
+                          onClick={() => deleteCartItem(id)}
+                          className="mb-2 cursor-pointer"
+                        >
+                          <HiArchiveBoxXMark className="text-xl text-denger" />
+                        </button>
+                      </div>
                       {/* <Counter setUniqueCart={setUniqueCart} uniqueCart={uniqueCart} productId={id} quantity={quantity} /> */}
-                      Quan
+                        Quan
                       <div className="text-xl font-bold text-primary">
                         {quantity}
                       </div>
@@ -137,10 +140,10 @@ const Cart = () => {
               </div>
             </div>
             <div className="flex w-full items-center justify-between gap-4">
-              <h2 className="text-left text-base md:text-xl font-bold capitalize align-baseline text-primary">
+              <h2 className="text-left align-baseline text-base font-bold capitalize text-primary md:text-xl">
                 total
               </h2>
-              <h2 className="text-left text-base md:text-xl font-bold capitalize text-primary">
+              <h2 className="text-left text-base font-bold capitalize text-primary md:text-xl">
                 {cartValue.length > 0
                   ? `$ ${(+total + 3.45).toFixed(2)}`
                   : `$ ${0.0}`}

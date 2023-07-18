@@ -56,6 +56,7 @@ const Page = () => {
   const handleOptionChange = (e) => {
     setFilterProduct(e.target.value);
   };
+  console.log(filterProduct);
 
   return (
     <div className="container px-3 py-8 sm:py-4 sm:pb-12 md:px-0 ">
@@ -68,7 +69,7 @@ const Page = () => {
         <div id="buttonSection" className="btn_container mt-4 md:mt-0 ">
           {button && (
             <button
-              className="btn w-full sm:w-max"
+              className={filterProduct === "All" ? "btn border broder-primary w-full sm:w-max text-primary shadow-md shadow-nutral1" : "btn w-full sm:w-max"}
               onClick={handleClick}
               data-name="All"
             >
@@ -82,7 +83,7 @@ const Page = () => {
                     <>
                       <button
                         key={i}
-                        className="btn w-full sm:w-max"
+                        className={filterProduct === btns ? "btn w-full sm:w-max text-primary border border-primary shadow-md shadow-nutral1" : "btn w-full sm:w-max"}
                         onClick={handleClick}
                         data-name={btns}
                       >
@@ -96,7 +97,7 @@ const Page = () => {
                     <>
                       <button
                         key={i}
-                        className="btn w-full sm:w-max"
+                        className={filterProduct === btns ? "btn w-full sm:w-max text-primary border border-primary shadow-md shadow-nutral1" : "btn w-full sm:w-max"}
                         onClick={handleClick}
                         data-name={btns}
                       >
