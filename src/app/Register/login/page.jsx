@@ -4,6 +4,7 @@ import { RiShoppingBagFill } from "react-icons/ri";
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
 import { loginSchema } from "../schemas/page";
+import RegisterNav from "../components/RegisterNav";
 
 const page = () => {
   const {
@@ -28,10 +29,10 @@ const page = () => {
 
   return (
     <>
-      <div className="relative flex h-full w-full items-start justify-start md:justify-center overflow-y-hidden">
+      <div className="relative flex h-full w-full items-start justify-start overflow-y-hidden md:justify-center">
         <form
           onSubmit={handleSubmit}
-          className="registerForm w-full max-w-md drop-shadow-lg shadow-nutral2 animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-nutral3 px-4 pb-6 pt-0 sm:mx-0 md:mx-4 md:my-8"
+          className="registerForm w-full max-w-md animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-nutral3 px-4 pb-6 pt-0 shadow-nutral2 drop-shadow-lg sm:mx-0 md:mx-4 md:my-8"
         >
           <div className="flex items-center justify-center pb-1 text-6xl text-cyan-700"></div>
           <div className="pb-2">
@@ -53,8 +54,8 @@ const page = () => {
                 value={values.email}
                 className={
                   errors.email && touched.email
-                    ? "form border-2 border-denger py-2 md:py-1 placeholder:text-sm pl-4 placeholder:capitalize"
-                    : "form py-2 md:py-1 placeholder:text-sm pl-4 placeholder:capitalize"
+                    ? "form border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
+                    : "form py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
                 }
                 placeholder="enter your email"
               />
@@ -82,8 +83,8 @@ const page = () => {
                 value={values.password}
                 className={
                   errors.password && touched.password
-                    ? "form border-2 border-denger placeholder:text-sm py-2 md:py-1 pl-4 placeholder:capitalize"
-                    : "form bg-transparent placeholder:text-sm py-2 md:py-1 pl-4 placeholder:capitalize"
+                    ? "form border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
+                    : "form bg-transparent py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
                 }
                 placeholder="enter your password"
               />
@@ -104,7 +105,12 @@ const page = () => {
               sign in
             </button>
           </div>
-
+          <div className="flex items-center gap-3 justify-center">
+            <p className="text-primary">Don't have any account? </p>
+            <span>
+              <RegisterNav registerRoute="/Register" registerType="sign up" />
+            </span>
+          </div>
           {/* <div><p className='capitalize text-gray-300'>{account}<span><button type='button' className='uppercase text-sky-400 underline cursor-pointer'>{acctionType}</button></span></p></div> */}
         </form>
       </div>
