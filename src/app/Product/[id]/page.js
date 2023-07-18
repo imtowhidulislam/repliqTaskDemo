@@ -169,6 +169,12 @@ const ProductDetailsPage = ({ params }) => {
           })}
         </>
       </div>
+
+      <div className="mb-4 grid place-items-center">
+        <Link href="/Product" className="">
+          <button className="flex max-w-sm w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary text-primary bg-transparent  px-4 py-2 text-sm font-bold capitalize drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md">Back To Product</button>
+        </Link>
+      </div>
     </div>
   );
 };

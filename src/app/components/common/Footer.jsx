@@ -54,28 +54,28 @@ const Footer = () => {
         <div className="grid grid-cols-footerLayout gap-12">
           <div className="footerStyle">
             <h2 className="text-2xl text-nutral2">Privacy Policy</h2>
-            <p>Terms & Condition</p>
-            <p>contacts</p>
-            <p>support</p>
-            <p>feedback</p>
+            <p className="text-sm">Terms & Condition</p>
+            <p className="text-sm">contacts</p>
+            <p className="text-sm">support</p>
+            <p className="text-sm">feedback</p>
           </div>
           <div className="footerStyle">
             <h2 className="text-2xl text-nutral2">Navigate</h2>
             <div className="flex items-center gap-2">
               <Link
-                className="transition-all duration-200 ease-in-out hover:text-primary"
+                className="transition-all duration-200 ease-in-out text-sm hover:font-semibold hover:text-primary"
                 href="/"
               >
                 Home
               </Link>
               <Link
-                className="transition-all duration-200 ease-in-out hover:text-primary"
+                className="transition-all duration-200 ease-in-out text-sm hover:font-semibold hover:text-primary"
                 href="/Product"
               >
                 Product
               </Link>
               <Link
-                className="transition-all duration-200 ease-in-out hover:text-primary"
+                className="transition-all duration-200 ease-in-out text-sm hover:font-semibold hover:text-primary"
                 href="/Dashboard"
               >
                 Dashboard
