@@ -56,7 +56,6 @@ const Page = () => {
   const handleOptionChange = (e) => {
     setFilterProduct(e.target.value);
   };
-  console.log(filterProduct);
 
   return (
     <div className="container px-3 py-8 sm:py-4 sm:pb-12 md:px-0 ">

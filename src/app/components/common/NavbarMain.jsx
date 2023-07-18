@@ -12,7 +12,6 @@ import { usePathname } from "next/navigation";
 
 const NavbarMain = ({ params }) => {
   const currentPath = usePathname();
-  console.log(currentPath);
   const { cart } = useContext(CartContextProvider);
   const [cartItem, setCartItem] = cart;
   const [toggleNav, setToggleNav] = useState(false);

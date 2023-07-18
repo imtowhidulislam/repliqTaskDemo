@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { HiArrowCircleLeft, HiArrowCircleRight } from "react-icons/hi";
 
 function Pagination({ product }) {
-  console.log(product);
   const [currPage, setCurrPage] = useState(0);
 
   // !! Createing A variable to track the context per page.
@@ -13,13 +12,10 @@ function Pagination({ product }) {
     currPage * contentPerPage,
     currPage + 1 * contentPerPage
   );
-  console.log(slicedData);
 
   // *** Creating approximate pages.
   const pages = Math.ceil(product?.length / contentPerPage);
-  console.log(pages);
   const generatedPages = Array.from({ length: pages }, (_, index) => index + 1);
-  console.log(generatedPages);
 
   return (
     <div className="flex w-full items-center justify-center gap-1">

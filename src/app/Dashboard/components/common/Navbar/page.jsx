@@ -28,7 +28,6 @@ const dashBoard = [
 ];
 const DashboardNavbar = () => {
   const currRoute = usePathname().split("/").slice(-1)[0].toLowerCase();
-  console.log(currRoute);
   return (
     <div>
       <div className="mt-16 grid w-full place-items-start gap-3 md:mt-0">
