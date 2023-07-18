@@ -102,7 +102,7 @@ const ProductCategory = ({
                       </h2>
                       <p className="text-base">
                         Rating :{" "}
-                        <span className="text-xl font-bold text-primary">
+                        <span className="text-base font-bold text-nutral2">
                           {rating.rate}
                         </span>
                       </p>
