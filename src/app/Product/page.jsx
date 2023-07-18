@@ -106,8 +106,8 @@ const Page = () => {
                         key={i}
                         className={
                           filterProduct === btns
-                            ? "w-full cursor-pointer rounded-md border-2 border-nutral3 bg-nutral3 px-8 py-2 text-center font-bold capitalize text-nutral2 shadow-nutral2 drop-shadow-md hover:border-transparent hover:bg-nutral3 hover:text-primary"
-                            : "w-full cursor-pointer rounded-md border-2 border-nutral3 bg-transparent px-8 py-2 text-center font-bold capitalize text-nutral2 shadow-nutral2 drop-shadow-md hover:border-transparent hover:bg-nutral3 hover:text-primary"
+                            ? " cursor-pointer rounded-md border-2 border-nutral3 bg-nutral3 px-8 py-2 text-center font-bold capitalize text-nutral2 shadow-nutral2 drop-shadow-md hover:border-transparent hover:bg-nutral3 hover:text-primary"
+                            : " cursor-pointer rounded-md border-2 border-nutral3 bg-transparent px-8 py-2 text-center font-bold capitalize text-nutral2 shadow-nutral2 drop-shadow-md hover:border-transparent hover:bg-nutral3 hover:text-primary"
                         }
                         onClick={handleClick}
                         data-name={btns}

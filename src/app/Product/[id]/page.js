@@ -74,17 +74,17 @@ const ProductDetailsPage = ({ params }) => {
             const titleLength = title.split(" ").slice(0, 5).join(" ");
             return (
               <div key={id} className="my-20 min-h-custom-h-form">
-                <div className="grid grid-cols-productLayout gap-4">
+                <div className="grid grid-cols-productLayout gap-0 sm:gap-4">
                   <div className="grid animate-moveInLeft place-items-center rounded-md bg-nutral3 drop-shadow-lg">
                     <Image
                       className="m-4 aspect-square rounded-md bg-gray-100 object-cover object-center"
                       src={img}
                       alt=""
-                      width={400}
-                      height={400}
+                      width={350}
+                      height={350}
                     />
                     <div className="items-cener my-4 flex  justify-between gap-3">
-                      <div className="grid h-24 w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
+                      <div className="grid h-16 w-16 md:h-24 md:w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
                         <Image
                           className="aspect-square object-cover object-center"
                           src={img}
@@ -93,7 +93,7 @@ const ProductDetailsPage = ({ params }) => {
                           height={50}
                         />
                       </div>
-                      <div className="grid h-24 w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
+                      <div className="grid h-16 w-16 md:h-24 md:w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
                         <Image
                           className="aspect-square object-cover object-center"
                           src={img}
@@ -102,7 +102,7 @@ const ProductDetailsPage = ({ params }) => {
                           height={50}
                         />
                       </div>
-                      <div className="grid h-24 w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
+                      <div className="grid h-16 w-16 md:h-24 md:w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
                         <Image
                           className="aspect-square object-cover object-center"
                           src={img}
@@ -113,7 +113,7 @@ const ProductDetailsPage = ({ params }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="z-20  flex items-start flex-col justify-center animate-moveInRight px-4 pb-4 pt-4 text-gray-700">
+                  <div className="z-20  flex items-start flex-col justify-center animate-moveInRight px-1 md:px-4 pb-4 pt-4 text-gray-700">
                     <h2 className="text-pimary capitalize max-w-lg text-xl font-semibold text-nutral2">
                       {cat}
                     </h2>
