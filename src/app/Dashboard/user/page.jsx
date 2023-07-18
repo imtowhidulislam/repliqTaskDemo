@@ -4,7 +4,7 @@ import CartContextProvider from "@/app/context/cartContext";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext,useState } from "react";
-import Empty from "../../../../public/emptyUser.svg";
+import Empty from "../../../../public/emptyImg1.svg";
 import { toast } from "react-hot-toast";
 
 const page = () => {

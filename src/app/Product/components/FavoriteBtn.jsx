@@ -17,7 +17,7 @@ const FavoriteBtn = () => {
         className="grid h-8 w-8 place-items-center rounded-full bg-[#65646485] p-1 backdrop-blur-sm"
       >
         {favorite ? (
-          <HiHeart className="text-2xl text-nutral3" />
+          <HiHeart className="text-2xl text-denger" />
         ) : (
           <HiOutlineHeart className="text-2xl text-nutral3" />
         )}

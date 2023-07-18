@@ -37,7 +37,7 @@ const Dashboard = () => {
   return (
     <div>
       <div>
-        <h2 className="mb-4 font-mono text-base uppercase md:text-2xl font-bold ">
+        <h2 className="mb-4 text-base uppercase md:text-2xl font-bold ">
           total no of product is : {productValue.length}
         </h2>
         <div className="">

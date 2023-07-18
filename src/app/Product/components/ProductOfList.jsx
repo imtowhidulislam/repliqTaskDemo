@@ -104,7 +104,7 @@ const ProductOfList = ({ product, isLoading, cart, setCart }) => {
                 >
                   add to cart{" "}
                   <span>
-                    <HiShoppingCart className="text-2xl text-primary group-hover:animate-cartAnimate" />
+                    <HiShoppingCart className="text-2xl text-primary " />
                   </span>
                 </button>
               </div>

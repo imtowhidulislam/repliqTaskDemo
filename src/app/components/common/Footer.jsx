@@ -81,8 +81,8 @@ const Footer = () => {
                 Dashboard
               </Link>
             </div>
-            <p>
-              <span>email : </span>repliq@gmail.com
+            <p className="lowercase">
+              <span className="capitalize">email : </span>repliq@gmail.com
             </p>
           </div>
           <div className="footerStyle">

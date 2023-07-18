@@ -54,7 +54,7 @@ const Loading = () => {
                     <button
                     type="button"
                     onClick={() => addToCart(id)}
-                    className="w-full cursor-pointer rounded-md border-2 border-[#cccccc]  bg-transparent px-4 py-2 text-sm font-bold capitalize text-lime-900 transition-all duration-200 ease-in-out hover:border-transparent hover:bg-lime-700 hover:text-lime-100 hover:drop-shadow-md"
+                    className="w-full cursor-pointer rounded-md border-2 border-[#cccccc]  bg-transparent px-4 py-2 text-sm font-bold capitalize text-lime-900 transition-all duration-200 ease-in-out"
                     >
                     {/* add to cart */}
                     </button>

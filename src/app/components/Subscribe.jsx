@@ -14,14 +14,14 @@ const Subscribe = () => {
   });
   return (
     <div className="grid place-items-center bg-transparent px-4 py-16 md:px-0">
-      <div className="footerStyle max-w-lg rounded-md border border-nutral1 p-4 md:hidden">
+      <div className="footerStyle max-w-lg rounded-md border border-gray-300 p-4 md:hidden">
         <h2 className=" sm:text-nutral2">
           subscribe our newsletter and get 10% off!!
         </h2>
         <form className="" action="" onSubmit={handleSubmit}></form>
         <div className="w-full">
           <input
-            className="mb-4 w-full rounded-sm border border-nutral1 bg-transparent px-4 py-2 placeholder:text-nutral2 active:border-primary sm:border-nutral2 sm:placeholder:text-nutral2"
+            className="mb-4 w-full rounded-sm border border-gray-300 bg-transparent px-4 py-2 placeholder:text-nutral2 active:border-primary sm:border-gray-300 sm:placeholder:text-nutral2"
             id="email"
             name="email"
             value={values.email}
@@ -45,7 +45,7 @@ const Subscribe = () => {
       </div>
 
       <div className="drop-shadow-lg container hidden md:block w-full">
-        <div className="grid grid-cols-productLayout gap-4 place-content-center h-full w-full rounded-md border border-nutral1 p-4 ">
+        <div className="grid grid-cols-productLayout gap-4 place-content-center h-full w-full rounded-md border border-gray-300 p-4 ">
           <div className="">
             <h2 className=" sm:text-nutral2 capitalize">
               subscribe our newsletter and get 10% off!!
@@ -54,7 +54,7 @@ const Subscribe = () => {
               get regular updates on our product with our newsletter.
             </h2>
           </div>
-          <form className="flex items-center drop-shadow-lg justify-center rounded-md h-full border-2 border-nutral1" action="" onSubmit={handleSubmit}>
+          <form className="flex items-center drop-shadow-lg justify-center rounded-md h-full border-2 border-gray-300" action="" onSubmit={handleSubmit}>
             <div className="w-full">
               <input
                 className="w-full border-transparent outline-none rounded-md bg-transparent px-4 py-2 placeholder:text-nutral2 active:border-primary sm:border-nutral2 sm:placeholder:text-nutral2"

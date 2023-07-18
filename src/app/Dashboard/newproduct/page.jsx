@@ -4,7 +4,7 @@ import Image from "next/image";
 import CartContextProvider from "@/app/context/cartContext";
 import Link from "next/link";
 import { ButtonOutlined } from "@/app/Util/ButtonOutlined";
-import EmptyProduct from "../../../../public/noUser.svg"
+import EmptyProduct from "../../../../public/emptyImg2.svg"
 
 const NewProduct = () => {
   const { product } = useContext(CartContextProvider);
