@@ -128,15 +128,15 @@ label {
 .grid-layout > *:first-child {
   /* background-color: #e4e2e2; */
   grid-row: 1;
-  grid-column: 1 / 5;
-  @apply px-0 py-5 md:px-4 md:py-8;
+  grid-column: 1 / 4;
+  @apply px-0 py-5 md:px-4 md:py-8 bg-nutral3 h-full;
   /* padding-block: 2rem; */
   /* padding-inline: 1rem; */
 }
 .grid-layout > *:last-child {
   /* background-color: #ccc9c9; */
   grid-row: 1;
-  grid-column: 5 / 13;
+  grid-column: 4 / 13;
   @apply px-0 py-5 md:px-4 md:py-8;
   /* padding-block: 2rem; */
   /* padding-inline: 1rem; */

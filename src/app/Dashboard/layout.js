@@ -4,16 +4,16 @@ import Dropdown from "./components/common/Dropdown";
 
 const DashboardLayout = ({ children }) => {
   return (
-    <div className="grid-layout container">
+    <div className="grid-layout ">
       <>
-        <div className="hidden md:block"> 
+        <div className="hidden md:block">
           <DashboardNavbar />
         </div>
-        <div className="block md:hidden mt-30">
+        <div className="mt-30 block md:hidden pl-4 sm:pl-8">
           <Dropdown />
         </div>
       </>
-      {children}
+      <div className="container ">{children}</div>
     </div>
   );
 };
