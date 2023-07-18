@@ -208,7 +208,7 @@ const page = () => {
 
           {/* <div><p className='capitalize text-gray-300'>{account}<span><button type='button' className='uppercase text-sky-400 underline cursor-pointer'>{acctionType}</button></span></p></div> */}
           <div className="flex items-center gap-3 justify-center">
-            <p className="text-primary">Already have an account? </p>
+            <p className="text-nutral2">Already have an account? </p>
             <span>
               <RegisterNav
                 registerRoute="/Register/login"

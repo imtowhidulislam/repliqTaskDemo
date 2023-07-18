@@ -14,7 +14,7 @@ const RegisterNav = ({registerRoute,registerType}) => {
           className="group w-max rounded-sm bg-transparent border-2 border-nutral1 px-2 py-1 hover:drop-shadow-md transition-all duration-200 ease-in-out hover:bg-primary hover:border-transparent"
           href={registerRoute}
         >
-          <button className="font-bold w-full capitalize text-center text-sm group-hover:text-nutral3">
+          <button className="font-bold w-full capitalize text-center text-sm text-primary group-hover:text-nutral3">
             {registerType}
           </button>
         </Link>

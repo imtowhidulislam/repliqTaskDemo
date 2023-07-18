@@ -106,7 +106,7 @@ const page = () => {
             </button>
           </div>
           <div className="flex items-center gap-3 justify-center">
-            <p className="text-primary">Don't have any account? </p>
+            <p className="text-nutral2">Don't have any account? </p>
             <span>
               <RegisterNav registerRoute="/Register" registerType="sign up" />
             </span>
