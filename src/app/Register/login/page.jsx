@@ -28,7 +28,7 @@ const page = () => {
 
   return (
     <>
-      <div className="relative flex h-full w-full items-center justify-center overflow-y-hidden">
+      <div className="relative flex h-full w-full items-start justify-start overflow-y-hidden">
         <form
           onSubmit={handleSubmit}
           className="registerForm w-full max-w-md drop-shadow-lg shadow-nutral2 animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-nutral3 px-4 pb-6 pt-0 sm:mx-0 md:mx-4 md:my-8"
@@ -53,8 +53,8 @@ const page = () => {
                 value={values.email}
                 className={
                   errors.email && touched.email
-                    ? "form border-2 border-denger py-1 placeholder:text-sm pl-4 placeholder:capitalize"
-                    : "form py-1 placeholder:text-sm pl-4 placeholder:capitalize"
+                    ? "form border-2 border-denger py-2 md:py-1 placeholder:text-sm pl-4 placeholder:capitalize"
+                    : "form py-2 md:py-1 placeholder:text-sm pl-4 placeholder:capitalize"
                 }
                 placeholder="enter your email"
               />
@@ -82,8 +82,8 @@ const page = () => {
                 value={values.password}
                 className={
                   errors.password && touched.password
-                    ? "form border-2 border-denger placeholder:text-sm py-1 pl-4 placeholder:capitalize"
-                    : "form bg-transparent placeholder:text-sm py-1 pl-4 placeholder:capitalize"
+                    ? "form border-2 border-denger placeholder:text-sm py-2 md:py-1 pl-4 placeholder:capitalize"
+                    : "form bg-transparent placeholder:text-sm py-2 md:py-1 pl-4 placeholder:capitalize"
                 }
                 placeholder="enter your password"
               />

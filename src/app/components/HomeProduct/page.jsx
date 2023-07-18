@@ -64,8 +64,8 @@ const HomeTopratedProduct = () => {
             <h2
               className={
                 isLoading
-                  ? "animate-pulse bg-gradient-to-r from-accent to-primary bg-clip-text text-xl font-extrabold uppercase text-transparent md:text-5xl"
-                  : "bg-gradient-to-r from-accent to-primary bg-clip-text text-xl font-extrabold uppercase text-transparent md:text-5xl"
+                  ? "animate-pulse bg-gradient-to-r from-nutral2 to-nutral2 bg-clip-text text-xl font-extrabold uppercase text-transparent md:text-5xl"
+                  : "bg-gradient-to-r from-nutral2 to-nutral2 bg-clip-text text-xl font-extrabold uppercase text-transparent md:text-5xl"
               }
             >
               Top Rated Product
@@ -119,7 +119,7 @@ const HomeTopratedProduct = () => {
                             </h2>
                             <p className="text-base">
                               Rating :{" "}
-                              <span className="text-xl font-bold text-primary">
+                              <span className="text-base font-bold text-nutral2">
                                 {rating.rate}
                               </span>
                             </p>

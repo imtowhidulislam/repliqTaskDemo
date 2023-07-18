@@ -40,7 +40,7 @@ const NavbarMain = ({ params }) => {
   };
 
   return (
-    <div className="fixed left-0 top-0 z-50 w-full md:relative bg-nutral1 md:bg-transparent">
+    <div className="fixed left-0 top-0 z-50 w-full bg-nutral1 md:relative md:bg-transparent">
       <div className="container py-4">
         {width > 768 ? (
           <nav className="flex w-full max-w-7xl items-center justify-between gap-2">
@@ -93,9 +93,6 @@ const NavbarMain = ({ params }) => {
             </div>
             <div className="flexRow gap-4">
               <li className="flex items-center gap-2">
-                <span>
-                  <VscAccount />
-                </span>
                 <Link
                   className={
                     currentPath === "/Register"
@@ -105,32 +102,36 @@ const NavbarMain = ({ params }) => {
                   href="/Register"
                 >
                   {" "}
+                  <span>
+                    <span>
+                      <VscAccount className="pr-2 text-3xl" />
+                    </span>
+                  </span>
                   Account
                 </Link>
               </li>
               <li className="flex items-center gap-2 ">
-                <span className="countCart relative">
-                  <BsCartPlus />
-                  <span>
-                    <p
-                      className={
-                        currentPath === "/Cart"
-                          ? "absolute -top-2 left-1 mb-1 ml-1 flex h-4 w-4 items-center justify-center rounded-full bg-denger text-small font-bold text-nutral2"
-                          : "absolute -top-2 left-1 mb-1 ml-1 flex h-4 w-4 items-center justify-center rounded-full bg-denger text-small font-bold text-nutral2"
-                      }
-                    >
-                      {cartItem.length}
-                    </p>
-                  </span>
-                </span>
+                <span className="countCart"></span>
                 <Link
                   className={
-                    currentPath === "/Cart"
-                      ? "navLink text-primary"
-                      : "navLink"
+                    currentPath === "/Cart" ? "navLink text-primary" : "navLink"
                   }
                   href="/Cart"
                 >
+                  <span className="relative">
+                    <BsCartPlus className="pr-2 text-3xl" />
+                    <span>
+                      <p
+                        className={
+                          currentPath === "/Cart"
+                            ? "absolute -top-2 left-1 mb-1 ml-1 flex h-5 w-5 text-base items-center justify-center rounded-full bg-denger  font-semibold text-nutral3"
+                            : "absolute -top-2 left-1 mb-1 ml-1 flex h-5 w-5 text-base items-center justify-center rounded-full bg-denger  font-semibold text-nutral3"
+                        }
+                      >
+                        {cartItem.length}
+                      </p>
+                    </span>
+                  </span>
                   Cart{" "}
                 </Link>
               </li>
@@ -158,7 +159,7 @@ const NavbarMain = ({ params }) => {
             >
               <div className="">
                 <div>
-                  <li>
+                  <li className="hidden">
                     <SearchButton />
                   </li>
                 </div>
@@ -208,12 +209,11 @@ const NavbarMain = ({ params }) => {
                     >
                       {" "}
                       <span>
-                        <VscAccount />{" "}
+                        <VscAccount className="pr-2 text-2xl" />{" "}
                       </span>{" "}
                       Account
                     </Link>
-                  </li>
-                  {" "}
+                  </li>{" "}
                   <li className="navList flex items-center justify-start gap-2 py-2">
                     <Link
                       onClick={toggleMobNav}
@@ -226,7 +226,7 @@ const NavbarMain = ({ params }) => {
                     >
                       {" "}
                       <span className="relative">
-                        <BsCartPlus />
+                        <BsCartPlus className="pr-2 text-2xl" />
                         <span>
                           <p
                             className={

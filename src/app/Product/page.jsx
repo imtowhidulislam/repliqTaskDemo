@@ -9,11 +9,12 @@ import CartContextProvider from "../context/cartContext";
 import Loading from "./loading";
 import { buttonData } from "../Data/buttonData";
 import Example from "./components/productDropDown";
+import Pagination from "./components/Pagination";
 
 const Page = () => {
   const sectionRef = useRef(null);
   //   const { data, isLoading, error } = useProductData();
-  const { cart,searchProduct } = useContext(CartContextProvider);
+  const { cart, searchProduct } = useContext(CartContextProvider);
   const [cartValue, setCartValue] = cart;
   const [searchProducts, setSearchProducts] = searchProduct;
   const [backToTop, setBackToTop] = useState(false);
@@ -109,26 +110,32 @@ const Page = () => {
       </div>
 
       <div className="my-8 md:hidden">
-        <Example setFilterProduct={setFilterProduct} people={buttonData || button} handleOptionChange={handleOptionChange}  />
+        <Example
+          setFilterProduct={setFilterProduct}
+          people={buttonData || button}
+          handleOptionChange={handleOptionChange}
+        />
       </div>
 
       {/* !! fetching product categorically */}
       {isLoading ? (
         <Loading />
       ) : (
-        <div 
+        <div
           // ref={sectionRef}
-          className="z-10 mt-10 grid min-h-custom-min-h grid-cols-productLayout place-items-center gap-4 overflow-hidden md:placeholder-start"
+          className="md:placeholder-start z-10 mt-10 grid min-h-custom-min-h grid-cols-productLayout place-items-center gap-4 overflow-hidden"
         >
           {filterProduct === "All" ? (
-            <ProductOfList
-              filterProduct={filterProduct}
-              product={searchProducts.length > 0 ? searchProducts : data}
-              // setProduct={setProductValue}
-              isLoading={isLoading}
-              cart={cartValue}
-              setCart={setCartValue}
-            />
+            <>
+              <ProductOfList
+                filterProduct={filterProduct}
+                product={searchProducts.length > 0 ? searchProducts : data}
+                // setProduct={setProductValue}
+                isLoading={isLoading}
+                cart={cartValue}
+                setCart={setCartValue}
+              />
+            </>
           ) : (
             <ProductCategory
               filterProduct={filterProduct}
@@ -142,8 +149,11 @@ const Page = () => {
         </div>
       )}
 
+      <div className="py-4 mt-12">
+        {filterProduct === "All" && <Pagination />}
+      </div>
       {/* Move to Top Button. */}
-      <div className="fixed bottom-5 left-3/4 z-50">
+      <div className="fixed bottom-5 left-3/4 z-50 w-full">
         <button
           className="rounded-full border-2 border-nutral3 p-1"
           onClick={handleTop}
