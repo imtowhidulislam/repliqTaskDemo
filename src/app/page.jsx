@@ -29,7 +29,7 @@ export default function Home() {
             <header className="container z-0 grid grid-cols-homepageLayoutHero1 place-items-center gap-12 md:gap-16 lg:gap-20">
               <div className="z-0 animate-moveUp">
                 <div>
-                  <h2 className="bg-gradient-to-r from-primary to-accent bg-clip-text text-left font-mono text-4xl font-extrabold uppercase text-transparent sm:text-5xl lg:text-7xl">
+                  <h2 className="bg-gradient-to-r from-accent to-primary bg-clip-text text-left text-4xl font-extrabold uppercase text-transparent md:text-5xl lg:text-7xl">
                     shopping and department store
                   </h2>
                 </div>

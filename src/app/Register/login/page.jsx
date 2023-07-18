@@ -28,7 +28,7 @@ const page = () => {
 
   return (
     <>
-      <div className="relative flex h-full w-full items-start justify-start overflow-y-hidden">
+      <div className="relative flex h-full w-full items-start justify-start md:justify-center overflow-y-hidden">
         <form
           onSubmit={handleSubmit}
           className="registerForm w-full max-w-md drop-shadow-lg shadow-nutral2 animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-nutral3 px-4 pb-6 pt-0 sm:mx-0 md:mx-4 md:my-8"

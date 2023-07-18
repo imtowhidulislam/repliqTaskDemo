@@ -66,6 +66,8 @@ const ProductOfList = ({ product, isLoading, cart, setCart }) => {
                     />
                   </div>
                   <div className="z-20 px-4 pb-4 pt-2 text-nutral2">
+
+                    <h2 className="mt-2 text-xl font-semibold uppercase">{cat}</h2>
                     <div>
                       <h2 className="sm:text-lg">
                         {" "}
@@ -74,8 +76,6 @@ const ProductOfList = ({ product, isLoading, cart, setCart }) => {
                           : `${titleLength}...`}
                       </h2>
                     </div>
-
-                    <h2 className="mt-2 text-xl font-bold uppercase">{cat}</h2>
                     <div className="flex items-center justify-between gap-4 py-2">
                       <h2>
                         {" "}
@@ -100,7 +100,7 @@ const ProductOfList = ({ product, isLoading, cart, setCart }) => {
                 <button
                   type="button"
                   onClick={() => getProduct(id)}
-                  className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary bg-transparent  px-4 py-2 text-sm font-bold capitalize text-nutral2 drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-nutral3 hover:text-primary hover:drop-shadow-md"
+                  className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary bg-transparent  px-4 py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-nutral3 hover:text-primary hover:drop-shadow-md"
                 >
                   add to cart{" "}
                   <span>

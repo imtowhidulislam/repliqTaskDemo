@@ -114,6 +114,9 @@ const ProductDetailsPage = ({ params }) => {
                     </div>
                   </div>
                   <div className="z-20  flex items-start flex-col justify-center animate-moveInRight px-4 pb-4 pt-4 text-gray-700">
+                    <h2 className="text-pimary capitalize max-w-lg text-xl font-semibold text-nutral2">
+                      {cat}
+                    </h2>
                     <div>
                       <h2 className="text-2xl font-bold">
                         {" "}
@@ -122,9 +125,6 @@ const ProductDetailsPage = ({ params }) => {
                           : `${titleLength}...`}
                       </h2>
                     </div>
-                    <h2 className="text-pimary capitalize max-w-lg text-xl font-semibold text-nutral2">
-                      {cat}
-                    </h2>
                     <div className="py-2">
                       <h2 className="py-4 font-semibold text-nutral2">
                         <span className="line-clamp-4">{desc}</span>
@@ -137,7 +137,7 @@ const ProductDetailsPage = ({ params }) => {
                       </h2>
                       <p className="flex items-center justify-start gap-2">
                         {" "}
-                        <span className="text-2xl font-bold text-primary">
+                        <span className="text-xl font-bold text-nutral2">
                           {rating.rate}
                         </span>
                           <HiStar className='text-yellow-500 text-2xl font-bold'/>
@@ -148,11 +148,11 @@ const ProductDetailsPage = ({ params }) => {
                       <button
                         type="button"
                         onClick={() => getProduct(id)}
-                        className="group flex max-w-sm w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-nutral2 bg-transparent  px-4 py-2 text-sm font-bold capitalize text-nutral2 drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
+                        className="group flex max-w-sm w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary text-primary bg-transparent  px-4 py-2 text-sm font-bold capitalize drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
                       >
                         add to cart{" "}
                         <span>
-                          <HiShoppingCart className="text-2xl text-accent group-hover:animate-cartAnimate" />
+                          <HiShoppingCart className="text-2xl text-primary group-hover:animate-cartAnimate" />
                         </span>
                       </button>
                       <Link
