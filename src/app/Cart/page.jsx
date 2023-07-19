@@ -52,7 +52,7 @@ const Cart = () => {
           <h2 className="cartTitle ms:text-4xl text-left font-mono text-2xl font-extrabold capitalize text-accent">
             {uniqueCart.length < 1
               ? "Your cart is empty"
-              : `Your Cart has ${cartValue.length} products`}
+              : `Your Cart has ${cartValue.length} ${cartValue.length <= 1 ? "product" : "products"}`}
           </h2>
           <button
             type="button"

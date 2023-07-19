@@ -74,7 +74,7 @@ const HomeTopratedProduct = () => {
             <h2 className="text-center text-2xl font-bold">Loading...</h2>
           ) : (
             <div className="ms:px-0 grid w-full grid-cols-productLayout place-items-start gap-4 overflow-hidden px-4 sm:grid-cols-productLayout">
-              {topRate?.map((topProduct) => {
+              {topRate?.map((topProduct,inx) => {
                 const {
                   id,
                   title,
@@ -84,10 +84,11 @@ const HomeTopratedProduct = () => {
                   category: cat,
                 } = topProduct;
                 const titleLength = title.split(" ").slice(0, 5).join(" ");
+                console.log(inx);
                 return (
                   <div
                     key={id}
-                    className="card relative z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2 bg-nutral3 transition-colors duration-100 ease-in-out hover:bg-[#f5f5f5]"
+                    className={`card relative z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2 bg-nutral3 transition-colors duration-100 ease-in-out hover:bg-[#f5f5f5]`}
                   >
                     <div className="absolute right-3 top-3">
                       <FavoriteBtn />
