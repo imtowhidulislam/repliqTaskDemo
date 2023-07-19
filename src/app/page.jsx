@@ -2,7 +2,7 @@
 import { useContext, useState } from "react";
 import Image from "next/image";
 import { RiH2 } from "react-icons/ri";
-import ImageOne from "../../public/imageOne.svg";
+import ImageOne from "../../public/shopping.svg";
 // import ImageTwo from "../..public/imageTwo.svg"
 import Link from "next/link";
 import TopratedProduct from "./components/TopratedProduct";
