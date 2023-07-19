@@ -156,8 +156,8 @@ const ProductDetailsPage = ({ params }) => {
                         </span>
                       </button>
                       <Link
-                        className="group grid w-24 place-items-center rounded-md border border-nutral2 text-2xl text-denger shadow-nutral2 drop-shadow-md "
-                        href="/Cart"
+                        className="group grid w-24 place-items-center bg-baseClr1/75 rounded-md text-2xl text-[#949393f1] shadow-nutral2 drop-shadow-md "
+                        href="#"
                       >
                         <HiHeart className="group-hover:animate-bounce" />
                       </Link>

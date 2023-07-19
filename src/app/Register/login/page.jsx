@@ -1,10 +1,9 @@
 "use client";
-import React, { useContext, useState } from "react";
-import { RiShoppingBagFill } from "react-icons/ri";
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
 import { loginSchema } from "../schemas/page";
 import RegisterNav from "../components/RegisterNav";
+import TextInputField from "@/app/common/TextInputField";
 
 const page = () => {
   const {
@@ -41,60 +40,30 @@ const page = () => {
             </h2>
           </div>
 
-          <div className="text-nutral2">
-            <label className="lableWidth font-bold capitalize " htmlFor="email">
-              email
-            </label>
-            <div className="relative">
-              <input
-                type="email"
-                name="email"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.email}
-                className={
-                  errors.email && touched.email
-                    ? "form border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                    : "form py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                }
-                placeholder="enter your email"
-              />
-              {errors.email && touched.email && (
-                <p className="absolute left-0 top-full text-small capitalize text-denger md:text-sm">
-                  {errors.email}
-                </p>
-              )}
-            </div>
-          </div>
-
-          <div className="text-nutral2">
-            <label
-              className="lableWidth font-bold capitalize "
-              htmlFor="password"
-            >
-              password
-            </label>
-            <div className="relative">
-              <input
-                type="password"
-                name="password"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.password}
-                className={
-                  errors.password && touched.password
-                    ? "form border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                    : "form bg-transparent py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                }
-                placeholder="enter your password"
-              />
-              {errors.password && touched.password && (
-                <p className="absolute left-0 top-full text-small capitalize text-denger md:text-sm">
-                  {errors.password}
-                </p>
-              )}
-            </div>
-          </div>
+          <TextInputField
+            label="Email"
+            type="email"
+            name="email"
+            id="email"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            placeholder="enter your email"
+            errors={errors.email}
+            touched={touched.email}
+            values={values.email}
+          />
+          <TextInputField
+            label="Password"
+            type="pasword"
+            name="password"
+            id="password"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            placeholder="enter your password"
+            errors={errors.password}
+            touched={touched.password}
+            values={values.password}
+          />
 
           <div className="mt-4 w-full md:mt-12">
             <button
@@ -105,7 +74,7 @@ const page = () => {
               sign in
             </button>
           </div>
-          <div className="flex items-center gap-3 justify-center">
+          <div className="flex items-center justify-center gap-3">
             <p className="text-nutral2">Don't have any account? </p>
             <span>
               <RegisterNav registerRoute="/Register" registerType="sign up" />

@@ -46,8 +46,8 @@ const NavbarMain = ({ params }) => {
           <nav className="flex w-full max-w-7xl items-center justify-between gap-2">
             <div>
               <Link href="/">
-                <h2 className="flex items-center gap-2 text-2xl font-bold uppercase text-primary">
-                  <span className="text-3xl text-primary">
+                <h2 className="flex items-center gap-2 text-3xl font-bold uppercase text-primary">
+                  <span className="text-4xl text-primary">
                     <RiShoppingBagFill />
                   </span>
                   repliq
@@ -86,13 +86,13 @@ const NavbarMain = ({ params }) => {
                 Dashboard
               </Link>
             </div>
-            <div className="flexRow gap-4">
-              {currentPath === "/Product" && (
+            {currentPath === "/Product" && (
+              <div className="flexRow gap-4">
                 <li>
                   <SearchButton />
                 </li>
-              )}
-            </div>
+              </div>
+            )}
             <div className="flexRow gap-4">
               <li className="flex items-center gap-2">
                 <Link
