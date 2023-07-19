@@ -109,7 +109,7 @@ const Cart = () => {
                         </button>
                       </div>
                       {/* <Counter setUniqueCart={setUniqueCart} uniqueCart={uniqueCart} productId={id} quantity={quantity} /> */}
-                        Quan
+                        Qnty.
                       <div className="text-xl font-bold text-primary">
                         {quantity}
                       </div>

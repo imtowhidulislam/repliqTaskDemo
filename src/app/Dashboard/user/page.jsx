@@ -23,9 +23,9 @@ const page = () => {
   };
 
   return (
-    <div>
+    <div className="">
       {users.length <= 0 ? (
-        <div className="grid place-items-center overflow-hidden">
+        <div className="grid place-items-center gap-4 overflow-hidden">
           <div className="animate-moveInLeft">
             <Image src={Empty} alt={user} width={400} height={400} />
           </div>

@@ -136,7 +136,7 @@ label {
 .grid-layout > *:last-child {
   /* background-color: #ccc9c9; */
   grid-row: 1;
-  grid-column: 3 / 13;
+  grid-column: 2 / 12;
   @apply px-0 py-5 md:px-4 md:py-8;
   /* padding-block: 2rem; */
   /* padding-inline: 1rem; */

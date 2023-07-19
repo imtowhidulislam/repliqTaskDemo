@@ -46,8 +46,6 @@ const SearchButton = () => {
     checkProductIsAvailable();
   }, [searchInput]);
 
-  console.log(searchProducts);
-  console.log(searchInput);
 
   useEffect(() => {
     focusSearch.current.focus();
@@ -59,8 +57,6 @@ const SearchButton = () => {
   const deleteSearchText = () => {
     setSearchInput("");
   };
-  console.log(searchInput);
-  console.log(searchValue);
 
   return (
     <div className="flex items-center justify-between overflow-hidden rounded-full border border-accent">
