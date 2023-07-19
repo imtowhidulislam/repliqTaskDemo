@@ -6,6 +6,9 @@ import { formSchema } from "../Register/schemas/page";
 import toast from "react-hot-toast";
 import CartContextProvider from "../context/cartContext";
 import RegisterNav from "./components/RegisterNav";
+import TextInputField from "../common/TextInputField";
+import FileInputField from "../common/FileInputField";
+import PasswordInputField from "../common/PasswordInputField";
 
 const page = () => {
   const imgRef = useRef(null);
@@ -41,7 +44,8 @@ const page = () => {
     },
   });
 
-  const handleImg = () => imgRef.current.click();
+  // const handleImg = () => imgRef.current.click();
+  const uploadImage = (e) => setFieldValue("file", e.target.files[0]);
 
   return (
     <>
@@ -57,144 +61,69 @@ const page = () => {
             </h2>
           </div>
 
-          <div className="text-nutral2">
-            <label className="lableWidth font-bold " htmlFor="first name">
-              First Name
-            </label>
-            <div className="relative">
-              <input
-                type="text"
-                name="fName"
-                id="title"
-                value={values.fName}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="enter your name"
-                className={
-                  errors.fName && touched.fName
-                    ? "form border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize placeholder:text-gray-900 md:py-1"
-                    : "form py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                }
-              />
-              {errors.fName && touched.fName && (
-                <p className="absolute left-0 top-full text-small capitalize text-denger md:text-sm">
-                  {errors.fName}
-                </p>
-              )}
-            </div>
-          </div>
+          <TextInputField
+            type="text"
+            name="fName"
+            id="fName"
+            label="First Name"
+            value={values.fName}
+            placeholder="Enter your first name"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errors={errors.fName}
+            touched={touched.fName}
+          />
 
-          <div className="text-nutral2">
-            <label className="lableWidth font-bold capitalize " htmlFor="desc">
-              last name
-            </label>
-            <div className="relative">
-              <input
-                type="text"
-                name="lName"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.lName}
-                className={
-                  errors.lName && touched.lName
-                    ? "form border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                    : "form py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                }
-                placeholder="enter your last Name"
-              />
-              {errors.lName && touched.lName && (
-                <p className="absolute left-0 top-full text-small capitalize text-denger md:text-sm">
-                  {errors.lName}
-                </p>
-              )}{" "}
-            </div>
-          </div>
-          <div className="text-nutral2">
-            <label className="lableWidth font-bold capitalize " htmlFor="email">
-              email
-            </label>
-            <div className="relative">
-              <input
-                type="email"
-                name="email"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.email}
-                className={
-                  errors.email && touched.email
-                    ? "form border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                    : "form py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                }
-                placeholder="enter your email"
-              />
-              {errors.email && touched.email && (
-                <p className="absolute left-0 top-full text-small capitalize text-denger md:text-sm">
-                  {errors.email}
-                </p>
-              )}
-            </div>
-          </div>
-          <div className="text-nutral2">
-            <label className="lableWidth font-bold capitalize " htmlFor="image">
-              Image
-            </label>
-            <div className="relative">
-              <input
-                type="file"
-                accept="image/*"
-                ref={imgRef}
-                // name="file"
-                onBlur={handleBlur}
-                onChange={(e) => setFieldValue("file", e.target.files[0])}
-                className={
-                  errors.file && touched.file
-                    ? "form hidden border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                    : "form hidden py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                }
-                placeholder="enter product Image"
-              />
-              <button
-                onClick={handleImg}
-                className="font-semibnold flex w-full items-center justify-start gap-2 rounded-md bg-slate-300/30 py-2 pl-4 text-left text-sm capitalize text-gray-400 md:py-1"
-              >
-                <RiImage2Fill className="text-xl text-primary md:text-3xl" />{" "}
-                Upload Image{" "}
-              </button>
-              {errors.file && touched.file && (
-                <p className="absolute left-0 top-full text-small capitalize text-denger md:text-sm">
-                  {errors.file}
-                </p>
-              )}
-            </div>
-          </div>
-          <div className="text-nutral2">
-            <label
-              className="lableWidth font-bold capitalize "
-              htmlFor="password"
-            >
-              password
-            </label>
-            <div className="relative">
-              <input
-                type="password"
-                name="password"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.password}
-                className={
-                  errors.password && touched.password
-                    ? "form border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                    : "form bg-transparent py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                }
-                placeholder="enter your password"
-              />
-              {errors.password && touched.password && (
-                <p className="absolute left-0 top-full text-small capitalize text-denger md:text-sm">
-                  {errors.password}
-                </p>
-              )}
-            </div>
-          </div>
+          <TextInputField
+            type="text"
+            name="lName"
+            id="lName"
+            label="Last Name"
+            value={values.lName}
+            placeholder="Enter your last name"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errors={errors.lName}
+            touched={touched.lName}
+          />
+
+          <TextInputField
+            type="email"
+            name="email"
+            id="email"
+            label="Email"
+            value={values.email}
+            placeholder="Enter your email"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errors={errors.email}
+            touched={touched.email}
+          />
+
+          <FileInputField
+            type="file"
+            btnLabel="Upload Image"
+            name="file"
+            onChange={uploadImage}
+            errors={errors.file}
+            touched={touched.file}
+            label="Image"
+            imgRef={imgRef}
+          >
+            <RiImage2Fill className="text-3xl text-primary" />
+          </FileInputField>
+
+          <PasswordInputField
+            type="password"
+            label="Password"
+            name="password"
+            values={values.password}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            placeholder="enter your password"
+            errors={errors.password}
+            touched={touched.password}
+          />
 
           <div className="mt-4 w-full md:mt-12">
             <button
@@ -206,8 +135,7 @@ const page = () => {
             </button>
           </div>
 
-          {/* <div><p className='capitalize text-gray-300'>{account}<span><button type='button' className='uppercase text-sky-400 underline cursor-pointer'>{acctionType}</button></span></p></div> */}
-          <div className="flex items-center gap-3 justify-center">
+          <div className="flex items-center justify-center gap-3">
             <p className="text-nutral2">Already have an account? </p>
             <span>
               <RegisterNav

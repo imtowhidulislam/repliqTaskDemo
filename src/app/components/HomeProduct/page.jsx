@@ -75,12 +75,19 @@ const HomeTopratedProduct = () => {
           ) : (
             <div className="ms:px-0 grid w-full grid-cols-productLayout place-items-start gap-4 overflow-hidden px-4 sm:grid-cols-productLayout">
               {topRate?.map((topProduct) => {
-                const { id, title, price, rating, image:img,category:cat } = topProduct;
+                const {
+                  id,
+                  title,
+                  price,
+                  rating,
+                  image: img,
+                  category: cat,
+                } = topProduct;
                 const titleLength = title.split(" ").slice(0, 5).join(" ");
                 return (
                   <div
                     key={id}
-                    className="card relative z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2 bg-nutral3 hover:bg-[#f5f5f5] transition-colors ease-in-out duration-100"
+                    className="card relative z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2 bg-nutral3 transition-colors duration-100 ease-in-out hover:bg-[#f5f5f5]"
                   >
                     <div className="absolute right-3 top-3">
                       <FavoriteBtn />
@@ -97,7 +104,6 @@ const HomeTopratedProduct = () => {
                           />
                         </div>
                         <div className="z-20 px-4 pb-4 pt-2 text-nutral2">
-
                           <h2 className="mt-2 text-xl font-semibold uppercase">
                             {cat}
                           </h2>
@@ -137,7 +143,7 @@ const HomeTopratedProduct = () => {
                       >
                         add to cart{" "}
                         <span>
-                          <HiShoppingCart className="text-2xl text-primary "/>
+                          <HiShoppingCart className="text-2xl text-primary " />
                         </span>
                       </button>
                     </div>

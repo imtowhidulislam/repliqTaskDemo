@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext, useRef, useState } from "react";
-import { RiShoppingBagFill,RiImage2Fill } from "react-icons/ri";
+import { RiShoppingBagFill, RiImage2Fill } from "react-icons/ri";
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
 
@@ -8,10 +8,12 @@ import CartContextProvider from "@/app/context/cartContext";
 import { useProductData } from "@/app/Data/productData";
 import { productSchema } from "@/app/Register/schemas/page";
 import NewProductProviderContext from "@/app/context/newProduct";
+import TextInputField from "@/app/common/TextInputField";
+import FileInputField from "@/app/common/FileInputField";
 
 const page = () => {
   const { data, isLoading, error } = useProductData();
-  const {product} = useContext(CartContextProvider);
+  const { product } = useContext(CartContextProvider);
   const [newProduct, setNewProduct] = product;
   const imgRef = useRef(null);
 
@@ -32,10 +34,7 @@ const page = () => {
       category: "",
     },
     validationSchema: productSchema,
-    onSubmit: async (
-      values,
-      { resetForm }
-    ) => {
+    onSubmit: async (values, { resetForm }) => {
       const userId = new Date().getTime().toString();
       const addNewProduct = { ...values, userId };
       setNewProduct([...newProduct, addNewProduct]);
@@ -46,14 +45,15 @@ const page = () => {
     },
   });
 
-  const handleImg = () => imgRef.current.click();
+  const uploadImage = (e) => setFieldValue("file", e.target.files[0]);
+  // const handleImg = () => imgRef.current.click();
 
   return (
     <>
       <div className="relative flex h-full w-full items-center justify-center overflow-y-hidden">
         <form
           onSubmit={handleSubmit}
-          className="registerForm md:mx-4 drop-shadow-lg shadow-nutral2 md:my-8 w-full max-w-md animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-nutral3 px-4 pb-6 pt-0 sm:mx-0"
+          className="registerForm w-full max-w-md animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-nutral3 px-4 pb-6 pt-0 shadow-nutral2 drop-shadow-lg sm:mx-0 md:mx-4 md:my-8"
         >
           <div className="flex items-center justify-center pb-1 text-6xl text-cyan-700"></div>
           <div className="pb-2">
@@ -62,151 +62,71 @@ const page = () => {
             </h2>
           </div>
 
-          <div className="text-nutral2">
-            <label
-              className="lableWidth font-bold "
-              htmlFor="name"
-            >
-              Name
-            </label>
-            <div className="relative">
-              <input
-                type="text"
-                id="title"
-                value={values.title}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder="enter product title"
-                className={
-                  errors.title && touched.title
-                    ? "form placeholder:text-sm text-nutral2 py-2 md:py-1 border-2 border-denger pl-4 placeholder:capitalize placeholder:text-gray-900"
-                    : "form placeholder:text-sm text-nutral2 py-2 md:py-1 pl-4 placeholder:capitalize "
-                }
-              />
-              {errors.title && touched.title && (
-                <p className="absolute left-0 top-full text-small md:text-sm capitalize text-denger">
-                  {errors.title}
-                </p>
-              )}
-            </div>
-          </div>
+          <TextInputField
+            label="Product Name"
+            type="text"
+            id="title"
+            name="title"
+            values={values.title}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errors={errors.title}
+            touched={touched.title}
+            placeholder="enter product title"
+          />
 
-          <div className="text-nutral2">
-            <label
-              className="lableWidth font-bold capitalize "
-              htmlFor="desc"
-            >
-              desc
-            </label>
-            <div className="relative">
-              <input
-                type="text"
-                name="desc"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.desc}
-                className={
-                  errors.desc && touched.desc
-                    ? "form placeholder:text-sm text-nutral2 py-2 md:py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                    : "form placeholder:text-sm text-nutral2 py-2 md:py-1 pl-4 placeholder:capitalize"
-                }
-                placeholder="enter product desc"
-              />
-              {errors.desc && touched.desc && (
-                <p className="absolute left-0 top-full text-small md:text-sm capitalize text-denger">
-                  {errors.desc}
-                </p>
-              )}{" "}
-            </div>
-          </div>
-          <div className="text-nutral2">
-            <label
-              className="lableWidth font-bold capitalize "
-              htmlFor="price"
-            >
-              price
-            </label>
-            <div className="relative">
-              <input
-                type="number"
-                name="price"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.price}
-                className={
-                  errors.price && touched.price
-                    ? "form placeholder:text-sm text-nutral2 py-2 md:py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                    : "form placeholder:text-sm text-nutral2 py-2 md:py-1 pl-4 placeholder:capitalize"
-                }
-                placeholder="enter product price"
-              />
-              {errors.price && touched.price && (
-                <p className="absolute left-0 top-full text-small md:text-sm capitalize text-denger">
-                  {errors.price}
-                </p>
-              )}
-            </div>
-          </div>
-          <div className="text-nutral2">
-            <label
-              className="lableWidth font-bold capitalize "
-              htmlFor="image"
-            >
-              Image
-            </label>
-            <div className="relative">
-              <input
-                type="file"
-                accept="image/*"
-                ref={imgRef}
-                // name="file"
-                onBlur={handleBlur}
-                onChange={(e) => setFieldValue("file", e.target.files[0])}
-                className={
-                  errors.file && touched.file
-                    ? "form placeholder:text-sm hidden py-2 md:py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                    : "form placeholder:text-sm hidden py-2 md:py-1 pl-4 placeholder:capitalize"
-                }
-                placeholder="enter product Image"
-              />
-              <button onClick={handleImg} className="capitalize text-gray-400 font-semibnold bg-slate-300/30 flex items-center justify-start gap-2 text-sm rounded-md py-2 md:py-1 pl-4 w-full text-left"><RiImage2Fill className=" text-xl md:text-3xl text-primary " /> Upload Image </button>
-              {errors.file && touched.file && (
-                <p className="absolute left-0 top-full text-small md:text-sm capitalize text-denger">
-                  {errors.file}
-                </p>
-              )}
-            </div>
-          </div>
-        <div className="text-nutral2">
-          <label
-            className="lableWidth font-bold capitalize "
-            htmlFor="categor"
+          <TextInputField
+            label="Product Desc"
+            type="text"
+            name="desc"
+            id="desc"
+            placeholder="enter product desc"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errors={errors.desc}
+            touched={touched.desc}
+          />
+
+          <TextInputField
+            label="Product Price"
+            type="number"
+            name="price"
+            id="price"
+            placeholder="enter product price"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errors={errors.price}
+            touched={touched.price}
+          />
+
+          <FileInputField
+            type="file"
+            label="Product Image"
+            name="file"
+            id="file"
+            btnLabel="Upload Product Image"
+            onChange={uploadImage}
+            onBlur={handleBlur}
+            errors={errors.file}
+            touched={touched.file}
+            imgRef={imgRef}
           >
-            Category
-          </label>
-          <div className="relative">
-            <input
-              type="text"
-              name="category"
-              onBlur={handleBlur}
-              onChange={handleChange}
-              value={values.category}
-              className={
-                errors.category && touched.category
-                  ? "form placeholder:text-sm text-nutral2 py-2 md:py-1 border-2 border-denger pl-4 placeholder:capitalize"
-                  : "form placeholder:text-sm text-nutral2 py-2 md:py-1 bg-transparent pl-4 placeholder:capitalize"
-              }
-              placeholder="enter product category"
-            />
-            {errors.category && touched.category && (
-              <p className="absolute left-0 top-full text-small md:text-sm capitalize text-denger">
-                {errors.category}
-              </p>
-            )}
-          </div>
-        </div>
+            <RiImage2Fill className="text-3xl text-primary" />
+          </FileInputField>
 
-          <div className="mt-4 md:mt-12 w-full">
+          <TextInputField
+            label="Produt Category"
+            type="text"
+            name="category"
+            id="category"
+            placeholder="enter prodcut category"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errors={errors.category}
+            touched={touched.category}
+          />
+
+          <div className="mt-4 w-full md:mt-12">
             <button
               type="submit"
               // onClick={handleSubmit}
