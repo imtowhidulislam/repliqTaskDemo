@@ -84,7 +84,6 @@ const HomeTopratedProduct = () => {
                   category: cat,
                 } = topProduct;
                 const titleLength = title.split(" ").slice(0, 5).join(" ");
-                console.log(inx);
                 return (
                   <div
                     key={id}
