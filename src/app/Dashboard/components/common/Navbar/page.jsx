@@ -40,8 +40,8 @@ const DashboardNavbar = () => {
               href={route}
               className={
                 currRoute === routeName.toLowerCase().split(" ").join("")
-                  ? "w-full cursor-pointer rounded-md bg-nutral2 px-8 py-2 text-left font-bold capitalize text-nutral3 shadow-nutral2 drop-shadow-md hover:border-transparent hover:bg-nutral3 hover:text-primary"
-                  : "w-full cursor-pointer rounded-md bg-transparent px-8 py-2 text-left font-bold capitalize text-nutral2 shadow-nutral2 drop-shadow-md hover:border-transparent hover:bg-nutral3 hover:text-primary"
+                  ? "w-full cursor-pointer rounded-md bg-nutral2  px-3 lg:px-8 py-2 text-left font-bold capitalize text-nutral3 shadow-nutral2 drop-shadow-md hover:border-transparent hover:bg-nutral3 hover:text-primary"
+                  : "w-full cursor-pointer rounded-md bg-transparent px-3 lg:px-8 py-2 text-left font-bold capitalize text-nutral2 shadow-nutral2 drop-shadow-md hover:border-transparent hover:bg-nutral3 hover:text-primary"
               }
             >
               {routeName === "dashboard" ? "products" : routeName}

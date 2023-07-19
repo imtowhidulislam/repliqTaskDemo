@@ -26,7 +26,7 @@ const Dropdown = () => {
   },[currPath])
   
   return (
-    <div className="md:mt-4 flex items-center pt-20">
+    <div className="md:mt-4 flex items-center mt-20">
       <div className="relative w-full lg:w-1/2 mx-auto">
         <button
           className="inline-flex items-center justify-between w-full rounded-md bg-nutral3 px-4 py-3 font-bold capitalize drop-shadow-md focus:text-nutral2"

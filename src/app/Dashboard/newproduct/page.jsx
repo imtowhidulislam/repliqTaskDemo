@@ -32,14 +32,14 @@ const NewProduct = () => {
                 key={id}
                 className="mb-2 animate-moveUp flex max-w-xs flex-col flex-wrap items-center justify-center gap-2 rounded-md border-2 border-nutral3 p-4 shadow-xl sm:flex-row sm:justify-between sm:gap-1"
               >
-                <div className="overflow-hidden rounded border-lime-700">
+                <div className="overflow-hidden rounded border-primary h-48 w-auto">
                   {/*  <Image
                     src={imageUrl}
                     alt={title}
                     width={300}
                     height={250}
                   />  */}
-                  <img src={imageUrl} alt="preview" />
+                  <img className="object-cover object-center aspect-square" src={imageUrl} alt="preview" />
                 </div>
                 <p className="text-sm mt-2 md:text-xl font-bold capitalize text-nutral2">
                   {title}
