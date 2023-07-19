@@ -39,7 +39,7 @@ const FileInputField = (props) => {
           />
           <button
             onClick={handleImg}
-            className="font-semibnold flex w-full items-center justify-start gap-2 rounded-md bg-slate-300/30 py-2 pl-4 text-left text-sm capitalize text-gray-400 md:py-1"
+            className="font-semibnold flex w-full items-center justify-start gap-2 rounded-md bg-baseClr1 py-2 pl-4 text-left text-sm capitalize text-gray-400 md:py-1"
           >
             {/* <RiImage2Fill className="text-xl text-primary md:text-3xl" />{" "} */}
             {children}

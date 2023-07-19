@@ -9,7 +9,7 @@ const RegisterNav = ({registerRoute,registerType}) => {
   console.log(getCurrPathOfRegisterRoute);
   return (
     <div className="">
-      <div className="flex items-center justify-between sm:flex-col pt-6 pb-0 md:py-2 gap-4">
+      <div className="flex items-center justify-between pb-0 md:py-1 gap-4">
         <Link
           className="group w-max rounded-sm bg-transparent px-2 py-1 hover:drop-shadow-md transition-all duration-200 ease-in-out  hover:border-transparent"
           href={registerRoute}
