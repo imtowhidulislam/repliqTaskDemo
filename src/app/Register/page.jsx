@@ -110,7 +110,7 @@ const page = () => {
             label="Image"
             imgRef={imgRef}
           >
-            <RiImage2Fill className="text-3xl text-primary" />
+            <RiImage2Fill className="text-2xl md:text-3xl text-primary" />
           </FileInputField>
 
           <PasswordInputField

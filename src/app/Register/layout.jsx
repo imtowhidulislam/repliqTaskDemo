@@ -3,9 +3,9 @@ import RegisterNav from "./components/RegisterNav";
 
 const RegisterLayout = ({ children }) => {
   return (
-    <div className="grid-layout1 py-8 min-h-custom-h-form container">
+    <div className="grid-layout1 container min-h-custom-h-form py-8">
       {/* <RegisterNav /> */}
-      {children}
+      <div className="mt-20 md:mt-0">{children}</div>
     </div>
   );
 };
