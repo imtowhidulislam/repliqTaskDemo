@@ -88,7 +88,7 @@ const page = () => {
           />
 
           <TextInputField
-            type="email"
+            type="text"
             name="email"
             id="email"
             label="Email"

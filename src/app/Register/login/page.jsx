@@ -42,7 +42,7 @@ const page = () => {
 
           <TextInputField
             label="Email"
-            type="email"
+            type="text"
             name="email"
             id="email"
             onChange={handleChange}
