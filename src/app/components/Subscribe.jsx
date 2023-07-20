@@ -54,7 +54,7 @@ const Subscribe = () => {
               get regular updates on our product with our newsletter.
             </h2>
           </div>
-          <form className="flex items-center drop-shadow-lg justify-center rounded-md h-full border-2 border-gray-300" action="" onSubmit={handleSubmit}>
+          <form className="flex items-center justify-center rounded-md h-full border-2 border-gray-300" action="" onSubmit={handleSubmit}>
             <div className="w-full">
               <input
                 className="w-full border-transparent outline-none rounded-md bg-transparent px-4 py-2 placeholder:text-nutral2 active:border-primary sm:border-nutral2 sm:placeholder:text-nutral2"
