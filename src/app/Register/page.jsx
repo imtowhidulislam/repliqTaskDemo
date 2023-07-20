@@ -110,7 +110,7 @@ const page = () => {
             label="Image"
             imgRef={imgRef}
           >
-            <RiImage2Fill className="text-2xl md:text-3xl text-primary" />
+            <RiImage2Fill className="text-2xl text-primary md:text-3xl" />
           </FileInputField>
 
           <PasswordInputField
@@ -133,16 +133,15 @@ const page = () => {
             >
               sign up
             </button>
-          </div>
-
-          <div className="flex items-center justify-center gap-3">
-            <p className="text-nutral2">Already have an account? </p>
-            <span>
-              <RegisterNav
-                registerRoute="/Register/login"
-                registerType="sign in"
-              />
-            </span>
+            <div className="flex items-center justify-center gap-3">
+              <p className="text-nutral2">Already have an account? </p>
+              <span>
+                <RegisterNav
+                  registerRoute="/Register/login"
+                  registerType="sign in"
+                />
+              </span>
+            </div>
           </div>
         </form>
       </div>

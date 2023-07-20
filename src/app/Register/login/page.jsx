@@ -40,18 +40,18 @@ const page = () => {
             </h2>
           </div>
 
-            <TextInputField
-              label="Email"
-              type="text"
-              name="email"
-              id="email"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              placeholder="enter your email"
-              errors={errors.email}
-              touched={touched.email}
-              values={values.email}
-            />
+          <TextInputField
+            label="Email"
+            type="text"
+            name="email"
+            id="email"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            placeholder="enter your email"
+            errors={errors.email}
+            touched={touched.email}
+            values={values.email}
+          />
           <TextInputField
             label="Password"
             type="pasword"
@@ -73,12 +73,12 @@ const page = () => {
             >
               sign in
             </button>
-          </div>
-          <div className="flex items-center justify-center gap-3">
-            <p className="text-nutral2">Don't have any account? </p>
-            <span>
-              <RegisterNav registerRoute="/Register" registerType="sign up" />
-            </span>
+            <div className="flex items-center justify-center gap-3">
+              <p className="text-nutral2">Don't have any account? </p>
+              <span>
+                <RegisterNav registerRoute="/Register" registerType="sign up" />
+              </span>
+            </div>
           </div>
           {/* <div><p className='capitalize text-gray-300'>{account}<span><button type='button' className='uppercase text-sky-400 underline cursor-pointer'>{acctionType}</button></span></p></div> */}
         </form>
