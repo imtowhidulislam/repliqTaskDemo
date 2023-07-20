@@ -73,7 +73,7 @@ const ProductDetailsPage = ({ params }) => {
 
             const titleLength = title.split(" ").slice(0, 5).join(" ");
             return (
-              <div key={id} className="my-20 min-h-custom-h-form">
+              <div key={id} className="mt-20 min-h-custom-h-form">
                 <div className="grid grid-cols-productLayout gap-0 sm:gap-4">
                   <div className="grid animate-moveInLeft place-items-center rounded-md bg-nutral3 drop-shadow-lg">
                     <Image
