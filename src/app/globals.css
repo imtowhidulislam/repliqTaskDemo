@@ -100,7 +100,7 @@ input {
   /* backdrop-filter: blur(0.5rem); */
 }
 .registerForm > *:not(:last-child) {
-  @apply mb-2 md:mb-6;
+  @apply mb-2 md:mb-3;
 }
 label {
   @apply text-small md:text-sm;
