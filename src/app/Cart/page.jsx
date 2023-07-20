@@ -52,7 +52,9 @@ const Cart = () => {
           <h2 className="cartTitle ms:text-4xl text-left font-mono text-2xl font-extrabold capitalize text-accent">
             {uniqueCart.length < 1
               ? "Your cart is empty"
-              : `Your Cart has ${cartValue.length} ${cartValue.length <= 1 ? "product" : "products"}`}
+              : `Your Cart has ${cartValue.length} ${
+                  cartValue.length <= 1 ? "product" : "products"
+                }`}
           </h2>
           <button
             type="button"
@@ -75,7 +77,6 @@ const Cart = () => {
                   key={id}
                   className="group mb-2 flex items-center justify-between gap-8 rounded-md border-b border-nutral1 bg-nutral3 p-3 shadow-nutral2 drop-shadow-md"
                 >
-
                   <div className="flex items-center gap-6">
                     <div className="h-20 w-20 overflow-hidden rounded-md">
                       <Image
@@ -109,7 +110,7 @@ const Cart = () => {
                         </button>
                       </div>
                       {/* <Counter setUniqueCart={setUniqueCart} uniqueCart={uniqueCart} productId={id} quantity={quantity} /> */}
-                        Qnty.
+                      Qnty.
                       <div className="text-xl font-bold text-primary">
                         {quantity}
                       </div>
