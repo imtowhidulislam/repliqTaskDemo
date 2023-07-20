@@ -233,8 +233,8 @@ const NavbarMain = ({ params }) => {
                           <p
                             className={
                               currentPath === "/Cart"
-                                ? "absolute -top-2 left-1 mb-1 ml-1 flex h-4 w-4 items-center justify-center rounded-full bg-pink-500 text-small font-bold text-lime-100"
-                                : "absolute -top-2 left-1 mb-1 ml-1 flex h-4 w-4 items-center justify-center rounded-full bg-pink-500 text-small font-bold text-lime-100"
+                                ? "absolute -top-2 left-1 mb-1 ml-1 flex h-4 w-4 items-center justify-center rounded-full bg-nutral2 text-small font-bold text-nutral3"
+                                : "absolute -top-2 left-1 mb-1 ml-1 flex h-4 w-4 items-center justify-center rounded-full bg-nutral2 text-small font-bold text-nutral3"
                             }
                           >
                             {cartItem.length}

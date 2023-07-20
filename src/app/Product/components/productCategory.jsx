@@ -84,9 +84,9 @@ const ProductCategory = ({
                   </div>
                   <div className="z-20 px-4 pb-4 pt-2 text-nutral2">
 
-                    <h2 className="mt-2 text-xl font-semibold uppercase">{cat}</h2>
+                    <h2 className="mt-2 text-base font-semibold uppercase">{cat}</h2>
                     <div>
-                      <h2 className="sm:text-lg">
+                      <h2 className="sm:text-lg line-clamp-1">
                         {" "}
                         {title.split(" ").length <= 5
                           ? `${titleLength}`
@@ -117,7 +117,7 @@ const ProductCategory = ({
                 <button
                   type="button"
                   onClick={() => getProduct(id)}
-                  className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary bg-transparent  px-4 py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-nutral3 hover:text-primary hover:drop-shadow-md"
+                  className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border border-primary bg-transparent  px-4 py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-nutral3 hover:text-primary hover:drop-shadow-md"
                 >
                   add to cart{" "}
                   <span>

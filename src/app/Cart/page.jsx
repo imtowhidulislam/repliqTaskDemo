@@ -48,7 +48,7 @@ const Cart = () => {
   return (
     <div className="cartHeight py-16">
       <div className="container p-2 sm:p-4 md:p-0 ">
-        <div className="mb-8 flex items-center justify-between gap-4 sm:gap-20">
+        <div className="mb-8 flex items-start justify-between flex-col sm:items-center sm:flex-row gap-4 sm:gap-20">
           <h2 className="cartTitle ms:text-4xl text-left font-mono text-2xl font-extrabold capitalize text-accent">
             {uniqueCart.length < 1
               ? "Your cart is empty"
