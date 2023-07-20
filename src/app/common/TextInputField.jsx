@@ -19,10 +19,10 @@ const TextInputField = ( props ) => {
     <>
 
       <div className="text-nutral2">
-        <label className="lableWidth font-bold " htmlFor="first name">
+        <label className="lableWidth font-bold" htmlFor="first name">
           {label}
         </label>
-        <div className="relative">
+        <div className="relative ">
           <input
             type={type}
             name={name}
@@ -33,12 +33,13 @@ const TextInputField = ( props ) => {
             placeholder={placeholder}
             className={
               errors && touched
-                ? "form border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize placeholder:text-gray-900 md:py-1"
-                : "form py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
+                ? `form border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize placeholder:text-gray-900 md:py-1 ${errors && 'mb-3'}`
+                : `form py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1 ${errors && 'mb-3'}`
             }
           />
+          
           {errors && touched && (
-            <p className="absolute left-0 top-full text-small capitalize text-denger md:text-sm">
+            <p className="absolute left-0 top-[75%] text-small capitalize text-denger md:text-sm">
               {errors}
             </p>
           )}

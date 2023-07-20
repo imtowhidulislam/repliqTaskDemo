@@ -30,23 +30,23 @@ const FileInputField = (props) => {
             name={name}
             onBlur={onBlur}
             onChange={onChange}
-            className={
-              errors && touched
-                ? "form hidden border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                : "form hidden py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-            }
+            className="hidden "
             placeholder="enter product Image"
           />
           <button
             onClick={handleImg}
-            className="font-semibnold flex w-full items-center justify-start gap-2 rounded-md bg-baseClr1 py-2 pl-4 text-left text-sm capitalize text-gray-400 md:py-1"
+            className={
+              errors && touched
+                ? `form border-2 border-denger placeholder:text-sm placeholder:capitalize font-semibnold flex w-full items-center justify-start gap-2 rounded-md bg-baseClr1 py-2 pl-4 text-left text-sm capitalize text-gray-400 md:py-1 ${errors && 'mb-5'}`
+                : `form placeholder:text-sm placeholder:capitalize font-semibnold flex w-full items-center justify-start gap-2 rounded-md bg-baseClr1 py-2 pl-4 text-left text-sm capitalize text-gray-400 md:py-1 ${errors && 'mb-5'}`
+            }
           >
             {/* <RiImage2Fill className="text-xl text-primary md:text-3xl" />{" "} */}
             {children}
             {btnLabel}
           </button>
           {errors && touched && (
-            <p className="absolute left-0 top-full text-small capitalize text-denger md:text-sm">
+            <p className="absolute mb-2 left-0 top-[92%] text-small capitalize text-denger md:text-sm">
               {errors}
             </p>
           )}
