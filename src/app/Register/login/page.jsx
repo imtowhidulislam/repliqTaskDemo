@@ -40,18 +40,18 @@ const page = () => {
             </h2>
           </div>
 
-          <TextInputField
-            label="Email"
-            type="text"
-            name="email"
-            id="email"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            placeholder="enter your email"
-            errors={errors.email}
-            touched={touched.email}
-            values={values.email}
-          />
+            <TextInputField
+              label="Email"
+              type="text"
+              name="email"
+              id="email"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder="enter your email"
+              errors={errors.email}
+              touched={touched.email}
+              values={values.email}
+            />
           <TextInputField
             label="Password"
             type="pasword"
