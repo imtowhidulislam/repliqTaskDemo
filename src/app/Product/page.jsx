@@ -4,6 +4,7 @@ import ProductCategory from "./components/productCategory";
 import ProductOfList from "./components/ProductOfList";
 import { useQuery } from "@tanstack/react-query";
 import { HiOutlineArrowUpCircle, HiArrowUpCircle } from "react-icons/hi2";
+import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 // import { useProductData } from "../Data/productData";
 import CartContextProvider from "../context/cartContext";
 import Loading from "./loading";
@@ -23,6 +24,7 @@ const Page = () => {
   const [button, setButton] = useState([]);
   const [filterProduct, setFilterProduct] = useState("All");
 
+  // !! Fetching Data from API.
   const fetchData = async () => {
     const res = await fetch("https://fakestoreapi.com/products");
     const data = await res.json();
@@ -35,6 +37,7 @@ const Page = () => {
     return data;
   };
 
+  // ?? Setting up the Data using TanStack Query.
   const { data, isLoading, error } = useQuery({
     queryKey: ["productData"],
     queryFn: fetchData,
@@ -48,7 +51,6 @@ const Page = () => {
   };
 
   // !! Fetching the Unique Category Product >>>
-
   const handleClick = (e) => {
     setFilterProduct(e.target.dataset.name);
   };

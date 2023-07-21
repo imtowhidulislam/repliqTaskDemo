@@ -40,7 +40,7 @@ const NavbarMain = ({ params }) => {
   };
 
   return (
-    <div className="fixed left-0 top-0 z-50 w-full bg-nutral1 md:relative md:bg-transparent">
+    <div className="fixed left-0 top-0 z-[999] w-full bg-nutral1 md:relative md:bg-transparent">
       <div className="container py-4">
         {width > 768 ? (
           <nav className="flex w-full max-w-7xl items-center justify-between gap-2">
@@ -140,7 +140,7 @@ const NavbarMain = ({ params }) => {
             </div>
           </nav>
         ) : (
-          <nav className="relative z-20 flex w-full max-w-7xl items-center justify-between gap-4">
+          <nav className="relative flex w-full max-w-7xl items-center justify-between gap-4">
             <div>
               <h2 className="flex items-center gap-2 text-2xl font-bold uppercase text-primary">
                 <span className="text-primary">
@@ -149,14 +149,14 @@ const NavbarMain = ({ params }) => {
                 repliq
               </h2>
             </div>
-            <div className="cursor-pointer" onClick={handleToggle}>
+            <div className="cursor-pointer z-[110]" onClick={handleToggle}>
               {toggleNav ? <FaBars /> : <RxCross1 />}
             </div>
             <div
               className={
                 toggleNav
-                  ? "mobileNav top fixed left-0 z-50 bg-[#1e1e1c89] px-4 py-20 backdrop-blur-md backdrop-filter sm:px-32"
-                  : "mobileNav-active top fixed left-0 z-50 bg-[#1e1e1c89] px-4 py-20 backdrop-blur-md backdrop-filter sm:px-32 "
+                  ? "mobileNav z-[-100] top fixed left-0 bg-[#1e1e1c89] px-4 py-20 backdrop-blur-md backdrop-filter sm:px-32"
+                  : "mobileNav-active z-[-100] top fixed left-0 bg-[#1e1e1c89] px-4 py-20 backdrop-blur-md backdrop-filter sm:px-32 "
               }
             >
               <div className="">

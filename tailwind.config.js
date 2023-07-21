@@ -10,7 +10,8 @@ module.exports = {
       colors : {
         // primary : "#0f51f7",
         primary : "#2b57c5",
-        accent : "#1aab7f",
+        // accent : "#1aab7f",
+        accent : "#0B7D5B",
         baseClr1 : "#f0f2f7",
         denger: "#f05959",
         nutral1 : "#ba9e9f",

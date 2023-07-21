@@ -77,10 +77,10 @@ const Cart = () => {
                   key={id}
                   className="group mb-2 flex items-center justify-between gap-8 rounded-md border-b border-nutral1 bg-nutral3 p-3 shadow-nutral2 drop-shadow-md"
                 >
-                  <div className="flex items-center gap-6">
-                    <div className="h-20 w-20 overflow-hidden rounded-md">
+                  <div className="flex items-center gap-4">
+                    <div className="h-20 shrink-0 w-20 overflow-hidden rounded-md">
                       <Image
-                        className="aspect-square h-20 object-cover object-center"
+                        className="aspect-square h-full object-cover object-center"
                         src={image}
                         alt="image"
                         width={80}
@@ -88,7 +88,7 @@ const Cart = () => {
                       />
                     </div>
                     <div>
-                      <h2 className="text-left text-xs font-bold capitalize text-nutral2 md:text-base">
+                      <h2 className="text-left text-xs font-semibold capitalize text-nutral2 md:text-base">
                         {title}
                       </h2>
                       <h2 className="py-1 text-left text-xs font-bold capitalize text-nutral2 md:text-xl">

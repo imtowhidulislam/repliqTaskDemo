@@ -49,8 +49,8 @@ const Dashboard = () => {
                 key={id}
                 className={`border z-0 mb-2 flex animate-moveUp items-center justify-between gap-8 rounded-md border-baseClr1 bg-nutral3 p-3 drop-shadow-md delay-[${setDelay}]`}
               >
-                <div className="flex items-center gap-2 md:gap-8">
-                  <div className="h-20 w-20 overflow-hidden rounded-md">
+                <div className="flex items-center gap-3 md:gap-8">
+                  <div className="h-20 shrink-0 w-20 overflow-hidden rounded-md">
                     <Image
                       className="h-20 w-full object-center object-cover aspect-square"
                       src={image}

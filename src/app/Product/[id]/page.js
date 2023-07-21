@@ -84,7 +84,7 @@ const ProductDetailsPage = ({ params }) => {
                       height={350}
                     />
                     <div className="items-cener my-4 flex  justify-between gap-3">
-                      <div className="grid h-16 w-16 md:h-24 md:w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
+                      <div className="grid h-16 w-16 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1 md:h-24 md:w-24">
                         <Image
                           className="aspect-square object-cover object-center"
                           src={img}
@@ -93,7 +93,7 @@ const ProductDetailsPage = ({ params }) => {
                           height={50}
                         />
                       </div>
-                      <div className="grid h-16 w-16 md:h-24 md:w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
+                      <div className="grid h-16 w-16 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1 md:h-24 md:w-24">
                         <Image
                           className="aspect-square object-cover object-center"
                           src={img}
@@ -102,7 +102,7 @@ const ProductDetailsPage = ({ params }) => {
                           height={50}
                         />
                       </div>
-                      <div className="grid h-16 w-16 md:h-24 md:w-24 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1">
+                      <div className="grid h-16 w-16 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1 md:h-24 md:w-24">
                         <Image
                           className="aspect-square object-cover object-center"
                           src={img}
@@ -113,8 +113,8 @@ const ProductDetailsPage = ({ params }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="z-20  flex items-start flex-col justify-center animate-moveInRight px-1 md:px-4 pb-4 pt-4 text-gray-700">
-                    <h2 className="text-pimary capitalize max-w-lg text-xl font-semibold text-nutral2">
+                  <div className="z-20  flex animate-moveInRight flex-col items-start justify-center px-1 pb-4 pt-4 text-gray-700 md:px-4">
+                    <h2 className="text-pimary max-w-lg text-xl font-semibold capitalize text-nutral2">
                       {cat}
                     </h2>
                     <div>
@@ -140,15 +140,31 @@ const ProductDetailsPage = ({ params }) => {
                         <span className="text-xl font-bold text-nutral2">
                           {rating.rate}
                         </span>
-                          <HiStar className='text-yellow-500 text-2xl font-bold'/>
+                        <HiStar className="text-2xl font-bold text-yellow-500" />
                       </p>
                     </div>
-
+                    <div className="my-2 grid gap-2">
+                      <p className="text-base font-bold capitalize">choose size:</p>
+                      <div className="flex gap-4 text-base font-bold capitalize text-nutral3">
+                        <p className="grid h-8 w-8 place-items-center rounded-lg text-nutral2 bg-nutral2/20">
+                          s
+                        </p>
+                        <p className="grid h-8 w-8 place-items-center rounded-lg bg-accent/80 ">
+                          m
+                        </p>
+                        <p className="grid h-8 w-8 place-items-center rounded-lg text-nutral2 bg-nutral2/20">
+                          l
+                        </p>
+                        <p className="grid h-8 w-8 place-items-center rounded-lg text-nutral2 bg-nutral2/20">
+                          xl
+                        </p>
+                      </div>
+                    </div>
                     <div className="items-justify-center mt-4 flex w-full  gap-4 ">
                       <button
                         type="button"
                         onClick={() => getProduct(id)}
-                        className="group flex max-w-sm w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary text-primary bg-transparent  px-4 py-2 text-sm font-bold capitalize drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
+                        className="group flex w-full max-w-sm cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary bg-transparent px-4  py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
                       >
                         add to cart{" "}
                         <span>
@@ -156,7 +172,7 @@ const ProductDetailsPage = ({ params }) => {
                         </span>
                       </button>
                       <Link
-                        className="group grid w-24 place-items-center bg-baseClr1/75 rounded-md text-2xl text-[#949393f1] shadow-nutral2 drop-shadow-md "
+                        className="group grid w-24 place-items-center rounded-md bg-baseClr1/75 text-2xl text-[#949393f1] shadow-nutral2 drop-shadow-md "
                         href="#"
                       >
                         <HiHeart className="group-hover:animate-bounce" />
@@ -172,7 +188,9 @@ const ProductDetailsPage = ({ params }) => {
 
       <div className="mb-4 grid place-items-center">
         <Link href="/Product" className="">
-          <button className="flex max-w-sm w-full cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary text-primary bg-transparent  px-4 py-2 text-sm font-bold capitalize drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md">Back To Product</button>
+          <button className="flex w-full max-w-sm cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary bg-transparent px-4  py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md">
+            Back To Product
+          </button>
         </Link>
       </div>
     </div>

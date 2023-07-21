@@ -37,7 +37,7 @@ const Footer = () => {
   }, [newsletterUser]);
 
   return (
-    <div className="bg-nutral3 px-4 py-8 mt-1">
+    <div className="bg-nutral3 px-4 py-8">
       <div className="container">
         <div className="mb-10 flex items-center justify-start text-6xl text-gray-100">
           <div>

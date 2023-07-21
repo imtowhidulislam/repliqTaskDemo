@@ -37,7 +37,6 @@ const SearchButton = () => {
     const findSomeProductStatus = product.filter((item) =>
       item.title.toLowerCase().includes(`${searchInput}`)
     );
-    console.log(findSomeProductStatus);
     setSearchProducts(findSomeProductStatus);
     return findSomeProductStatus;
   };

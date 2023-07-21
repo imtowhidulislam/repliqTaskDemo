@@ -69,12 +69,12 @@ const page = () => {
             <button
               type="submit"
               // onClick={handleSubmit}
-              className="w-full cursor-pointer rounded-md border-2 border-nutral1 bg-transparent px-8 py-2 text-base font-bold capitalize text-nutral2 transition-all duration-200 ease-out hover:border-transparent hover:bg-accent hover:text-nutral2"
+              className="w-full cursor-pointer rounded-md border-2 border-nutral1 bg-transparent px-8 py-2 text-base font-bold capitalize text-nutral2 transition-all duration-200 ease-out hover:border-transparent hover:bg-accent hover:text-nutral3"
             >
               sign in
             </button>
             <div className="flex items-center justify-center gap-3">
-              <p className="text-nutral2">Don't have any account? </p>
+              <p className="text-nutral2 text-sm md:text-base">Don't have any account? </p>
               <span>
                 <RegisterNav registerRoute="/Register" registerType="sign up" />
               </span>

@@ -87,7 +87,7 @@ const HomeTopratedProduct = () => {
                 return (
                   <div
                     key={id}
-                    className={`card relative z-10 flex h-full animate-moveUp flex-col items-center justify-between gap-2 bg-nutral3 transition-colors duration-100 ease-in-out hover:bg-[#f5f5f5]`}
+                    className={`card relative z-10 flex h-max animate-moveUp flex-col items-center justify-between gap-2 bg-nutral3 transition-colors duration-100 ease-in-out hover:bg-[#f5f5f5]`}
                   >
                     <div className="absolute right-3 top-3">
                       <FavoriteBtn />
@@ -118,8 +118,8 @@ const HomeTopratedProduct = () => {
                           <div className="flex items-center justify-between gap-4 py-2">
                             <h2>
                               {" "}
-                              <span className="text-xl font-bold text-primary">
-                                {price}$
+                              <span className="text-lg font-bold text-primary">
+                                $ {price}
                               </span>
                             </h2>
                             <p className="text-base">
