@@ -40,7 +40,7 @@ const page = () => {
       const userId = new Date().getTime().toString();
       const newUser = { ...values, userId };
       setUsers([...users, newUser]);
-      resetForm();
+      // resetForm();
       toast.success("Submitted successfully");
     },
   });
@@ -110,6 +110,7 @@ const page = () => {
             touched={touched.file}
             label="Image"
             imgRef={imgRef}
+            imgName={values.file?.name}
           >
             <RiImage2Fill className="text-2xl text-primary md:text-3xl" />
           </FileInputField>

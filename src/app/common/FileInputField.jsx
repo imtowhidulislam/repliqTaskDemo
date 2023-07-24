@@ -42,7 +42,7 @@ const FileInputField = (props) => {
                 ? `form font-semibnold flex w-full items-center justify-start gap-2 rounded-md border-2 border-denger bg-baseClr1 py-2 pl-4 text-left text-sm capitalize text-gray-400 placeholder:text-sm placeholder:capitalize md:py-1 ${
                     errors && "mb-5"
                   }`
-                : `form font-semibnold flex w-full items-center justify-start gap-2 rounded-md bg-baseClr1 py-2 pl-4 text-left text-sm capitalize text-gray-400 placeholder:text-sm placeholder:capitalize md:py-1 ${
+                : `form font-semibnold flex w-full items-center justify-start gap-2 rounded-md bg-baseClr1 py-2 pl-4 text-left text-sm capitalize text-gray-600 placeholder:text-sm placeholder:capitalize md:py-1 ${
                     errors && "mb-5"
                   }`
             }

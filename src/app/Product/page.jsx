@@ -23,6 +23,7 @@ const Page = () => {
   const [productValue, setProductValue] = useState([]);
   const [button, setButton] = useState([]);
   const [filterProduct, setFilterProduct] = useState("All");
+  const [jsonData, setJsonData] = useState([]);
 
   // !! Fetching Data from API.
   const fetchData = async () => {
@@ -42,7 +43,6 @@ const Page = () => {
     queryKey: ["productData"],
     queryFn: fetchData,
   });
-
   // !!! Back To Top
   const handleTop = () => {
     sectionRef.current?.scrollIntoView({

@@ -39,7 +39,7 @@ const page = () => {
       const userId = new Date().getTime().toString();
       const addNewProduct = { ...values, userId };
       setNewProduct([...newProduct, addNewProduct]);
-      resetForm();
+      // resetForm();
       toast.success("New Product Added");
     },
   });
