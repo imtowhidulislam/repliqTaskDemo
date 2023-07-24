@@ -170,7 +170,7 @@ const ProductDetailsPage = ({ params }) => {
                         classNames="group flex w-full max-w-sm cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary bg-transparent px-4  py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
                       >
                         <span>
-                          <HiShoppingCart className="text-2xl text-primary group-hover:animate-cartAnimate" />
+                          <HiShoppingCart className="text-2xl text-primary" />
                         </span>
                       </ButtonFilled>
                       {/* <button
