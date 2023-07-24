@@ -34,8 +34,8 @@ const TextInputField = ( props ) => {
             placeholder={placeholder}
             className={
               errors && touched
-                ? `form border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize placeholder:text-gray-900 md:py-1 ${errors && 'mb-2'}`
-                : `form py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1 ${errors && 'mb-2'}`
+                ? `form border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize placeholder:text-gray-900 text-sm md:py-1 ${errors && 'mb-2'}`
+                : `form py-2 text-sm pl-4 placeholder:text-sm placeholder:capitalize md:py-1 ${errors && 'mb-2'}`
             }
           />
           
