@@ -51,6 +51,8 @@ module.exports = {
         moveInRight: "moveInRight .5s ease-in-out 1 forwards",
         cartAnimate: "cartAnimate 1s ease-in-out infinite forwards",
         cartDeleteBtnAnimate: "cartDeleteBtnAnimate .4s ease-in-out 1 forwards",
+        mobileNavIn : "mobileNavIn .5s ease-in-out 1 frowards",  
+        mobileNavOut : "mobileNavOut .5s ease-in-out 1 frowards"  
       },
       keyframes: {
         bounce: {
@@ -90,6 +92,14 @@ module.exports = {
             opacity: 1,
           },
         },
+        mobileNavIn : {
+          "0%" : {transform: "translateX(0%)" , opacity: 0},
+          "100%" : {transform: "translateX(-100%)" , opacity: 1},
+        },
+        mobileNavOut : {
+          "0%" : {inset : "0% 0% 0% 30%" , opacity: 1},
+          "100%" : {inset : "0% 0% 0% 100%" , opacity : 0}
+        }
       },
     },
   },
