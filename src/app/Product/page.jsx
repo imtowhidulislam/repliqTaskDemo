@@ -167,9 +167,9 @@ const Page = () => {
         {filterProduct === "All" && <Pagination product={data} />}
       </div>
       {/* Move to Top Button. */}
-      <div className="fixed bottom-5 left-3/4 z-50 w-full">
+      <div className="fixed bottom-5 left-[90%] z-50 w-full">
         <button
-          className="rounded-full border-2 border-nutral3 p-1"
+          className="rounded-full border-2 border-nutral2 p-1"
           onClick={handleTop}
         >
           {backToTop ? (

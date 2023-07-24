@@ -221,6 +221,6 @@ label {
 
 /* *** Top Btn Style Start */
 .topBtn {
-  @apply animate-pulse text-3xl font-bold text-baseClr1;
+  @apply animate-pulse text-3xl font-bold text-nutral2;
 }
 /* *** Top Btn Style End */
