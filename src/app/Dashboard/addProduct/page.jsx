@@ -10,6 +10,7 @@ import { productSchema } from "@/app/Register/schemas/page";
 import NewProductProviderContext from "@/app/context/newProduct";
 import TextInputField from "@/app/common/TextInputField";
 import FileInputField from "@/app/common/FileInputField";
+import ButtonFilled from "../../common/ButtonFilled";
 
 const page = () => {
   const { data, isLoading, error } = useProductData();
@@ -38,13 +39,12 @@ const page = () => {
       const userId = new Date().getTime().toString();
       const addNewProduct = { ...values, userId };
       setNewProduct([...newProduct, addNewProduct]);
-      console.log(values);
-      console.log(values.file.name);
       resetForm();
       toast.success("New Product Added");
     },
   });
 
+  console.log(values);
   const uploadImage = (e) => setFieldValue("file", e.target.files[0]);
   // const handleImg = () => imgRef.current.click();
 
@@ -53,7 +53,7 @@ const page = () => {
       <div className="relative flex h-full w-full items-center justify-center overflow-y-hidden">
         <form
           onSubmit={handleSubmit}
-          className="registerForm w-full max-w-md animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-nutral3 px-4 pb-6 pt-0 shadow-nutral2 drop-shadow-lg sm:mx-0 md:mx-4 md:my-8"
+          className="registerForm w-full max-w-md animate-moveUp overflow-hidden bg-nutral3 rounded-md border border-gray-200  px-4 pb-6 pt-0 shadow-nutral2 drop-shadow-lg sm:mx-0 md:mx-4 md:my-8"
         >
           <div className="flex items-center justify-center pb-1 text-6xl text-cyan-700"></div>
           <div className="pb-2">
@@ -106,12 +106,13 @@ const page = () => {
             id="file"
             btnLabel="Upload Product Image"
             onChange={uploadImage}
-            onBlur={handleBlur}
+            // onBlur={handleBlur}
             errors={errors.file}
             touched={touched.file}
             imgRef={imgRef}
+            imgName={values.file?.name}
           >
-            <RiImage2Fill className="text-2xl md:text-3xl text-primary" />
+            <RiImage2Fill className="text-2xl text-primary md:text-3xl" />
           </FileInputField>
 
           <TextInputField
@@ -127,13 +128,11 @@ const page = () => {
           />
 
           <div className="mt-4 w-full md:mt-12">
-            <button
-              type="submit"
-              // onClick={handleSubmit}
-              className="w-full cursor-pointer rounded-md border-2 border-nutral1 bg-transparent px-8 py-2 text-base font-bold capitalize text-nutral2 transition-all duration-200 ease-out hover:border-transparent hover:bg-accent hover:text-nutral3"
-            >
-              Create Product
-            </button>
+            <ButtonFilled
+              btnLebel="create product"
+              btnType="submit"
+              classNames="w-full cursor-pointer rounded-md border-2 border-nutral2 bg-transparent px-8 py-2 text-base font-bold capitalize text-nutral2 transition-all duration-200 ease-out hover:border-transparent hover:bg-accent hover:text-nutral3"
+            />
           </div>
 
           {/* <div><p className='capitalize text-gray-300'>{account}<span><button type='button' className='uppercase text-sky-400 underline cursor-pointer'>{acctionType}</button></span></p></div> */}

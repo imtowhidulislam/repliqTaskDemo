@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import Image from "next/image";
 import CartContextProvider from "@/app/context/cartContext";
 import Link from "next/link";
-import { ButtonOutlined } from "@/app/Util/ButtonOutlined";
+import ButtonOutlined from "@/app/common/ButtonOutlined";
 import EmptyProduct from "../../../../public/emptyImg2.svg";
 
 const NewProduct = () => {
@@ -21,16 +21,12 @@ const NewProduct = () => {
 
             const [imageUrl, setImageurl] = useState(null);
             const reader = new FileReader();
-            console.log(reader);
             reader.readAsDataURL(file);
             reader.onload = () => setImageurl(reader.result);
 
             return (
-              <div
-                key={id}
-                className="mb-2 max-w-md animate-moveUp rounded-md border-2 border-nutral3 p-4 shadow-xl sm:flex-row sm:justify-between sm:gap-1"
-              >
-                <div className="h-48 w-auto overflow-hidden rounded border-primary">
+              <div key={id} className="border border-nutral3 p-2 rounded-md md:flex md:items-center w-max shadow-md gap-4 md:p-5 md:rounded-lg md:border-none md:bg-nutral3/60 md:justify-center">
+                <div className="max-w-[150px] overflow-hidden rounded md:rounded-lg md:drop-shadow-md border-primary">
                   {/*  <Image
                     src={imageUrl}
                     alt={title}
@@ -38,13 +34,13 @@ const NewProduct = () => {
                     height={250}
                   />  */}
                   <img
-                    className="aspect-square h-auto object-cover object-center"
+                    className="aspect-square object-cover object-center"
                     src={imageUrl}
                     alt="preview"
                   />
                 </div>
-                <div className="py-4">
-                  <div className="flex items-center justify-between gap-2 w-full ">
+                <div className="py-4 md:py-0">
+                  <div className="flex w-full flex-col justify-start gap-2 ">
                     <p className="mt-2 text-sm font-bold capitalize text-nutral2 md:text-xl">
                       {title}
                     </p>
@@ -62,15 +58,15 @@ const NewProduct = () => {
                       </p>
                     </p>
                   </div>
-                </div>
-                <div className="mt-4 w-full shadow-nutral2 drop-shadow-md">
-                  <button
-                    type="button"
-                    onClick={() => handleRemoveUser(id)}
-                    className="w-full cursor-pointer rounded-full border-2 border-primary bg-transparent px-4 py-2 text-sm font-bold capitalize text-primary transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-lg "
-                  >
-                    add Product
-                  </button>
+                  <div className="mt-4 w-full shadow-nutral2 drop-shadow-md">
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveUser(id)}
+                      className="w-full cursor-pointer rounded-full border-2 border-primary bg-transparent px-4 py-2 text-sm font-bold capitalize text-primary transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-lg "
+                    >
+                      add Product
+                    </button>
+                  </div>
                 </div>
               </div>
             );
@@ -93,7 +89,7 @@ const NewProduct = () => {
                 className="w-full shadow-nutral2 drop-shadow-md"
                 href="/Dashboard/addProduct"
               >
-                <ButtonOutlined btnText="Add New Product" />
+                <ButtonOutlined btnLabel="Add New Product" btnType="button" />
               </Link>
             </div>
           </div>

@@ -1,5 +1,6 @@
 "use client"
 import React from "react";
+import PropTypes from "prop-types";
 
 const TextInputField = ( props ) => {
   const {
@@ -48,5 +49,18 @@ const TextInputField = ( props ) => {
     </>
   );
 };
+
+// ?? Defining the data type of every props;
+TextInputField.propTypes = {
+  type : PropTypes.string,
+  name : PropTypes.string,
+  id : PropTypes.string,
+  label : PropTypes.string,
+  placeholder : PropTypes.string,
+  onChange : PropTypes.func,
+  onBlur : PropTypes.func,
+  touched : PropTypes.bool,
+  errors : PropTypes.bool
+}
 
 export default TextInputField;

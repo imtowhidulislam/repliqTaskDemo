@@ -1,9 +1,9 @@
 "use client";
-import { ButtonOutlined } from "@/app/Util/ButtonOutlined";
+import ButtonOutlined from "@/app/common/ButtonOutlined";
 import CartContextProvider from "@/app/context/cartContext";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext,useState } from "react";
+import React, { useContext, useState } from "react";
 import Empty from "../../../../public/emptyImg1.svg";
 import { toast } from "react-hot-toast";
 
@@ -30,11 +30,14 @@ const page = () => {
             <Image src={Empty} alt={user} width={400} height={400} />
           </div>
           <div className="grid place-items-center">
-            <h2 className="py-4 text-2xl font-bold text-center md:text-left">
+            <h2 className="py-4 text-center text-2xl font-bold md:text-left">
               User not found, Create first.
             </h2>
-            <Link className="w-full drop-shadow-md shadow-nutral2" href="/Register">
-              <ButtonOutlined btnText="Create user" />
+            <Link
+              className="w-full shadow-nutral2 drop-shadow-md"
+              href="/Register"
+            >
+              <ButtonOutlined btnLabel="Create user" btnType="button" />
             </Link>
           </div>
         </div>
@@ -43,7 +46,7 @@ const page = () => {
           const { userId: id, fName, email, file } = user;
           const [imageUrl, setImageurl] = useState(null);
           const reader = new FileReader();
-          
+
           reader.readAsDataURL(file);
           reader.onload = () => {
             setImageurl(reader.result);
@@ -52,16 +55,20 @@ const page = () => {
           return (
             <div
               key={id}
-              className="mb-2 animate-moveInRight flex flex-col flex-wrap items-center justify-center gap-2 rounded-md border-2 border-gray-300 p-4 shadow-lg sm:flex-row sm:justify-between sm:gap-1"
+              className="mb-2 flex animate-moveInRight flex-col flex-wrap items-center justify-center gap-2 rounded-md border-2 border-gray-300 p-4 shadow-lg sm:flex-row sm:justify-between sm:gap-1"
             >
-              <div className="w-12 h-12 overflow-hidden rounded-full border-2 border-primary">
+              <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-primary">
                 {/* <Image
                   src={`/${image?.name}`}
                   alt={fName}
                   width={50}
                   height={50}
                 /> */}
-                <img className="objejct-cover aspect-square object-center" src={imageUrl} alt="preview" />
+                <img
+                  className="objejct-cover object-center` aspect-square"
+                  src={imageUrl}
+                  alt="preview"
+                />
               </div>
               <p className="text-xl font-bold capitalize text-primary">
                 {fName}

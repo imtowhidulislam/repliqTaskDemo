@@ -1,5 +1,4 @@
 "use client";
-import { ButtonFilled, ButtonOutlined } from "@/app/Util/ButtonOutlined";
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext, useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
@@ -9,6 +8,7 @@ import { HiHeart, HiStar } from "react-icons/hi2";
 import CartContextProvider from "@/app/context/cartContext";
 import { HiShoppingCart } from "react-icons/hi";
 import { toast } from "react-hot-toast";
+import ButtonFilled from "@/app/common/ButtonFilled";
 
 const ProductDetailsPage = ({ params }) => {
   const { cart } = useContext(CartContextProvider);
@@ -84,7 +84,7 @@ const ProductDetailsPage = ({ params }) => {
                       height={350}
                     />
                     <div className="items-cener my-4 flex  justify-between gap-3">
-                      <div className="grid h-16 rounded-md shadow-md w-16 place-items-center overflow-hidden bg-baseClr1 p-1 md:h-24 md:w-24">
+                      <div className="grid h-16 w-16 place-items-center overflow-hidden rounded-md bg-baseClr1 p-1 shadow-md md:h-24 md:w-24">
                         <Image
                           className="aspect-square object-cover object-center"
                           src={img}
@@ -93,7 +93,7 @@ const ProductDetailsPage = ({ params }) => {
                           height={50}
                         />
                       </div>
-                      <div className="grid h-16 rounded-md shadow-md w-16 place-items-center overflow-hidden bg-baseClr1 p-1 md:h-24 md:w-24">
+                      <div className="grid h-16 w-16 place-items-center overflow-hidden rounded-md bg-baseClr1 p-1 shadow-md md:h-24 md:w-24">
                         <Image
                           className="aspect-square object-cover object-center"
                           src={img}
@@ -102,7 +102,7 @@ const ProductDetailsPage = ({ params }) => {
                           height={50}
                         />
                       </div>
-                      <div className="grid h-16 rounded-md shadow-md w-16 place-items-center overflow-hidden bg-baseClr1 p-1 md:h-24 md:w-24">
+                      <div className="grid h-16 w-16 place-items-center overflow-hidden rounded-md bg-baseClr1 p-1 shadow-md md:h-24 md:w-24">
                         <Image
                           className="aspect-square object-cover object-center"
                           src={img}
@@ -163,7 +163,17 @@ const ProductDetailsPage = ({ params }) => {
                       </div>
                     </div>
                     <div className="items-justify-center mt-4 flex w-full  gap-4 ">
-                      <button
+                      <ButtonFilled
+                        btnLebel="add to cart"
+                        btnType="button"
+                        onClick={() => getProduct(id)}
+                        classNames="group flex w-full max-w-sm cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary bg-transparent px-4  py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
+                      >
+                        <span>
+                          <HiShoppingCart className="text-2xl text-primary group-hover:animate-cartAnimate" />
+                        </span>
+                      </ButtonFilled>
+                      {/* <button
                         type="button"
                         onClick={() => getProduct(id)}
                         className="group flex w-full max-w-sm cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary bg-transparent px-4  py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
@@ -172,10 +182,10 @@ const ProductDetailsPage = ({ params }) => {
                         <span>
                           <HiShoppingCart className="text-2xl text-primary group-hover:animate-cartAnimate" />
                         </span>
-                      </button>
+                      </button> */}
                       <Link
                         className="group grid w-24 place-items-center rounded-md bg-baseClr1/75 text-2xl text-[#949393f1] shadow-nutral2 drop-shadow-md "
-                        href="#"
+                        href="/Cart"
                       >
                         <HiHeart className="group-hover:animate-bounce" />
                       </Link>

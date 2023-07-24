@@ -4,10 +4,14 @@ import React, { useEffect, useState } from "react";
 import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { toast } from "react-hot-toast";
 import Loading from "../loading";
 import { HiShoppingCart, HiOutlineHeart, HiHeart } from "react-icons/hi";
 import FavoriteBtn from "./FavoriteBtn";
+import ButtonFilled from "@/app/common/ButtonFilled";
+
+const LazyComponent = dynamic(() => import("../../common/LazyComponent"));
 
 const ProductOfList = ({ product, isLoading, cart, setCart }) => {
   // const [productData, setProductData] = useState([]);
@@ -59,15 +63,8 @@ const ProductOfList = ({ product, isLoading, cart, setCart }) => {
               </div>
               <Link href={`/Product/${id}`} className="">
                 <div>
-                  <div className="m-auto mb-4 h-60 max-w-xs p-4">
-                    <Image
-                      className="objece-center block aspect-square h-60 object-cover"
-                      src={img}
-                      alt=""
-                      width={300}
-                      height={400}
-                    />
-                  </div>
+                  <LazyComponent img={img} />
+
                   <div className="z-20 px-4 pb-4 pt-2 text-nutral2">
                     <h2 className="mt-2 text-base font-semibold uppercase">
                       {cat}
@@ -98,25 +95,21 @@ const ProductOfList = ({ product, isLoading, cart, setCart }) => {
                 </div>
               </Link>
               <div className="flex w-full items-center justify-between px-4 pb-4">
-                {/* <Button actionType="add to card" />
-                                <Button actionType="buy now" /> */}
-
-                <button
-                  type="button"
+                <ButtonFilled
+                  btnLebel="add to cart"
+                  btnType="button"
                   onClick={() => getProduct(id)}
-                  className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border border-primary bg-transparent  px-4 py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-nutral3 hover:text-primary hover:drop-shadow-md"
+                  classNames="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border border-primary bg-transparent  px-4 py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-nutral3 hover:text-primary hover:drop-shadow-md"
                 >
-                  add to cart{" "}
                   <span>
                     <HiShoppingCart className="text-2xl text-primary " />
                   </span>
-                </button>
+                </ButtonFilled>
               </div>
             </div>
           );
         })
       )}
-      
     </>
   );
 };

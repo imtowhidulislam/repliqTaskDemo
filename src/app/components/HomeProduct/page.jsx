@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { useProductData } from "../../Data/productData";
@@ -9,6 +10,8 @@ import CartContextProvider from "@/app/context/cartContext";
 import Loading from "@/app/product/loading";
 import FavoriteBtn from "@/app/Product/components/FavoriteBtn";
 import { HiShoppingCart } from "react-icons/hi";
+import ButtonFilled from "@/app/common/ButtonFilled";
+const LazyComponent = dynamic(() => import("../../common/LazyComponent"));
 
 const HomeTopratedProduct = () => {
   const { cart } = useContext(CartContextProvider);
@@ -37,6 +40,7 @@ const HomeTopratedProduct = () => {
     queryFn: fetchData,
   });
 
+  console.log(data);
   const addToCart = (id) => {
     try {
       const fetchCartItem = data?.find((item) => {
@@ -74,7 +78,7 @@ const HomeTopratedProduct = () => {
             <h2 className="text-center text-2xl font-bold">Loading...</h2>
           ) : (
             <div className="ms:px-0 grid w-full grid-cols-productLayout place-items-center gap-4 overflow-hidden px-4 sm:grid-cols-productLayout">
-              {topRate?.map((topProduct,inx) => {
+              {topRate?.map((topProduct, inx) => {
                 const {
                   id,
                   title,
@@ -94,21 +98,13 @@ const HomeTopratedProduct = () => {
                     </div>
                     <Link href={`/Product/${id}`} className="">
                       <div>
-                        <div className="m-auto mb-4 h-60 max-w-xs p-4">
-                          <Image
-                            className="objece-center block aspect-square h-60 object-cover"
-                            src={img}
-                            alt=""
-                            width={300}
-                            height={400}
-                          />
-                        </div>
+                        <LazyComponent img={img} />
                         <div className="z-20 px-4 pb-4 pt-2 text-nutral2">
                           <h2 className="mt-2 text-base font-semibold uppercase">
                             {cat}
                           </h2>
                           <div>
-                            <h2 className="sm:text-lg line-clamp-1">
+                            <h2 className="line-clamp-1 sm:text-lg">
                               {" "}
                               {title.split(" ").length <= 5
                                 ? `${titleLength}`
@@ -133,19 +129,16 @@ const HomeTopratedProduct = () => {
                       </div>
                     </Link>
                     <div className="flex w-full items-center justify-between px-4 pb-4">
-                      {/* <Button actionType="add to card" />
-                                <Button actionType="buy now" /> */}
-
-                      <button
-                        type="button"
+                      <ButtonFilled
+                        btnType="button"
+                        btnLebel="add to cart"
                         onClick={() => addToCart(id)}
-                        className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border border-primary bg-transparent  px-4 py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-nutral3 hover:text-primary hover:drop-shadow-md"
+                        classNames="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-md border border-primary bg-transparent  px-4 py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-nutral3 hover:text-primary hover:drop-shadow-md"
                       >
-                        add to cart{" "}
                         <span>
                           <HiShoppingCart className="text-2xl text-primary " />
                         </span>
-                      </button>
+                      </ButtonFilled>
                     </div>
                   </div>
                 );

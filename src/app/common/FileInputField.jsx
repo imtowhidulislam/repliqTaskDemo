@@ -1,4 +1,5 @@
 import React, { Children } from "react";
+import PropTypes from "prop-types";
 
 const FileInputField = (props) => {
   const {
@@ -7,6 +8,7 @@ const FileInputField = (props) => {
     label = "",
     name = "",
     imgRef,
+    imgName,
     children,
     onBlur = () => {},
     onChange = () => {},
@@ -28,7 +30,7 @@ const FileInputField = (props) => {
             accept="image/*"
             ref={imgRef}
             name={name}
-            onBlur={onBlur}
+            // onBlur={onBlur}
             onChange={onChange}
             className="hidden "
             placeholder="enter product Image"
@@ -47,7 +49,7 @@ const FileInputField = (props) => {
           >
             {/* <RiImage2Fill className="text-xl text-primary md:text-3xl" />{" "} */}
             {children}
-            {btnLabel}
+            {imgName ? imgName : btnLabel}
           </button>
           {errors && touched && (
             <p className="absolute left-0 top-[92%] mb-2 text-small capitalize text-denger md:text-sm">
@@ -59,5 +61,18 @@ const FileInputField = (props) => {
     </>
   );
 };
+
+FileInputField.propTypes = {
+  type : PropTypes.string,
+  label : PropTypes.string,
+  btnLabel : PropTypes.string,
+  name : PropTypes.string,
+  onChange : PropTypes.func,
+  onBlur : PropTypes.func,
+  errors : PropTypes.bool,
+  touched : PropTypes.bool,
+  imgRef : PropTypes.func,
+  imgName : PropTypes.object,
+}
 
 export default FileInputField;

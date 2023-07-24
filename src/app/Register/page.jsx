@@ -9,6 +9,7 @@ import RegisterNav from "./components/RegisterNav";
 import TextInputField from "../common/TextInputField";
 import FileInputField from "../common/FileInputField";
 import PasswordInputField from "../common/PasswordInputField";
+import ButtonFilled from "../common/ButtonFilled";
 
 const page = () => {
   const imgRef = useRef(null);
@@ -126,15 +127,16 @@ const page = () => {
           />
 
           <div className="mt-8 w-full md:mt-12">
-            <button
-              type="submit"
-              // onClick={handleSubmit}
-              className="w-full cursor-pointer rounded-md border-2 border-nutral1 bg-transparent px-8 py-2 text-base font-bold capitalize text-nutral2 transition-all duration-200 ease-out hover:border-transparent hover:bg-accent hover:text-nutral3"
-            >
-              sign up
-            </button>
+            <ButtonFilled
+              classNames="w-full cursor-pointer rounded-md border-2 border-nutral2 bg-transparent px-8 py-2 text-base font-bold capitalize text-nutral2 transition-all duration-200 ease-out hover:border-transparent hover:bg-accent hover:text-nutral3"
+              btnLebel="sign up"
+              btnType="submit"
+            />
+            
             <div className="flex items-center justify-center gap-3">
-              <p className="text-nutral2 text-sm md:text-base">Already have an account? </p>
+              <p className="text-sm text-nutral2 md:text-base">
+                Already have an account?{" "}
+              </p>
               <span className="">
                 <RegisterNav
                   registerRoute="/Register/login"
