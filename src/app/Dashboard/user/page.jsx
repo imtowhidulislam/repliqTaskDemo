@@ -11,7 +11,7 @@ const page = () => {
   const { user } = useContext(CartContextProvider);
   const [users, setUsers] = user;
 
-  const handleRemoveUser = (id) => {
+  /* const handleRemoveUser = (id) => {
     try {
       const showUser = users.filter(user => user);
       const removingUser = users.filter((item) => item.userId !== id);
@@ -20,7 +20,7 @@ const page = () => {
     } catch (error) {
       toast.error("User not found");
     }
-  };
+  }; */
 
   return (
     <div className="">
@@ -54,14 +54,14 @@ const page = () => {
               key={id}
               className="mb-2 animate-moveInRight flex flex-col flex-wrap items-center justify-center gap-2 rounded-md border-2 border-gray-300 p-4 shadow-lg sm:flex-row sm:justify-between sm:gap-1"
             >
-              <div className="w-12 overflow-hidden rounded-full border-2 border-primary">
+              <div className="w-12 h-12 overflow-hidden rounded-full border-2 border-primary">
                 {/* <Image
                   src={`/${image?.name}`}
                   alt={fName}
                   width={50}
                   height={50}
                 /> */}
-                <img className="objejct-cover object-center h-12 w-full" src={imageUrl} alt="preview" />
+                <img className="objejct-cover aspect-square object-center" src={imageUrl} alt="preview" />
               </div>
               <p className="text-xl font-bold capitalize text-primary">
                 {fName}
@@ -69,7 +69,7 @@ const page = () => {
               <p className="break-words text-small font-bold capitalize sm:text-base sm:font-semibold">
                 {email}
               </p>
-              <div>
+              {/* <div>
                 <button
                   type="button"
                   onClick={() => handleRemoveUser(id)}
@@ -77,7 +77,7 @@ const page = () => {
                 >
                   Remove
                 </button>
-              </div>
+              </div> */}
             </div>
           );
         })

@@ -28,7 +28,7 @@ const page = () => {
 
   return (
     <>
-      <div className="relative flex h-full w-full items-start justify-start overflow-y-hidden md:justify-center">
+      <div className="relative flex h-full w-full items-start justify-center overflow-y-hidden ">
         <form
           onSubmit={handleSubmit}
           className="registerForm w-full max-w-md animate-moveUp overflow-hidden rounded-md border border-gray-200 bg-baseClr1/70 px-4 pb-6 pt-0 shadow-nutral2 drop-shadow-lg sm:mx-0 md:mx-4 md:my-8"
@@ -65,7 +65,7 @@ const page = () => {
             values={values.password}
           />
 
-          <div className="mt-4 w-full md:mt-12">
+          <div className="mt-8 w-full md:mt-12">
             <button
               type="submit"
               // onClick={handleSubmit}

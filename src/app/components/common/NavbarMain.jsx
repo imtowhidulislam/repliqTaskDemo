@@ -155,8 +155,8 @@ const NavbarMain = ({ params }) => {
             <div
               className={
                 toggleNav
-                  ? "mobileNav z-[-100] top fixed left-0 bg-[#1e1e1c89] px-4 py-20 backdrop-blur-md backdrop-filter sm:px-32"
-                  : "mobileNav-active z-[-100] top fixed left-0 bg-[#1e1e1c89] px-4 py-20 backdrop-blur-md backdrop-filter sm:px-32 "
+                  ? "mobileNav z-[-100] top-0 fixed left-0 bg-[#1e1e1c89] px-4 py-20 backdrop-blur-md backdrop-filter sm:px-32"
+                  : "mobileNav-active z-[-100] top-0 fixed left-0 bg-[#1e1e1c89] px-4 py-20 backdrop-blur-md backdrop-filter sm:px-32"
               }
             >
               <div className="">

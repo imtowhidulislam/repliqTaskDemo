@@ -77,14 +77,14 @@ const ProductDetailsPage = ({ params }) => {
                 <div className="grid grid-cols-productLayout gap-0 sm:gap-4">
                   <div className="grid animate-moveInLeft place-items-center rounded-md bg-nutral3 drop-shadow-lg">
                     <Image
-                      className="m-4 aspect-square rounded-md bg-gray-100 object-cover object-center"
+                      className="m-4 aspect-square rounded-md object-cover object-center"
                       src={img}
                       alt=""
                       width={350}
                       height={350}
                     />
                     <div className="items-cener my-4 flex  justify-between gap-3">
-                      <div className="grid h-16 w-16 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1 md:h-24 md:w-24">
+                      <div className="grid h-16 rounded-md shadow-md w-16 place-items-center overflow-hidden bg-baseClr1 p-1 md:h-24 md:w-24">
                         <Image
                           className="aspect-square object-cover object-center"
                           src={img}
@@ -93,7 +93,7 @@ const ProductDetailsPage = ({ params }) => {
                           height={50}
                         />
                       </div>
-                      <div className="grid h-16 w-16 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1 md:h-24 md:w-24">
+                      <div className="grid h-16 rounded-md shadow-md w-16 place-items-center overflow-hidden bg-baseClr1 p-1 md:h-24 md:w-24">
                         <Image
                           className="aspect-square object-cover object-center"
                           src={img}
@@ -102,7 +102,7 @@ const ProductDetailsPage = ({ params }) => {
                           height={50}
                         />
                       </div>
-                      <div className="grid h-16 w-16 place-items-center overflow-hidden rounded-sm bg-baseClr1 p-1 md:h-24 md:w-24">
+                      <div className="grid h-16 rounded-md shadow-md w-16 place-items-center overflow-hidden bg-baseClr1 p-1 md:h-24 md:w-24">
                         <Image
                           className="aspect-square object-cover object-center"
                           src={img}
@@ -144,18 +144,20 @@ const ProductDetailsPage = ({ params }) => {
                       </p>
                     </div>
                     <div className="my-2 grid gap-2">
-                      <p className="text-base font-bold capitalize">choose size:</p>
+                      <p className="text-base font-bold capitalize">
+                        choose size:
+                      </p>
                       <div className="flex gap-4 text-base font-bold capitalize text-nutral3">
-                        <p className="grid h-8 w-8 place-items-center rounded-lg text-nutral2 bg-nutral2/20">
+                        <p className="grid h-8 w-8 place-items-center rounded-lg bg-nutral2/20 text-nutral2">
                           s
                         </p>
                         <p className="grid h-8 w-8 place-items-center rounded-lg bg-accent/80 ">
                           m
                         </p>
-                        <p className="grid h-8 w-8 place-items-center rounded-lg text-nutral2 bg-nutral2/20">
+                        <p className="grid h-8 w-8 place-items-center rounded-lg bg-nutral2/20 text-nutral2">
                           l
                         </p>
-                        <p className="grid h-8 w-8 place-items-center rounded-lg text-nutral2 bg-nutral2/20">
+                        <p className="grid h-8 w-8 place-items-center rounded-lg bg-nutral2/20 text-nutral2">
                           xl
                         </p>
                       </div>

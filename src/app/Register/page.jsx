@@ -125,7 +125,7 @@ const page = () => {
             touched={touched.password}
           />
 
-          <div className="mt-4 w-full md:mt-12">
+          <div className="mt-8 w-full md:mt-12">
             <button
               type="submit"
               // onClick={handleSubmit}

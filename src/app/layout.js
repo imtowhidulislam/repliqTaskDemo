@@ -22,7 +22,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
           <CartProvider>
-          <NavbarMain/>
+            <Navbar />
+          {/* <NavbarMain/> */}
             <QueryClientProvider client={queryClient} >
               {/* <main> */}
                 {children}

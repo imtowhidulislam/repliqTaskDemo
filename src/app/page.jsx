@@ -25,7 +25,7 @@ export default function Home() {
     <>
       <div>
         <div>
-          <div className="z-10 mt-16 overflow-hidden py-12 md:mt-0">
+          <div className="z-10 mt-16 overflow-hidden py-12 md:py-20 md:mt-0">
             <header className="container z-0 grid grid-cols-homepageLayoutHero1 place-items-center gap-12 md:gap-16 lg:gap-20">
               <div className="z-0 animate-moveUp">
                 <div>
