@@ -89,7 +89,7 @@ const page = () => {
 
           <TextInputField
             label="Product Price"
-            type="number"
+            type="text"
             name="price"
             id="price"
             placeholder="enter product price"
