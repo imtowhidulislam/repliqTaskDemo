@@ -158,8 +158,8 @@ const NavbarMain = ({ params }) => {
             <div
               className={
                 !toggleNav
-                  ? "fixed inset-y-0 right-0 w-3/4 bg-nutral2/20 backdrop-blur-md px-12 py-28 transition-all duration-500 ease-in-out md:static md:px-4 md:py-4"
-                  : "fixed inset-y-0 -right-full w-3/4 bg-nutral2/20 backdrop-blur-md px-12 py-28 transition-all delay-100 duration-500 ease-in-out md:bg-transparent md:px-4 md:py-0"
+                  ? "fixed inset-y-0 right-0 w-3/4 bg-nutral2/50 backdrop-blur-md px-12 py-28 transition-all duration-500 ease-in-out md:static md:px-4 md:py-4"
+                  : "fixed inset-y-0 -right-full w-3/4 bg-nutral2/50 backdrop-blur-md px-12 py-28 transition-all delay-100 duration-500 ease-in-out md:bg-transparent md:px-4 md:py-0"
               }
             >
               <div className="">
@@ -168,8 +168,8 @@ const NavbarMain = ({ params }) => {
                     onClick={toggleMobNav}
                     className={
                       currentPath === "/"
-                        ? "navLink navList text-nutral3"
-                        : "navLink navList"
+                        ? "navLink navList text-primary"
+                        : "navLink navList  text-nutral3"
                     }
                     href="/"
                   >
@@ -179,8 +179,8 @@ const NavbarMain = ({ params }) => {
                     onClick={toggleMobNav}
                     className={
                       currentPath === "/Product"
-                        ? "navLink navList text-nutral3"
-                        : "navLink navList"
+                        ? "navLink navList text-primary"
+                        : "navLink navList text-nutral3"
                     }
                     href="/Product"
                   >
@@ -190,8 +190,8 @@ const NavbarMain = ({ params }) => {
                     onClick={toggleMobNav}
                     className={
                       currentPath === "/Dashboard"
-                        ? "navLink navList text-nutral3"
-                        : "navLink navList"
+                        ? "navLink navList text-primary"
+                        : "navLink navList text-nutral3"
                     }
                     href="/Dashboard"
                   >
@@ -202,8 +202,8 @@ const NavbarMain = ({ params }) => {
                       onClick={toggleMobNav}
                       className={
                         currentPath === "/Register"
-                          ? "flex font-bold items-center text-nutral3"
-                          : "flex font-bold items-center"
+                          ? "flex font-bold items-center text-primary"
+                          : "flex font-bold items-center text-nutral3"
                       }
                       href="/Register"
                     >
@@ -219,8 +219,8 @@ const NavbarMain = ({ params }) => {
                       onClick={toggleMobNav}
                       className={
                         currentPath === "/Cart"
-                          ? "flex items-center font-bold text-nutral3"
-                          : "flex items-center font-bold"
+                          ? "flex items-center font-bold text-primary"
+                          : "flex items-center font-bold text-nutral3"
                       }
                       href="/Cart"
                     >
