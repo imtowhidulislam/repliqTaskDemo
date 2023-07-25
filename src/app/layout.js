@@ -2,11 +2,11 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
-import Navbar from './components/common/Navbar'
-import Footer from './components/common/Footer'
-import NavbarMain from './components/common/NavbarMain'
-import FooterMain from './components/common/FooterMain'
-import { CartProvider } from './context/cartContext'
+import Navbar from '../components/common/Navbar'
+import Footer from '../components/common/Footer'
+import NavbarMain from '../components/common/NavbarMain'
+import FooterMain from '../components/common/FooterMain'
+import { CartProvider } from '../context/cartContext'
 import { Toaster } from 'react-hot-toast'
 
 const inter = Inter({ subsets: ['latin'] })

@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import { useProductData } from "../Data/productData";
+import { useProductData } from "../../Data/productData";
 
 const Loading = () => {
   const { data } = useProductData();

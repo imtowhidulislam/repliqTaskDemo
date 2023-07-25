@@ -3,8 +3,8 @@ import { useFormik } from "formik";
 import toast from "react-hot-toast";
 import { loginSchema } from "../schemas/page";
 import RegisterNav from "../components/RegisterNav";
-import TextInputField from "@/app/common/TextInputField";
-import ButtonFilled from "../../common/ButtonFilled";
+import TextInputField from "../../../common/TextInputField";
+import ButtonFilled from "../../../common/ButtonFilled";
 
 const page = () => {
   const {
@@ -77,7 +77,7 @@ const page = () => {
                 Don't have any account?{" "}
               </p>
               <span>
-                <RegisterNav registerRoute="/Register" registerType="sign up" />
+                <RegisterNav registerRoute="/register" registerType="sign up" />
               </span>
             </div>
           </div>

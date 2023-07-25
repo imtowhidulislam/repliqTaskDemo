@@ -87,7 +87,7 @@ const NewProduct = () => {
               </h2>
               <Link
                 className="w-full shadow-nutral2 drop-shadow-md"
-                href="/Dashboard/addProduct"
+                href="/dashboard/addproduct"
               >
                 <ButtonOutlined btnLabel="Add New Product" btnType="button" />
               </Link>

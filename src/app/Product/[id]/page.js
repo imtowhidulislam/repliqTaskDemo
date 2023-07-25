@@ -5,10 +5,10 @@ import { FaStar } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import { HiHeart, HiStar } from "react-icons/hi2";
-import CartContextProvider from "@/app/context/cartContext";
+import CartContextProvider from "../../../context/cartContext";
 import { HiShoppingCart } from "react-icons/hi";
 import { toast } from "react-hot-toast";
-import ButtonFilled from "@/app/common/ButtonFilled";
+import ButtonFilled from "../../../common/ButtonFilled";
 
 const ProductDetailsPage = ({ params }) => {
   const { cart } = useContext(CartContextProvider);
@@ -187,7 +187,7 @@ const ProductDetailsPage = ({ params }) => {
                       </button> */}
                       <Link
                         className="group grid w-24 place-items-center rounded-md bg-baseClr1/75 text-2xl text-[#949393f1] shadow-nutral2 drop-shadow-md "
-                        href="/Cart"
+                        href="/cart"
                       >
                         <HiHeart className="group-hover:animate-bounce" />
                       </Link>
@@ -201,7 +201,7 @@ const ProductDetailsPage = ({ params }) => {
       </div>
 
       <div className="my-6 md:my-0 md:mt-8 md:mb-8 grid place-items-center">
-        <Link href="/Product" className="">
+        <Link href="/product" className="">
           <ButtonFilled
             btnLebel="back to product"
             btnType="button"

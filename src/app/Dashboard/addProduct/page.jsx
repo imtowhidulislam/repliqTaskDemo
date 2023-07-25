@@ -4,13 +4,13 @@ import { RiShoppingBagFill, RiImage2Fill } from "react-icons/ri";
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
 
-import CartContextProvider from "@/app/context/cartContext";
-import { useProductData } from "@/app/Data/productData";
-import { productSchema } from "@/app/Register/schemas/page";
-import NewProductProviderContext from "@/app/context/newProduct";
-import TextInputField from "@/app/common/TextInputField";
-import FileInputField from "@/app/common/FileInputField";
-import ButtonFilled from "../../common/ButtonFilled";
+import CartContextProvider from "../../../context/cartContext";
+import { useProductData } from "../../../Data/productData";
+import { productSchema } from "../../register/schemas/page";
+import NewProductProviderContext from "../../../context/newProduct";
+import TextInputField from "../../../common/TextInputField";
+import FileInputField from "../../../common/FileInputField";
+import ButtonFilled from "../../../common/ButtonFilled";
 
 const page = () => {
   const { data, isLoading, error } = useProductData();

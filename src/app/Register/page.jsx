@@ -2,14 +2,14 @@
 import React, { useContext, useRef, useState } from "react";
 import { RiShoppingBagFill, RiImage2Fill } from "react-icons/ri";
 import { useFormik } from "formik";
-import { formSchema } from "../Register/schemas/page";
+import { formSchema } from "./schemas/page";
 import toast from "react-hot-toast";
 import CartContextProvider from "../context/cartContext";
 import RegisterNav from "./components/RegisterNav";
-import TextInputField from "../common/TextInputField";
-import FileInputField from "../common/FileInputField";
-import PasswordInputField from "../common/PasswordInputField";
-import ButtonFilled from "../common/ButtonFilled";
+import TextInputField from "../../common/TextInputField";
+import FileInputField from "../../common/FileInputField";
+// import PasswordInputField from "../common/PasswordInputField";
+import ButtonFilled from "../../common/ButtonFilled";
 
 const page = () => {
   const imgRef = useRef(null);
@@ -140,7 +140,7 @@ const page = () => {
               </p>
               <span className="">
                 <RegisterNav
-                  registerRoute="/Register/login"
+                  registerRoute="/register/login"
                   registerType="sign in"
                 />
               </span>

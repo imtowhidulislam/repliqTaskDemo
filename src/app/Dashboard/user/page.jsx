@@ -35,7 +35,7 @@ const page = () => {
             </h2>
             <Link
               className="w-full shadow-nutral2 drop-shadow-md"
-              href="/Register"
+              href="/register"
             >
               <ButtonOutlined btnLabel="Create user" btnType="button" />
             </Link>

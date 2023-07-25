@@ -5,13 +5,13 @@ import { RiH2 } from "react-icons/ri";
 import ImageOne from "../../public/shopping.svg";
 // import ImageTwo from "../..public/imageTwo.svg"
 import Link from "next/link";
-import TopratedProduct from "./components/TopratedProduct";
+import TopratedProduct from "../components/TopratedProduct";
 import { useQuery } from "@tanstack/react-query";
-import Subscribe from "./components/Subscribe";
+import Subscribe from "../components/Subscribe";
 import { HiOutlineArrowCircleUp } from "react-icons/hi";
-import HomeTopratedProduct from "./components/HomeProduct/page";
-import CartContextProvider from "./context/cartContext";
-import { useProductData } from "./Data/productData";
+import HomeTopratedProduct from "../components/HomeProduct/page";
+import CartContextProvider from "../context/cartContext";
+import { useProductData } from "../Data/productData";
 // import CounterOne from "./components/CounterOne";
 // import CounterTwo from "./components/CounterTwo";
 
@@ -45,7 +45,7 @@ export default function Home() {
                 </p>
                 <div className="">
                   <li className=" flex w-max cursor-pointer justify-start rounded-full bg-nutral3 px-8 py-3 font-extrabold text-nutral2 drop-shadow-md transition-colors duration-300 ease-in-out hover:bg-primary  hover:text-nutral3">
-                    <Link href="/Product">
+                    <Link href="/product">
                       <button className="flex items-center justify-between gap-2 capitalize">
                         shop now{" "}
                         <HiOutlineArrowCircleUp className="animate-pulse text-xl" />{" "}

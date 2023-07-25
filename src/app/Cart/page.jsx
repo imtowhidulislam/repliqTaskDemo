@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useContext, useRef, useState } from "react";
 import { HiArchiveBoxXMark } from "react-icons/hi2";
-import CartContextProvider from "../context/cartContext";
+import CartContextProvider from "../../context/cartContext";
 import Image from "next/image";
 import { toast } from "react-hot-toast";
-import Counter from "../components/Counter";
+import Counter from "../../components/Counter";
 
 const Cart = () => {
   const { cart } = useContext(CartContextProvider);

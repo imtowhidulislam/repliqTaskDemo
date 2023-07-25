@@ -61,7 +61,7 @@ const ProductOfList = ({ product, isLoading, cart, setCart }) => {
               <div className="absolute right-3 top-3">
                 <FavoriteBtn />
               </div>
-              <Link href={`/Product/${id}`} className="">
+              <Link href={`/product/${id}`} className="">
                 <div>
                   <LazyComponent img={img} />
 

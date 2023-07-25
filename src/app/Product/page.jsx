@@ -6,9 +6,9 @@ import { useQuery } from "@tanstack/react-query";
 import { HiOutlineArrowUpCircle, HiArrowUpCircle } from "react-icons/hi2";
 import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 // import { useProductData } from "../Data/productData";
-import CartContextProvider from "../context/cartContext";
+import CartContextProvider from "../../context/cartContext";
 import Loading from "./loading";
-import { buttonData } from "../Data/buttonData";
+import {buttonData} from "../../Data/buttonData"
 import Example from "./components/productDropDown";
 import Pagination from "./components/Pagination";
 

@@ -75,7 +75,7 @@ const ProductCategory = ({
               <div className="absolute right-3 top-3">
                 <FavoriteBtn />
               </div>
-              <Link href={`/Product/${id}`} className="">
+              <Link href={`/product/${id}`} className="">
                 <div>
                   <LazyComponent img={img} />
                   <div className="z-20 px-4 pb-4 pt-2 text-nutral2">
