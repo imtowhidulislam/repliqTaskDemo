@@ -72,7 +72,7 @@ const page = () => {
               btnType="submit"
               classNames="w-full cursor-pointer rounded-md border-2 border-nutral2 bg-transparent px-8 py-2 text-base font-bold capitalize text-nutral2 transition-all duration-200 ease-out hover:border-transparent hover:bg-accent hover:text-nutral3"
             />
-            <div className="flex items-center justify-center gap-3">
+            <div className="flex items-center justify-center gap-2">
               <p className="text-sm text-nutral2 md:text-base">
                 Don't have any account?{" "}
               </p>

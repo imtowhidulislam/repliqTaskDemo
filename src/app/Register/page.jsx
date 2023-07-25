@@ -134,7 +134,7 @@ const page = () => {
               btnType="submit"
             />
             
-            <div className="flex items-center justify-center gap-3">
+            <div className="flex items-center justify-center gap-2">
               <p className="text-sm text-nutral2 md:text-base">
                 Already have an account?{" "}
               </p>

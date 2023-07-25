@@ -6,8 +6,8 @@ export const formSchema = yup.object().shape({
   lName: yup.string().required("last name is required"),
   email: yup
     .string()
-    .email("email is required")
-    .required("Please enter a valid Email"),
+    .email("Please enter a valid email")
+    .required("Email is required"),
   file: yup.mixed().required("Image is required"),
   password: yup
     .string()
@@ -28,6 +28,6 @@ export const loginSchema = yup.object().shape({
   email: yup
     .string()
     .email("Invalid email address")
-    .required("Please enter a valid Email"),
+    .required("Email is required"),
   password: yup.string().required("Password is required"),
 });
