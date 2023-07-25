@@ -150,7 +150,7 @@ const NavbarMain = ({ params }) => {
               </h2>
             </div>
             <div
-              className="z-[110] cursor-pointer md:hidden"
+              className="z-[110] cursor-pointer md:hidden text-nutral3 font-bold"
               onClick={handleToggle}
             >
               {toggleNav ? <FaBars /> : <RxCross1 />}
