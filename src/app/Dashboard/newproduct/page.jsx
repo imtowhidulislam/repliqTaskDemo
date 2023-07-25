@@ -1,9 +1,9 @@
 "use client";
 import React, { useContext, useState } from "react";
 import Image from "next/image";
-import CartContextProvider from "@/app/context/cartContext";
+import CartContextProvider from "../../../context/cartContext";
 import Link from "next/link";
-import ButtonOutlined from "@/app/common/ButtonOutlined";
+import ButtonOutlined from "../../../common/ButtonOutlined";
 import EmptyProduct from "../../../../public/emptyImg2.svg";
 
 const NewProduct = () => {

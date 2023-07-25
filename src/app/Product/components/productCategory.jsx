@@ -8,9 +8,9 @@ import { toast } from "react-hot-toast";
 import Loading from "../loading";
 import FavoriteBtn from "./FavoriteBtn";
 import { HiShoppingCart } from "react-icons/hi";
-import ButtonFilled from "@/app/common/ButtonFilled";
+import ButtonFilled from "../../../common/ButtonFilled";
 
-const LazyComponent = dynamic(() => import("../../common/LazyComponent"));
+const LazyComponent = dynamic(() => import("../../../common/LazyComponent"));
 
 const ProductCategory = ({
   product,

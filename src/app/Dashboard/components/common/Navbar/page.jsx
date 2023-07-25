@@ -7,22 +7,22 @@ import { usePathname } from "next/navigation";
 const dashBoard = [
   {
     id: 1,
-    route: "/Dashboard",
+    route: "/dashboard",
     routeName: "dashboard",
   },
   {
     id: 2,
-    route: "/Dashboard/addProduct",
+    route: "/dashboard/addproduct",
     routeName: "Add Product",
   },
   {
     id: 3,
-    route: "/Dashboard/user",
+    route: "/dashboard/user",
     routeName: "User",
   },
   {
     id: 4,
-    route: "/Dashboard/newproduct",
+    route: "/dashboard/newproduct",
     routeName: "New Product",
   },
 ];

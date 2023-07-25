@@ -1,6 +1,6 @@
 "use client";
-import ButtonOutlined from "@/app/common/ButtonOutlined";
-import CartContextProvider from "@/app/context/cartContext";
+import ButtonOutlined from "../../../common/ButtonOutlined";
+import CartContextProvider from "../../../context/cartContext";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext, useState } from "react";

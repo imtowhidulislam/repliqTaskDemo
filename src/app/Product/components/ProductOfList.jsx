@@ -9,9 +9,9 @@ import { toast } from "react-hot-toast";
 import Loading from "../loading";
 import { HiShoppingCart, HiOutlineHeart, HiHeart } from "react-icons/hi";
 import FavoriteBtn from "./FavoriteBtn";
-import ButtonFilled from "@/app/common/ButtonFilled";
+import ButtonFilled from "../../../common/ButtonFilled";
 
-const LazyComponent = dynamic(() => import("../../common/LazyComponent"));
+const LazyComponent = dynamic(() => import("../../../common/LazyComponent"));
 
 const ProductOfList = ({ product, isLoading, cart, setCart }) => {
   // const [productData, setProductData] = useState([]);

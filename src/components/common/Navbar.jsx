@@ -7,7 +7,7 @@ import { FaBars } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import { BsCartPlus } from "react-icons/bs";
 import SearchButton from "../SearchButton";
-import CartContextProvider from "@/app/context/cartContext";
+import CartContextProvider from "../../context/cartContext";
 import { usePathname } from "next/navigation";
 
 const NavbarMain = ({ params }) => {

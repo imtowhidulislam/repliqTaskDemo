@@ -12,6 +12,7 @@ const SearchButton = () => {
   const [searchInput, setSearchInput] = useState("");
   const [searchValue, setSearchValue] = useState("");
 
+  console.log(searchProducts);
   const fetchData = async () => {
     const res = await fetch("https://fakestoreapi.com/products");
     const data = await res.json();

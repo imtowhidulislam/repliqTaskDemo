@@ -27,8 +27,8 @@ const PasswordInputField = (props) => {
             value={values}
             className={
               errors && touched
-                ? "form border-2 border-denger py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
-                : "form bg-transparent py-2 pl-4 placeholder:text-sm placeholder:capitalize md:py-1"
+                ? "form border-2 border-denger py-2 pl-4 placeholder:text-sm text-sm placeholder:capitalize md:py-1"
+                : "form bg-transparent py-2 pl-4 placeholder:text-sm text-sm placeholder:capitalize md:py-1"
             }
             placeholder={placeholder}
           />

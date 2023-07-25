@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { HiArrowDown, HiArrowUp } from "react-icons/hi";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { dashboardData } from "@/app/Data/dropDownData";
+import { dashboardData } from "../../../../Data/dropDownData";
 
 const Dropdown = () => {
   const currPath = usePathname();
@@ -32,7 +32,7 @@ const Dropdown = () => {
           className="inline-flex items-center justify-between w-full rounded-md bg-nutral3 px-4 py-3 font-bold capitalize drop-shadow-md focus:text-nutral2"
           onClick={handleDropdown}
         >
-          {path === "Dashboard" ? "Product" : `${path}`}
+          {path === "dashboard" ? "product" : `${path}`}
           {menuOpen ? (
             <HiArrowUp className="trasition-all text-nutral2 duration-200 ease-in-out" />
           ) : (

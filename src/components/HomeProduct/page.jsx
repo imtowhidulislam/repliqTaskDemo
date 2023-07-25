@@ -6,11 +6,11 @@ import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { useProductData } from "../../Data/productData";
 import { toast } from "react-hot-toast";
-import CartContextProvider from "@/app/context/cartContext";
+import CartContextProvider from "../../context/cartContext";
 import Loading from "@/app/product/loading";
 import FavoriteBtn from "@/app/Product/components/FavoriteBtn";
 import { HiShoppingCart } from "react-icons/hi";
-import ButtonFilled from "@/app/common/ButtonFilled";
+import ButtonFilled from "../../common/ButtonFilled";
 const LazyComponent = dynamic(() => import("../../common/LazyComponent"));
 
 const HomeTopratedProduct = () => {
