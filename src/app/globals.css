@@ -32,7 +32,7 @@ body {
 }
 
 .navList {
-  @apply block w-full cursor-pointer rounded-md bg-transparent px-4 py-2 hover:bg-primary hover:text-baseClr1/80 hover:drop-shadow-md;
+  @apply block w-full cursor-pointer rounded-md bg-transparent px-4 py-2 hover:bg-primary hover:text-nutral3 hover:drop-shadow-md;
 }
 .navLink {
   @apply flex items-center text-base font-bold capitalize;
