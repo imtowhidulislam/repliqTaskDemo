@@ -42,7 +42,7 @@ const NavbarMain = ({ params }) => {
   return (
     <div className="fixed left-0 top-0 z-[999] w-full bg-nutral1 md:relative md:bg-transparent">
       <div className="container py-4">
-        {width > 768 ? (
+        {width >= 768 ? (
           <nav className="flex w-full max-w-7xl items-center justify-between gap-2">
             <div>
               <Link href="/">

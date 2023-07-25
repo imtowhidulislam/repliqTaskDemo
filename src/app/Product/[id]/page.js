@@ -57,7 +57,7 @@ const ProductDetailsPage = ({ params }) => {
     }
   };
   return (
-    <div className="min-h-custom-h-form">
+    <div className="lg:min-h-custom-h-form">
       <div className="container ">
         <>
           {uniqueItem?.map((singleProduct) => {
@@ -73,16 +73,18 @@ const ProductDetailsPage = ({ params }) => {
 
             const titleLength = title.split(" ").slice(0, 5).join(" ");
             return (
-              <div key={id} className="mt-20 min-h-custom-h-form">
-                <div className="grid grid-cols-productLayout gap-0 sm:gap-4">
+              <div key={id} className="mt-20">
+                <div className="grid grid-cols-productLayout md:bg-primary/5 md:p-5 rounded-lg gap-3 sm:gap-4">
                   <div className="grid animate-moveInLeft place-items-center rounded-md bg-nutral3 drop-shadow-lg">
                     <Image
                       className="m-4 aspect-square rounded-md object-cover object-center"
                       src={img}
+                      n
                       alt=""
                       width={350}
                       height={350}
                     />
+
                     <div className="items-cener my-4 flex  justify-between gap-3">
                       <div className="grid h-16 w-16 place-items-center overflow-hidden rounded-md bg-baseClr1 p-1 shadow-md md:h-24 md:w-24">
                         <Image
@@ -113,7 +115,7 @@ const ProductDetailsPage = ({ params }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="z-20  flex animate-moveInRight flex-col items-start justify-center px-1 pb-4 pt-4 text-gray-700 md:px-4">
+                  <div className="z-20 md:bg-primary/10 p-4 rounded-lg flex animate-moveInRight flex-col items-start justify-center px-1 pb-4 pt-4 text-gray-700 md:px-4">
                     <h2 className="text-pimary max-w-lg text-xl font-semibold capitalize text-nutral2">
                       {cat}
                     </h2>
@@ -198,11 +200,13 @@ const ProductDetailsPage = ({ params }) => {
         </>
       </div>
 
-      <div className="mb-4 grid place-items-center">
+      <div className="my-6 md:my-0 md:mt-8 md:mb-8 grid place-items-center">
         <Link href="/Product" className="">
-          <button className="flex w-full max-w-sm cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary bg-transparent px-4  py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md">
-            Back To Product
-          </button>
+          <ButtonFilled
+            btnLebel="back to product"
+            btnType="button"
+            classNames="flex w-full max-w-sm cursor-pointer items-center justify-center gap-2 rounded-md border-2 border-primary bg-transparent px-4  py-2 text-sm font-bold capitalize text-primary drop-shadow-lg transition-all duration-200 ease-in-out hover:border-transparent hover:bg-baseClr1 hover:text-primary hover:drop-shadow-md"
+          />
         </Link>
       </div>
     </div>
